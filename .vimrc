@@ -9,7 +9,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'quickrun'
+Bundle 'thinca/vim-quickrun'
 Bundle 'The-NERD-tree'
 Bundle 'neocomplcache'
 Bundle 'surround.vim'
@@ -22,7 +22,7 @@ let g:neocomplcache_enable_at_startup = 1
 filetype on
 filetype indent on
 filetype plugin on
-"syntax on
+syntax on
 
 set autoindent
 set laststatus=2
@@ -55,11 +55,15 @@ set modelines=0                  " モードラインは無効
 set clipboard+=unnamed           " OSのクリップボードを使用する
 set mouse=a                      " ターミナルでマウスを使用できるようにする
 set clipboard=unnamed            " ヤンクした文字は、システムのクリップボードに入れる
+set hlsearch                     " 検索結果をハイライト
 set guioptions+=a
 set ttymouse=xterm2
 
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする "
 imap <C-p>  <ESC>"*pa
+
+" ESCキー連打で検索ハイライトを消す
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " Ev/Rvでvimrcの編集と反映
 command! Ev edit $MYVIMRC
