@@ -24,7 +24,6 @@ filetype indent on
 filetype plugin on
 syntax on
 
-set autoindent
 set laststatus=2
 set statusline=%<%f:%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set t_Co=256
@@ -36,6 +35,9 @@ set fileformats=unix,dos,mac
 set ambiwidth=double
 
 let mapleader = ","              " キーマップリーダー
+set autoindent                   " オートインデントの設定
+set shiftwidth=2                 " オートインデント時の文字数
+set expandtab                    " ソフトタブを有効にする
 set number                       " 行番号の表示
 set scrolloff=5                  " スクロール時の余白確保
 set textwidth=0                  " 一行に長い文章を書いていても自動折り返しをしない
