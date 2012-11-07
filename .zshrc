@@ -18,18 +18,23 @@ if [ -f ~/.zsh/auto-fu.zsh ]; then
     zstyle ':completion:*' completer _oldlist _complete
 fi
 
+## cdなしでディレクトリ名を直接指定して移動し、移動後自動でlsする
+setopt auto_cd
+function chpwd() { ls }
+
 ## コマンドのオプションを表示
-#autoload -U compinit
-#compinit
+autoload -U compinit
+compinit
 
 ## エディタ(vim)
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+export EDITOR=/usr/bin/vim
+alias vi='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 
 ## command edit
-alias ls='ls -la'
-alias la='ls -la'
+alias ls='ls -la --color'
+alias la='ls -la --color'
+alias rm='rm -i'
 
 ## コマンド履歴
 HISTFILE=~/.zsh_history
@@ -61,9 +66,10 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -U colors; colors
 
 # 一般ユーザ時
-tmp_prompt="%{${fg[cyan]}%}%m%# %{${reset_color}%}"
+#tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
+tmp_prompt="%{${fg[cyan]}%}[%n@%m]%{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%{${fg[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
+tmp_rprompt="%{${fg[yellow]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
@@ -85,4 +91,4 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 ### Ruby ###
 
 # rbenv
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
