@@ -20,7 +20,7 @@ fi
 
 ## cdなしでディレクトリ名を直接指定して移動し、移動後自動でlsする
 setopt auto_cd
-function chpwd() { ls }
+function chpwd() { ls -la --color }
 
 ## コマンドのオプションを表示
 autoload -U compinit
