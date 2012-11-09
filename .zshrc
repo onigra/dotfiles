@@ -27,6 +27,12 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
+## tmux
+alias tm='tmux'
+alias tml='tmux ls'
+alias tmk='tmux kill-session -t'
+alias tma='tmux attach -t'
+
 ## command edit
 alias ls='ls -la'
 alias la='ls -la'
@@ -37,6 +43,20 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
+
+# ------------------------------
+# gitブランチとステータスの表示
+# ------------------------------
+## http://d.hatena.ne.jp/mollifier/20090814/p1
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '(%b)'
+zstyle ':vcs_info:*' actionformats '(%b)[%a]'
+
+precmd () {
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
 
 # ------------------------------
 # Look And Feel Settings
@@ -58,12 +78,13 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 ### Prompt ###
 # プロンプトに色を付ける
+# http://www.sakito.com/2011/11/zsh.html
 autoload -U colors; colors
 
 # 一般ユーザ時
 tmp_prompt="%{${fg[cyan]}%}%m%# %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%{${fg[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
+tmp_rprompt="%1(v|%F{magenta}%1v%f|)%{${fg[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
@@ -78,6 +99,7 @@ PROMPT=$tmp_prompt    # 通常のプロンプト
 PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
+
 
 # ------------------------------
 # Programing Setting
