@@ -52,6 +52,7 @@ setopt share_history        # share command history data
 # ------------------------------
 # gitブランチとステータスの表示
 # ------------------------------
+## http://d.hatena.ne.jp/mollifier/20090814/p1
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%b)[%a]'
@@ -82,6 +83,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 ### Prompt ###
 # プロンプトに色を付ける
+# http://www.sakito.com/2011/11/zsh.html
 autoload -U colors; colors
 
 # 一般ユーザ時
