@@ -20,7 +20,7 @@ fi
 
 ## cdなしでディレクトリ名を直接指定して移動し、移動後自動でlsする
 setopt auto_cd
-function chpwd() { ls }
+function chpwd() { ls -la --color }
 
 ## コマンドのオプションを表示
 autoload -U compinit
@@ -30,6 +30,12 @@ compinit
 export EDITOR=/usr/bin/vim
 alias vi='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
+
+## tmux
+alias tm='tmux'
+alias tml='tmux ls'
+alias tmk='tmux kill-session -t'
+alias tma='tmux attach -t'
 
 ## command edit
 alias ls='ls -la --color'
@@ -42,6 +48,19 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
+
+# ------------------------------
+# gitブランチとステータスの表示
+# ------------------------------
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '(%b)'
+zstyle ':vcs_info:*' actionformats '(%b)[%a]'
+
+precmd () {
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
 
 # ------------------------------
 # Look And Feel Settings
@@ -69,7 +88,7 @@ autoload -U colors; colors
 #tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
 tmp_prompt="%{${fg[cyan]}%}[%n@%m]%{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%{${fg[yellow]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
+tmp_rprompt="%1(v|%F{magenta}%1v%f|)%{${fg[yellow]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
@@ -84,6 +103,7 @@ PROMPT=$tmp_prompt    # 通常のプロンプト
 PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
+
 
 # ------------------------------
 # Programing Setting
