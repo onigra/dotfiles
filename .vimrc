@@ -13,12 +13,29 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'The-NERD-tree'
 Bundle 'neocomplcache'
 Bundle 'surround.vim'
+Bundle 'unite.vim'
 " </Vundle>
 " <neocomplcache see="https://github.com/Shougo/neocomplcache/blob/master/README">
 let g:neocomplcache_enable_at_startup = 1
 " </neocomplcache>
 
+"-------------------------------------------------------------------------------
+" unite.vim
+"-------------------------------------------------------------------------------
+" 入力モードで開始
+let g:vimfiler_as_default_explorer = 1
+ "縦分割で開く
+let g:unite_enable_split_vertically = 1
+
+" バッファリスト
+nnoremap <silent><Space>l :Unite Buffer<CR>
+" 最近使ったファイル
+nnoremap <silent><Space>m :Unite file_mru<CR>
+" VimFilerを起動
+nnoremap <silent><Space>f :UniteWithBufferDir -buffer-name=files file<CR>
+"-------------------------------------------------------------------------------
 " start original .vimrc statements
+"-------------------------------------------------------------------------------
 filetype on
 filetype indent on
 filetype plugin on
@@ -54,14 +71,13 @@ set showcmd                      " コマンドをステータス行に表示
 set showmode                     " 現在のモードを表示
 set viminfo='50,<1000,s100,\"50  " viminfoファイルの設定
 set modelines=0                  " モードラインは無効
-set clipboard+=unnamed           " OSのクリップボードを使用する
+set clipboard+=unnamed           " ヤンクした文字は、OSのクリップボードにも入れる
 set mouse=a                      " ターミナルでマウスを使用できるようにする
-set clipboard=unnamed            " ヤンクした文字は、システムのクリップボードに入れる
 set hlsearch                     " 検索結果をハイライト
 set guioptions+=a
 set ttymouse=xterm2
 
-" 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする "
+" 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする
 imap <C-p>  <ESC>"*pa
 
 " ESCキー連打で検索ハイライトを消す

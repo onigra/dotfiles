@@ -28,7 +28,7 @@ alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 ## tmux
-alias tm='tmux'
+alias tm='tmux -2'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
 alias tma='tmux attach -t'
