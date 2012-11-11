@@ -1,7 +1,7 @@
 "-------------------------------------------------------------------------------
-" 基本設定 Basics
+" Plugins(Vundler)
+" https://github.com/gmarik/vundle/blob/master/README.md
 "-------------------------------------------------------------------------------
-" <Vundle see="https://github.com/gmarik/vundle/blob/master/README.md">
 set nocompatible
 filetype off
 
@@ -11,13 +11,24 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'thinca/vim-quickrun'
 Bundle 'The-NERD-tree'
-Bundle 'neocomplcache'
+Bundle 'Shougo/neocomplcache'
+Bundle 'taichouchou2/vim-rsense'
 Bundle 'surround.vim'
 Bundle 'unite.vim'
-" </Vundle>
-" <neocomplcache see="https://github.com/Shougo/neocomplcache/blob/master/README">
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'taglist.vim'
+
+"-------------------------------------------------------------------------------
+" neocomplcache
+" https://github.com/Shougo/neocomplcache/blob/master/README
+"-------------------------------------------------------------------------------
 let g:neocomplcache_enable_at_startup = 1
-" </neocomplcache>
+let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
+let g:rsenseUseOmniFunc = 1
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 "-------------------------------------------------------------------------------
 " unite.vim
@@ -26,13 +37,37 @@ let g:neocomplcache_enable_at_startup = 1
 let g:vimfiler_as_default_explorer = 1
  "縦分割で開く
 let g:unite_enable_split_vertically = 1
-
 " バッファリスト
 nnoremap <silent><Space>l :Unite Buffer<CR>
 " 最近使ったファイル
 nnoremap <silent><Space>m :Unite file_mru<CR>
 " VimFilerを起動
 nnoremap <silent><Space>f :UniteWithBufferDir -buffer-name=files file<CR>
+
+"-------------------------------------------------------------------------------
+" vim-powerline
+"-------------------------------------------------------------------------------
+let g:Powerline_symbols = 'fancy'
+
+"-------------------------------------------------------------------------------
+" taglist.vim
+"-------------------------------------------------------------------------------
+set tags=tags
+" taglistを開くショットカットキー
+nnoremap <silent><leader>tl :Tlist<CR>
+" ctagsのパス(Homebrew)
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+" 現在編集中のソースのタグしか表示しない
+let Tlist_Show_One_File = 1
+" taglistのウィンドウが最後のウィンドウならばVimを閉じる
+let Tlist_Exit_OnlyWindow = 1
+" 自動表示
+let Tlist_Auto_Open = 1
+" 表示幅
+let Tlist_WinWidth = 30
+" 右側でtaglistのウィンドウを表示
+"let Tlist_Use_Right_Window = 1
+
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
 "-------------------------------------------------------------------------------
@@ -42,7 +77,7 @@ filetype plugin on
 syntax on
 
 set laststatus=2
-set statusline=%<%f:%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+"set statusline=%<%f:%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set t_Co=256
 set backupcopy=yes
 set encoding=utf-8
@@ -77,6 +112,24 @@ set hlsearch                     " 検索結果をハイライト
 set guioptions+=a
 set ttymouse=xterm2
 
+" カーソル行をハイライト
+set cursorline
+" カレントウィンドウにのみ罫線を引く
+augroup cch
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
+
+hi clear CursorLine
+hi CursorLine gui=underline
+highlight CursorLine ctermbg=black guibg=black
+
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+" 保存時にtabをスペースに変換する
+autocmd BufWritePre * :%s/\t/  /ge
+
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする
 imap <C-p>  <ESC>"*pa
 
@@ -87,6 +140,7 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 command! Ev edit $MYVIMRC
 command! Rv source $MYVIMRC
 
+" シンタックスハイライト
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
