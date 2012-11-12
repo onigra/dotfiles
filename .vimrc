@@ -52,7 +52,7 @@ nnoremap <silent><Space>f :UniteWithBufferDir -buffer-name=files file<CR>
 "-------------------------------------------------------------------------------
 " taglist.vim
 "-------------------------------------------------------------------------------
-"set tags=tags
+set tags=tags
 " taglistを開くショットカットキー
 nnoremap <silent><leader>tl :Tlist<CR>
 " ctagsのパス(Homebrew)
