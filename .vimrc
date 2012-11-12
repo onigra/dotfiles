@@ -16,7 +16,7 @@ Bundle 'taichouchou2/vim-rsense'
 Bundle 'surround.vim'
 Bundle 'unite.vim'
 "Bundle 'Lokaltog/vim-powerline'
-"Bundle 'taglist.vim'
+Bundle 'taglist.vim'
 
 "-------------------------------------------------------------------------------
 " neocomplcache
@@ -52,21 +52,21 @@ nnoremap <silent><Space>f :UniteWithBufferDir -buffer-name=files file<CR>
 "-------------------------------------------------------------------------------
 " taglist.vim
 "-------------------------------------------------------------------------------
-""set tags=tags
-"" taglistを開くショットカットキー
-"nnoremap <silent><leader>tl :Tlist<CR>
-"" ctagsのパス(Homebrew)
-"let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-"" 現在編集中のソースのタグしか表示しない
-"let Tlist_Show_One_File = 1
-"" taglistのウィンドウが最後のウィンドウならばVimを閉じる
-"let Tlist_Exit_OnlyWindow = 1
-"" 自動表示
-"let Tlist_Auto_Open = 1
-"" 表示幅
-"let Tlist_WinWidth = 30
-"" 右側でtaglistのウィンドウを表示
-""let Tlist_Use_Right_Window = 1
+"set tags=tags
+" taglistを開くショットカットキー
+nnoremap <silent><leader>tl :Tlist<CR>
+" ctagsのパス(Homebrew)
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+" 現在編集中のソースのタグしか表示しない
+let Tlist_Show_One_File = 1
+" taglistのウィンドウが最後のウィンドウならばVimを閉じる
+let Tlist_Exit_OnlyWindow = 1
+" 自動表示
+let Tlist_Auto_Open = 1
+" 表示幅
+let Tlist_WinWidth = 30
+" 右側でtaglistのウィンドウを表示
+"let Tlist_Use_Right_Window = 1
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
