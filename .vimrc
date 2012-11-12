@@ -136,6 +136,18 @@ imap <C-p>  <ESC>"*pa
 " ESCキー連打で検索ハイライトを消す
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" FPS風キーバインド
+" http://d.hatena.ne.jp/toromoti/20101120/1290275019
+nnoremap h i
+nnoremap H I
+nnoremap i <Up>
+nnoremap j <Left>
+nnoremap k <Down>
+nnoremap <C-j> b
+nnoremap <C-l> w
+nnoremap <C-i> 5<Up>
+nnoremap <C-k> 5<Down>
+
 " Ev/Rvでvimrcの編集と反映
 command! Ev edit $MYVIMRC
 command! Rv source $MYVIMRC
