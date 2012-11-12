@@ -26,6 +26,9 @@ function chpwd() { ls -la --color }
 autoload -U compinit
 compinit
 
+## ctags
+alias ctags='/usr/local/bin/ctags'
+
 ## エディタ(vim)
 export EDITOR=/usr/bin/vim
 alias vi='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
@@ -33,6 +36,12 @@ alias vim='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 
 ## tmux
 alias tm='tmux'
+alias tml='tmux ls'
+alias tmk='tmux kill-session -t'
+alias tma='tmux attach -t'
+
+## tmux
+alias tm='tmux -2'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
 alias tma='tmux attach -t'
