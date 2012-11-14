@@ -22,7 +22,7 @@ Bundle 'taglist.vim'
 " neocomplcache
 " https://github.com/Shougo/neocomplcache/blob/master/README
 "-------------------------------------------------------------------------------
-"let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 1
 "let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
 "let g:rsenseUseOmniFunc = 1
 "if !exists('g:neocomplcache_omni_patterns')
@@ -109,11 +109,10 @@ set modelines=0                  " モードラインは無効
 set clipboard+=unnamed           " ヤンクした文字は、OSのクリップボードにも入れる
 set mouse=a                      " ターミナルでマウスを使用できるようにする
 set hlsearch                     " 検索結果をハイライト
+set cursorline                   " カーソル行をハイライト
 set guioptions+=a
 set ttymouse=xterm2
 
-" カーソル行をハイライト
-set cursorline
 " カレントウィンドウにのみ罫線を引く
 augroup cch
   autocmd! cch
