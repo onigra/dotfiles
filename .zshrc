@@ -31,9 +31,12 @@ alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 ## diff
+## colordiff: http://www.glidenote.com/archives/1403
 alias diff='colordiff -w'
 
 ## less
+## colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
+## -Rを付けるとちゃんとカラー表示される。
 export LESS="=R"
 
 ## tmux
