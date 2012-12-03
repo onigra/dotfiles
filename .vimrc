@@ -22,7 +22,7 @@ Bundle 'taglist.vim'
 " neocomplcache
 " https://github.com/Shougo/neocomplcache/blob/master/README
 "-------------------------------------------------------------------------------
-"let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 1
 "let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
 "let g:rsenseUseOmniFunc = 1
 "if !exists('g:neocomplcache_omni_patterns')
