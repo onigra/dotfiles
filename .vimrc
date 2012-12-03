@@ -109,11 +109,10 @@ set modelines=0                  " モードラインは無効
 set clipboard+=unnamed           " ヤンクした文字は、OSのクリップボードにも入れる
 set mouse=a                      " ターミナルでマウスを使用できるようにする
 set hlsearch                     " 検索結果をハイライト
+set cursorline                   " カーソル行をハイライト
 set guioptions+=a
 set ttymouse=xterm2
 
-" カーソル行をハイライト
-set cursorline
 " カレントウィンドウにのみ罫線を引く
 augroup cch
   autocmd! cch
@@ -130,6 +129,9 @@ autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
 
+"-------------------------------------------------------------------------------
+" キーバインド編集
+"-------------------------------------------------------------------------------
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする
 imap <C-p>  <ESC>"*pa
 
@@ -138,21 +140,25 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " FPS風キーバインド
 " http://d.hatena.ne.jp/toromoti/20101120/1290275019
-nnoremap h i
-nnoremap H I
-nnoremap i <Up>
-nnoremap j <Left>
-nnoremap k <Down>
-nnoremap <C-j> b
-nnoremap <C-l> w
-nnoremap <C-i> 5<Up>
-nnoremap <C-k> 5<Down>
+" nnoremap h i
+" nnoremap H I
+" nnoremap i <Up>
+" nnoremap j <Left>
+" nnoremap k <Down>
+" nnoremap <C-j> b
+" nnoremap <C-l> w
+
+" Ctrl + 上下移動で5行分移動
+nnoremap <C-k> 5<Up>
+nnoremap <C-j> 5<Down>
 
 " Ev/Rvでvimrcの編集と反映
 command! Ev edit $MYVIMRC
 command! Rv source $MYVIMRC
 
+"-------------------------------------------------------------------------------
 " シンタックスハイライト
+"-------------------------------------------------------------------------------
 syntax enable
 "set background=dark
 "let g:solarized_termcolors=256
