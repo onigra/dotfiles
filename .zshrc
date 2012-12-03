@@ -33,6 +33,9 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 ## diff
 alias diff='colordiff -w'
 
+## less
+export LESS="=R"
+
 ## tmux
 alias tm='tmux -2'
 alias tml='tmux ls'
