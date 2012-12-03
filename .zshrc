@@ -34,6 +34,9 @@ export EDITOR=/usr/bin/vim
 alias vi='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 
+## diff
+alias diff='colordiff -w'
+
 ## tmux
 alias tm='tmux -2'
 alias tml='tmux ls'
