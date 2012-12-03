@@ -40,6 +40,9 @@ alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
 alias tma='tmux attach -t'
 
+## mysql
+alias pmysql='mysql --pager='less -S''
+
 ## command edit
 alias ls='ls -la --color'
 alias la='ls -la --color'
