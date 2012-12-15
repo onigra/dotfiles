@@ -22,6 +22,9 @@ fi
 #autoload -U compinit
 #compinit
 
+## cd後自動でlsする
+function chpwd() { ls -la }
+
 ## ctags
 alias ctags='/usr/local/bin/ctags'
 
