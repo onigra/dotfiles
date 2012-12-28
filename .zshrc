@@ -35,7 +35,8 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 
 ## diff
 ## colordiff: http://www.glidenote.com/archives/1403
-alias diff='colordiff -w'
+alias difc='colordiff -w'
+alias dify='diff -y --suppress-common-lines'
 
 ## less
 ## colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
