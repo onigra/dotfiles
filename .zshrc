@@ -35,7 +35,8 @@ alias vi='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 
 ## diff
-alias diff='colordiff -w'
+alias difc='colordiff -w'
+alias dify='diff -y --suppress-common-lines'
 
 ## tmux
 alias tm='tmux -2'
