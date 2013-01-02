@@ -5,18 +5,21 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/dotfiles/neobundle.vim
+if has('vim_starting')
+  set runtimepath+=~/dotfiles/neobundle.vim
+  call neobundle#rc(expand('~/.vim/'))
+endif
 
-Bundle 'gmarik/vundle'
-Bundle 'thinca/vim-quickrun'
-Bundle 'The-NERD-tree'
-Bundle 'Shougo/neocomplcache'
-Bundle 'taichouchou2/vim-rsense'
-Bundle 'surround.vim'
-Bundle 'unite.vim'
-"Bundle 'Lokaltog/vim-powerline'
-Bundle 'taglist.vim'
+NeoBundle 'gmarik/vundle'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'The-NERD-tree'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'taichouchou2/vim-rsense'
+NeoBundle 'surround.vim'
+NeoBundle 'unite.vim'
+"NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'taglist.vim'
 
 "-------------------------------------------------------------------------------
 " neocomplcache
