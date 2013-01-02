@@ -19,6 +19,7 @@ NeoBundle 'surround.vim'
 NeoBundle 'unite.vim'
 "NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'taglist.vim'
+NeoBundle 'vim-scripts/wombat256.vim'
 
 "-------------------------------------------------------------------------------
 " neocomplcache
@@ -162,6 +163,4 @@ command! Rv source $MYVIMRC
 " シンタックスハイライト
 "-------------------------------------------------------------------------------
 syntax enable
-"set background=dark
-"let g:solarized_termcolors=256
-colorscheme desert
+colorscheme wombat256mod
