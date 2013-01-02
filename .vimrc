@@ -11,7 +11,6 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/'))
 endif
 
-NeoBundle 'gmarik/vundle'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'The-NERD-tree'
 NeoBundle 'Shougo/neocomplcache'
