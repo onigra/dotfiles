@@ -123,4 +123,6 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 ### Ruby ###
 
 # rbenv
-#eval "$(rbenv init -)"
+export RBENV_ROOT="/opt/rbenv"
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init -)"
