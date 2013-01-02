@@ -98,9 +98,9 @@ autoload -U colors; colors
 
 # 一般ユーザ時
 #tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
-tmp_prompt="%{${fg[cyan]}%}[%n@%m]%{${reset_color}%} "
-tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%1(v|%F{magenta}%1v%f|)%{${fg[yellow]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
+tmp_prompt="%{${fg[magenta]}%}[%n@%m]%{${reset_color}%} "
+tmp_prompt2="%{${fg[yellow]}%}%_> %{${reset_color}%}"
+tmp_rprompt="%1(v|%F{red}%1v%f|)%{${fg[cyan]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
