@@ -20,6 +20,7 @@ NeoBundle 'surround.vim'
 NeoBundle 'unite.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'taglist.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 "-------------------------------------------------------------------------------
 " neocomplcache
