@@ -1,6 +1,8 @@
 # ------------------------------
 # General Settings
 # ------------------------------
+export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
+
 ## Environment variable configuration
 ##
 ## LANG
@@ -50,7 +52,7 @@ alias tmk='tmux kill-session -t'
 alias tma='tmux attach -t'
 
 ## mysql
-alias mysql='mysql --pager='less -S''
+#alias mysql='mysql --pager='less -S''
 
 ## command edit
 alias ls='ls -la'
@@ -126,4 +128,5 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 ### Ruby ###
 
 # rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
