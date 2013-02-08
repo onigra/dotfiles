@@ -129,7 +129,6 @@ set clipboard+=unnamed           " ヤンクした文字は、OSのクリップ�
 set mouse=a                      " ターミナルでマウスを使用できるようにする
 set hlsearch                     " 検索結果をハイライト
 set cursorline                   " カーソル行をハイライト
-set paste                        " デフォルトでpasteモードにしておく
 set guioptions+=a
 set ttymouse=xterm2
 
