@@ -23,6 +23,19 @@ NeoBundle 'taglist.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 
 "-------------------------------------------------------------------------------
+" Marked setting 
+" http://blog.glidenote.com/blog/2013/01/10/vim-quickrun-marked/
+"-------------------------------------------------------------------------------
+let g:quickrun_config = {}
+let g:quickrun_config.markdown = {
+      \ 'outputter' : 'null',
+      \ 'command'   : 'open',
+      \ 'cmdopt'    : '-a',
+      \ 'args'      : 'Marked',
+      \ 'exec'      : '%c %o %a %s',
+      \ }
+
+"-------------------------------------------------------------------------------
 " neocomplcache
 " https://github.com/Shougo/neocomplcache/blob/master/README
 "-------------------------------------------------------------------------------

@@ -35,6 +35,10 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
+## markdown書く時にMarkedで確認しながら編集できる設定
+## http://blog.glidenote.com/blog/2013/01/10/vim-quickrun-marked/
+alias marked='open -a Marked'
+
 ## diff
 ## colordiff: http://www.glidenote.com/archives/1403
 alias difc='colordiff -w'
