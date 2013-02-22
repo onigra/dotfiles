@@ -55,6 +55,10 @@ alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
 alias tma='tmux attach -t'
 
+## jenkins
+alias jenstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
+alias jenstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
+
 ## mysql
 #alias mysql='mysql --pager='less -S''
 
