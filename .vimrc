@@ -21,8 +21,6 @@ NeoBundle 'unite.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'taglist.vim'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'mrkn/mrkn256.vim'
-NeoBundle 'jnurmine/Zenburn'
 
 "-------------------------------------------------------------------------------
 " Marked setting 
@@ -183,4 +181,4 @@ command! Rv source $MYVIMRC
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme solarized 
