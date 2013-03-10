@@ -42,7 +42,7 @@ alias dify='diff -y --suppress-common-lines'
 alias tm='tmux -2'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
-alias tma='tmux attach -t'
+alias tma='tmux -2 attach -t'
 
 ## mysql
 alias pmysql='mysql --pager='less -S''
