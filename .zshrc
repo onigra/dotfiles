@@ -53,7 +53,7 @@ export LESS="=R"
 alias tm='tmux -2 new -s'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
-alias tma='tmux attach -t'
+alias tma='tmux -2 attach -t'
 
 ## jenkins
 alias jenstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
