@@ -65,6 +65,9 @@ alias jenstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.pli
 ## git
 alias gch='git checkout HEAD'
 alias gst='git status'
+alias gca='git commit -a'
+alias gpo='git push origin master'
+alias gdf='git diff'
 
 ## command edit
 alias ls='ls -la'
