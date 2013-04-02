@@ -36,6 +36,21 @@ let g:quickrun_config.markdown = {
       \ }
 
 "-------------------------------------------------------------------------------
+" NERD tree
+" http://vimwiki.net/?scripts%2F18
+"-------------------------------------------------------------------------------
+let file_name = expand("%")
+if has('vim_starting') &&  file_name == ""
+    autocmd VimEnter * NERDTree ./
+endif
+
+nmap <silent> <C-e> :NERDTreeToggle<CR>
+vmap <silent> <C-e> <Esc> :NERDTreeToggle<CR>
+omap <silent> <C-e> :NERDTreeToggle<CR>
+imap <silent> <C-e> <Esc> :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden=1
+
+"-------------------------------------------------------------------------------
 " neocomplcache
 " https://github.com/Shougo/neocomplcache/blob/master/README
 "-------------------------------------------------------------------------------
@@ -83,7 +98,7 @@ let Tlist_Auto_Open = 1
 " 表示幅
 let Tlist_WinWidth = 30
 " 右側でtaglistのウィンドウを表示
-"let Tlist_Use_Right_Window = 1
+" let Tlist_Use_Right_Window = 1
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
