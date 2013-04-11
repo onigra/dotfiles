@@ -17,6 +17,7 @@ Bundle 'surround.vim'
 Bundle 'unite.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'taglist.vim'
+Bundle 'vim-scripts/wombat256.vim'
 
 "-------------------------------------------------------------------------------
 " neocomplcache
@@ -125,7 +126,7 @@ hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
 " 保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
 
@@ -162,4 +163,4 @@ command! Rv source $MYVIMRC
 syntax enable
 "set background=dark
 "let g:solarized_termcolors=256
-colorscheme desert
+colorscheme wombat256mod

@@ -39,7 +39,11 @@ alias difc='colordiff -w'
 alias dify='diff -y --suppress-common-lines'
 
 ## tmux
+<<<<<<< HEAD
 alias tm='tmux -2'
+=======
+alias tm='tmux -2 new -s'
+>>>>>>> c41e584... -2入れて起動しないとvimが256色にならない
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
 alias tma='tmux -2 attach -t'
