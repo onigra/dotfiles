@@ -62,6 +62,9 @@ alias jenstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.pli
 ## mysql
 #alias mysql='mysql --pager='less -S''
 
+## memcached
+alias mem='memcached -u memcached -d'
+
 ## git
 alias gch='git checkout HEAD'
 alias gst='git status'
