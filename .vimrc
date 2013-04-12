@@ -21,6 +21,7 @@ NeoBundle 'unite.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'taglist.vim'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/wombat256.vim'
 
 "-------------------------------------------------------------------------------
 " Marked setting 
@@ -195,5 +196,5 @@ command! Rv source $MYVIMRC
 "-------------------------------------------------------------------------------
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized 
+" let g:solarized_termcolors=256
+colorscheme wombat256mod
