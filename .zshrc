@@ -37,7 +37,7 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 
 ## markdown書く時にMarkedで確認しながら編集できる設定
 ## http://blog.glidenote.com/blog/2013/01/10/vim-quickrun-marked/
-alias marked='open -a Marked'
+alias marked='open -a Marked ; vi'
 
 ## diff
 ## colordiff: http://www.glidenote.com/archives/1403
@@ -65,6 +65,9 @@ alias jenstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.pli
 ## memcached
 alias mem='memcached -u memcached -d'
 
+## rails
+alias brs='bundle exec rails server'
+
 ## git
 alias gch='git checkout HEAD'
 alias gst='git status'
@@ -72,7 +75,7 @@ alias gca='git commit -a'
 alias gpo='git push origin master'
 alias gdf='git diff'
 
-## command edit
+## ls
 alias ls='ls -la'
 alias la='ls -la'
 

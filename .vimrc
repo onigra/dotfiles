@@ -17,11 +17,13 @@ NeoBundle 'The-NERD-tree'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'taichouchou2/vim-rsense'
 NeoBundle 'surround.vim'
-NeoBundle 'unite.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'taglist.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/wombat256.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/syntastic'
 
 "-------------------------------------------------------------------------------
 " Marked setting 
@@ -64,20 +66,6 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 "-------------------------------------------------------------------------------
-" unite.vim
-"-------------------------------------------------------------------------------
-" 入力モードで開始
-let g:vimfiler_as_default_explorer = 1
- "縦分割で開く
-let g:unite_enable_split_vertically = 1
-" バッファリスト
-nnoremap <silent><Space>l :Unite Buffer<CR>
-" 最近使ったファイル
-nnoremap <silent><Space>m :Unite file_mru<CR>
-" VimFilerを起動
-nnoremap <silent><Space>f :UniteWithBufferDir -buffer-name=files file<CR>
-
-"-------------------------------------------------------------------------------
 " vim-powerline
 "-------------------------------------------------------------------------------
 let g:Powerline_symbols = 'fancy'
@@ -85,7 +73,7 @@ let g:Powerline_symbols = 'fancy'
 "-------------------------------------------------------------------------------
 " taglist.vim
 "-------------------------------------------------------------------------------
-set tags=tags
+set tags=tags=tags,./tags,**1/tags,tags;/Projects
 " taglistを開くショットカットキー
 nnoremap <silent><leader>tl :Tlist<CR>
 " ctagsのパス(Homebrew)
@@ -100,6 +88,15 @@ let Tlist_Auto_Open = 1
 let Tlist_WinWidth = 30
 " 右側でtaglistのウィンドウを表示
 " let Tlist_Use_Right_Window = 1
+
+"-------------------------------------------------------------------------------
+" ctrlp
+" http://qiita.com/items/5ece3f39481f6aab9bc5
+"-------------------------------------------------------------------------------
+let g:ctrlp_use_migemo = 1
+let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアしない
+let g:ctrlp_mruf_max            = 500 " MRUの最大記録数
+let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで開く
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
