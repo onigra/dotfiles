@@ -47,7 +47,7 @@ alias dify='diff -y --suppress-common-lines'
 ## less
 ## colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
 ## -Rを付けるとちゃんとカラー表示される。
-export LESS="=R"
+export LESS="-R"
 
 ## tmux
 alias tm='tmux -2 new -s'
