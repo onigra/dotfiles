@@ -35,8 +35,13 @@ alias vi='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /usr/bin/vim "$@"'
 
 ## diff
-alias difc='colordiff -w'
-alias dify='diff -y --suppress-common-lines'
+alias diff='colordiff'
+alias diffy='diff -y --suppress-common-lines'
+
+## less
+## colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
+## -Rを付けるとちゃんとカラー表示される。
+export LESS="-R"
 
 ## tmux
 alias tm='tmux -2 new -s'
@@ -45,9 +50,19 @@ alias tmk='tmux kill-session -t'
 alias tma='tmux -2 attach -t'
 
 ## mysql
-alias pmysql='mysql --pager='less -S''
+#alias pmysql='mysql --pager='less -S''
 
-## command edit
+## bundler
+alias be='bundle exec'
+
+## git
+alias gch='git checkout HEAD'
+alias gst='git status'
+alias gca='git commit -a'
+alias gpo='git push origin master'
+alias gdf='git diff'
+
+## ls
 alias ls='ls -la --color'
 alias la='ls -la --color'
 alias rm='rm -i'
