@@ -65,8 +65,8 @@ alias jenstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.pli
 ## memcached
 alias mem='memcached -u memcached -d'
 
-## rails
-alias brs='bundle exec rails server'
+## bundler
+alias be='bundle exec'
 
 ## git
 alias gch='git checkout HEAD'
@@ -85,6 +85,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
+
+## zshが悪さしないように
+## http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
+setopt nonomatch
 
 # ------------------------------
 # gitブランチとステータスの表示
