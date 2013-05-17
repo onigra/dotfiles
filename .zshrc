@@ -41,8 +41,8 @@ alias marked='open -a Marked ; vi'
 
 ## diff
 ## colordiff: http://www.glidenote.com/archives/1403
-alias difc='colordiff -w'
-alias dify='diff -y --suppress-common-lines'
+alias diff='colordiff'
+alias diffy='diff -y --suppress-common-lines'
 
 ## less
 ## colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
