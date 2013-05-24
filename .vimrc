@@ -24,6 +24,8 @@ NeoBundle 'vim-scripts/wombat256.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
 
 "-------------------------------------------------------------------------------
 " Marked setting 
@@ -97,6 +99,14 @@ let g:ctrlp_use_migemo = 1
 let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアしない
 let g:ctrlp_mruf_max            = 500 " MRUの最大記録数
 let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで開く
+
+"-------------------------------------------------------------------------------
+" gitv, vim-fugitive
+" http://d.hatena.ne.jp/cohama/20120417/1334679297
+" http://d.hatena.ne.jp/cohama/20130517/1368806202
+" http://www.gregsexton.org/portfolio/gitv/
+"-------------------------------------------------------------------------------
+autocmd FileType git :setlocal foldlevel=99
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
