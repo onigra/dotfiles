@@ -76,6 +76,10 @@ alias gca='git commit -a'
 alias gpo='git push origin master'
 alias gdf='git diff'
 
+## chef, knife-solo, berkshelf
+alias berkinstall='bundle exec berks install --path cookbooks'
+alias knifecook='bundle exec knife solo cook'
+
 ## ls
 alias ls='ls -la'
 alias la='ls -la'
