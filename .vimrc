@@ -19,13 +19,15 @@ NeoBundle 'taichouchou2/vim-rsense'
 NeoBundle 'surround.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'taglist.vim'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/wombat256.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
+" colorscheme
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/wombat256.vim'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 "-------------------------------------------------------------------------------
 " Marked setting 
@@ -202,6 +204,6 @@ command! Rv source $MYVIMRC
 " シンタックスハイライト
 "-------------------------------------------------------------------------------
 syntax enable
-set background=dark
 " let g:solarized_termcolors=256
-colorscheme wombat256mod
+" set background=dark
+colorscheme Tomorrow-Night-Eighties
