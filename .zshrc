@@ -2,6 +2,7 @@
 # General Settings
 # ------------------------------
 export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
+export BERKSHELF_PATH="/Users/taketake3280467/study/chefstudy/chef-repo"
 
 ## Environment variable configuration
 ##
@@ -78,6 +79,12 @@ alias gdf='git diff'
 ## ls
 alias ls='ls -la'
 alias la='ls -la'
+
+## chef, knife
+alias ksc='knife solo cook'
+
+## shasum
+alias sha256="shasum -a 256"
 
 ## コマンド履歴
 HISTFILE=~/.zsh_history
