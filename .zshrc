@@ -80,9 +80,6 @@ alias gdf='git diff'
 alias ls='ls -la'
 alias la='ls -la'
 
-## chef, knife
-alias ksc='knife solo cook'
-
 ## shasum
 alias sha256="shasum -a 256"
 
