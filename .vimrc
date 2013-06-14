@@ -5,19 +5,28 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/neobundle.vim.git
+  call neobundle#rc(expand('~/.bundle'))
+endif
 
-Bundle 'gmarik/vundle'
-Bundle 'thinca/vim-quickrun'
-Bundle 'The-NERD-tree'
-Bundle 'Shougo/neocomplcache'
-Bundle 'taichouchou2/vim-rsense'
-Bundle 'surround.vim'
-Bundle 'unite.vim'
-"Bundle 'Lokaltog/vim-powerline'
-Bundle 'taglist.vim'
-Bundle 'vim-scripts/wombat256.vim'
+NeoBundle 'gmarik/vundle'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'The-NERD-tree'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'taichouchou2/vim-rsense'
+NeoBundle 'surround.vim'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'taglist.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'gregsexton/gitv'
+" colorscheme
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/wombat256.vim'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 "-------------------------------------------------------------------------------
 " neocomplcache
@@ -163,4 +172,4 @@ command! Rv source $MYVIMRC
 syntax enable
 "set background=dark
 "let g:solarized_termcolors=256
-colorscheme wombat256mod
+colorscheme Tomorrow-Night-Bright
