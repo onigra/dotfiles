@@ -10,6 +10,9 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.bundle'))
 endif
 
+" NeoBundleInstall時のプロトコルをhttpsに変更する
+" let g:neobundle_default_git_protocol='https'
+
 NeoBundle 'gmarik/vundle'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'The-NERD-tree'
