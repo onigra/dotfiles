@@ -68,6 +68,8 @@ alias mem='memcached -u memcached -d'
 
 ## bundler
 alias be='bundle exec'
+alias bi='bundle install --path vendor/bundle'
+alias bu='bundle update'
 
 ## git
 alias gch='git checkout HEAD'
@@ -79,6 +81,9 @@ alias gdf='git diff'
 ## chef, knife-solo, berkshelf
 alias berkinstall='bundle exec berks install --path cookbooks'
 alias knifecook='bundle exec knife solo cook'
+alias knifepre='bundle exec knife solo prepare'
+alias knifecreate='bundle exec knife cookbook create $1 -o site-cookbooks'
+alias knifetest='bundle exec knife cookbook test $1 -o .'
 
 ## ls
 alias ls='ls -la'
