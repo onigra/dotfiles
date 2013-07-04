@@ -28,6 +28,9 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/wombat256.vim'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'joedicastro/vim-molokai256'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'tejr/sahara'
 
 "-------------------------------------------------------------------------------
 " Marked setting 
@@ -205,5 +208,5 @@ command! Rv source $MYVIMRC
 "-------------------------------------------------------------------------------
 syntax enable
 " let g:solarized_termcolors=256
-" set background=dark
-colorscheme Tomorrow-Night-Eighties
+set background=dark
+colorscheme sahara
