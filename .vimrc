@@ -10,9 +10,7 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.bundle'))
 endif
 
-" NeoBundleInstall時のプロトコルをhttpsに変更する
-" let g:neobundle_default_git_protocol='https'
-
+" NeoBundleInstall時のプロトコルをhttpsに変更する " let g:neobundle_default_git_protocol='https' 
 NeoBundle 'gmarik/vundle'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'The-NERD-tree'
@@ -36,7 +34,7 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 " https://github.com/Shougo/neocomplcache/blob/master/README
 "-------------------------------------------------------------------------------
 let g:neocomplcache_enable_at_startup = 1
-"let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
+let g:rsenseHome = "/usr/local/rsense-0.3/libexec"
 "let g:rsenseUseOmniFunc = 1
 "if !exists('g:neocomplcache_omni_patterns')
 "  let g:neocomplcache_omni_patterns = {}
