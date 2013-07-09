@@ -157,6 +157,12 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 let g:Powerline_symbols = 'fancy'
 
 "-------------------------------------------------------------------------------
+" Splash
+"-------------------------------------------------------------------------------
+let g:splash#path = expand('~/') . 'dotfiles/cheatsheat.txt'
+nnoremap <silent><C-m> :Splash<CR>
+
+"-------------------------------------------------------------------------------
 " Marked
 " http://blog.glidenote.com/blog/2013/01/10/vim-quickrun-marked/
 "-------------------------------------------------------------------------------
@@ -195,6 +201,7 @@ let Tlist_WinWidth = 30
 " http://www.gregsexton.org/portfolio/gitv/
 "-------------------------------------------------------------------------------
 nnoremap <silent><C-g> :Gitv<Cr>
+nnoremap <silent><C-v> :Gitv!<Cr>
 autocmd FileType git :setlocal foldlevel=99
 
 "-------------------------------------------------------------------------------
@@ -281,6 +288,6 @@ command! Rv source $MYVIMRC
 " シンタックスハイライト
 "-------------------------------------------------------------------------------
 syntax enable
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 set background=dark
 colorscheme sahara
