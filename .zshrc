@@ -78,6 +78,10 @@ alias gca='git commit -a'
 alias gpo='git push origin master'
 alias gdf='git diff'
 
+## hub
+## http://qiita.com/yaotti/items/a4a7f3f9a38d7d3415e3
+function git(){hub "$@"}
+
 ## chef, knife-solo, berkshelf
 alias berkinstall='bundle exec berks install --path cookbooks'
 alias knifecook='bundle exec knife solo cook'
@@ -112,6 +116,7 @@ zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%b)[%a]'
 
 precmd () {
+  zstyle ':vcs_info:git:*:-all-' command /usr/local/bin/git
   psvar=()
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
@@ -141,7 +146,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -U colors; colors
 
 # 一般ユーザ時
-tmp_prompt="%{${fg[cyan]}%}%m%# %{${reset_color}%}"
+tmp_prompt="%{${fg[cyan]}%}$ %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 tmp_rprompt="%1(v|%F{magenta}%1v%f|)%{${fg[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
