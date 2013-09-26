@@ -11,17 +11,6 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/'))
 endif
 
-" colorscheme
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/wombat256.vim'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'joedicastro/vim-molokai256'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'tejr/sahara'
-" ステータスラインをカッチョよくする
-NeoBundle 'Lokaltog/vim-powerline'
-
-" vimで非同期処理を行う
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
@@ -31,27 +20,29 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 
-" シンタックスチェック
 NeoBundle 'scrooloose/syntastic'
-" vimからgit操作
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
-" ファイラ
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
-" vimを開いた時にテキストを開く
 NeoBundle 'thinca/vim-splash'
-" vimからコマンドを実行
 NeoBundle 'thinca/vim-quickrun'
-" 入力補完
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'taichouchou2/vim-rsense'
-" 関数やメソッドをサイドバーで表示
 NeoBundle 'vim-scripts/taglist.vim'
-" テキストを囲うものを編集する
 NeoBundle 'tpope/vim-surround'
-" マルチプルカーソル
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
+" colorscheme
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/wombat256.vim'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'joedicastro/vim-molokai256'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'tejr/sahara'
 
 "-------------------------------------------------------------------------------
 " unite.vim
@@ -60,14 +51,6 @@ NeoBundle 'terryma/vim-multiple-cursors'
 " unite prefix key.
 nnoremap [unite] <Nop>
 nmap <Space>f [unite]
-
-" unite general settings
-" インサートモードで開始
-let g:unite_enable_start_insert = 1
-" 最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 50
-" file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
-let g:unite_source_file_mru_filename_format = ''
 
 " 現在開いているファイルのディレクトリ下のファイル一覧。
 " 開いていない場合はカレントディレクトリ
@@ -84,6 +67,14 @@ nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 " uniteを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
+
+" unite general settings
+" インサートモードで開始
+let g:unite_enable_start_insert = 1
+" 最近開いたファイル履歴の保存数
+let g:unite_source_file_mru_limit = 50
+" file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
+let g:unite_source_file_mru_filename_format = ''
 
 function! s:unite_my_settings()"{{{
   " ESCでuniteを終了
@@ -106,8 +97,23 @@ function! s:unite_my_settings()"{{{
   " ctrl+oでその場所に開く
   nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
   inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
-
 endfunction"}}}
+
+" unite-grep {{{
+" unite-grepのバックエンドをagに切り替える
+" http://qiita.com/items/c8962f9325a5433dc50d
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_recursive_opt = ''
+let g:unite_source_grep_max_candidates = 200
+
+" unite-grepのキーマップ
+" 選択した文字列をunite-grep
+vnoremap /g y:Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
+" }}}
+
+" unite colorscheme
+nnoremap <silent><C-o> :Unite colorscheme -auto-preview<Cr>
 
 "-------------------------------------------------------------------------------
 " vimfiler
@@ -138,6 +144,9 @@ function! s:my_action.func(candidates)
   exec 'vsplit '. a:candidates[0].action__path
 endfunction
 call unite#custom_action('file', 'my_vsplit', s:my_action)
+
+"セーフモードを無効にした状態で起動する
+let g:vimfiler_safe_mode_by_default = 0
 
 "-------------------------------------------------------------------------------
 " neocomplcache
@@ -201,7 +210,7 @@ let Tlist_WinWidth = 30
 " http://www.gregsexton.org/portfolio/gitv/
 "-------------------------------------------------------------------------------
 nnoremap <silent><C-g> :Gitv<Cr>
-nnoremap <silent><C-v> :Gitv!<Cr>
+nnoremap <silent><C-h> :Gitv!<Cr>
 autocmd FileType git :setlocal foldlevel=99
 
 "-------------------------------------------------------------------------------
@@ -290,4 +299,4 @@ command! Rv source $MYVIMRC
 syntax enable
 let g:solarized_termcolors=256
 set background=dark
-colorscheme sahara
+colorscheme jellybeans
