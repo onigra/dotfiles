@@ -1,19 +1,63 @@
-# ------------------------------
-# General Settings
-# ------------------------------
+##### 環境変数
+# PATH
 export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
-export BERKSHELF_PATH="/Users/taketake3280467/study/chefstudy/chef-repo"
-
-## Environment variable configuration
-##
-## LANG
-## http://curiousabt.blog27.fc2.com/blog-entry-65.html
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# LANG
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
+# EDITOR
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
-## コマンド入力補完
-if [ -f ~/.zsh/auto-fu.zsh ]; then
-    source ~/.zsh/auto-fu.zsh
+# BERKSHELF_PATH
+export BERKSHELF_PATH="/Users/taketake3280467/study/chefstudy/chef-repo"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+##### colors
+export LSCOLORS=ExFxCxDxBxegedabagacad
+eval $(gdircolors ~/.zsh/dircolors-solarized/dircolors.256dark)
+
+##### 補完の設定
+export ZLS_COLORS=$LS_COLORS
+
+if [ -n "$LS_COLORS" ]; then
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+fi
+
+zstyle ':completion:*:default' menu select=1
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+##### zsh setting
+setopt prompt_subst
+setopt nobeep
+setopt list_types
+setopt auto_list
+setopt auto_menu
+setopt hist_verify
+setopt auto_param_slash
+setopt mark_dirs
+setopt null_glob
+
+# コマンド履歴
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt share_history
+setopt hist_ignore_space
+
+# zshが悪さしないように
+# http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
+setopt nonomatch
+
+##### auto-fu
+if [ -f ~/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
+    source ~/.zsh/auto-fu.zsh/auto-fu.zsh
     function zle-line-init () {
         auto-fu-init
     }
@@ -21,96 +65,8 @@ if [ -f ~/.zsh/auto-fu.zsh ]; then
     zstyle ':completion:*' completer _oldlist _complete
 fi
 
-## コマンドのオプションを表示
-#autoload -U compinit
-#compinit
-
-## cd後自動でlsする
-function chpwd() { ls -la }
-
-## ctags
-alias ctags='/usr/local/bin/ctags'
-
-## エディタ(vim)
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-
-## markdown書く時にMarkedで確認しながら編集できる設定
-## http://blog.glidenote.com/blog/2013/01/10/vim-quickrun-marked/
-alias marked='open -a Marked ; vi'
-
-## diff
-## colordiff: http://www.glidenote.com/archives/1403
-alias diff='colordiff'
-alias diffy='diff -y --suppress-common-lines'
-
-## less
-## colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
-## -Rを付けるとちゃんとカラー表示される。
-export LESS="-R"
-
-## tmux
-alias tm='tmux -2 new -s'
-alias tml='tmux ls'
-alias tmk='tmux kill-session -t'
-alias tma='tmux -2 attach -t'
-
-## jenkins
-alias jenstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
-alias jenstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
-
-## mysql
-#alias mysql='mysql --pager='less -S''
-
-## memcached
-alias mem='memcached -u memcached -d'
-
-## bundler
-alias be='bundle exec'
-alias bi='bundle install --path vendor/bundle'
-alias bu='bundle update'
-
-## git
-alias gch='git checkout HEAD'
-alias gst='git status'
-alias gca='git commit -a'
-alias gpo='git push origin master'
-alias gdf='git diff'
-
-## hub
-## http://qiita.com/yaotti/items/a4a7f3f9a38d7d3415e3
-function git(){hub "$@"}
-
-## chef, knife-solo, berkshelf
-alias berkinstall='bundle exec berks install --path cookbooks'
-alias knifecook='bundle exec knife solo cook'
-alias knifepre='bundle exec knife solo prepare'
-alias knifecreate='bundle exec knife cookbook create $1 -o site-cookbooks'
-alias knifetest='bundle exec knife cookbook test $1 -o .'
-
-## ls
-alias ls='ls -la'
-alias la='ls -la'
-
-## shasum
-alias sha256="shasum -a 256"
-
-## コマンド履歴
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data
-
-## zshが悪さしないように
-## http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
-setopt nonomatch
-
-# ------------------------------
-# gitブランチとステータスの表示
-# ------------------------------
-## http://d.hatena.ne.jp/mollifier/20090814/p1
+##### vcs_info
+# http://d.hatena.ne.jp/mollifier/20090814/p1
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%b)[%a]'
@@ -122,34 +78,23 @@ precmd () {
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
-# ------------------------------
-# Look And Feel Settings
-# ------------------------------
-# Terminal Colorの設定
-export LSCOLORS=ExFxCxDxBxegedabagacad
+##### cd後自動でlsする
+function chpwd() { gls -la --color=auto }
 
-# 補完時の色の設定
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
-# ZLS_COLORSとは？
-export ZLS_COLORS=$LS_COLORS
-
-# lsコマンド時、自動で色がつく(ls -Gのようなもの？)
-export CLICOLOR=true
-
-# 補完候補に色を付ける
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-### Prompt ###
-# プロンプトに色を付ける
+##### Prompt
 # http://www.sakito.com/2011/11/zsh.html
 autoload -U colors; colors
 
+# rubyのバージョン出す
+rbenv_version() {
+  echo -n "${$(rbenv version)%% *}"
+}
+
 # 一般ユーザ時
-tmp_prompt="%{${fg[cyan]}%}$ %{${reset_color}%}"
-tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%1(v|%F{magenta}%1v%f|)%{${fg[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
-tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
+tmp_prompt="%{${fg_bold[red]}%}( ꒪﹃ ꒪) $(rbenv_version) > %{${reset_color}%}"
+tmp_prompt2="%{${fg_bold[red]}%}%_> %{${reset_color}%}"
+tmp_rprompt="%1(v|%F{magenta}%1v%f|)%{${fg_bold[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
+tmp_sprompt="%{${fg_bold[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
 if [ ${UID} -eq 0 ]; then
@@ -164,12 +109,6 @@ PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
+##### alias
+[ -f ~/dotfiles/.zsh/.zshrc.alias ] && source ~/dotfiles/.zsh/.zshrc.alias
 
-# ------------------------------
-# Programing Setting
-# ------------------------------
-### Ruby ###
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
