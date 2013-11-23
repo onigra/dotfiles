@@ -2,6 +2,8 @@
 " Plugins(NeoBundle)
 " https://github.com/Shougo/neobundle.vim
 "-------------------------------------------------------------------------------
+autocmd!
+
 set nocompatible
 filetype off
 set rtp+=~/dotfiles/neobundle.vim
@@ -10,6 +12,8 @@ if has('vim_starting')
   set runtimepath+=~/dotfiles/neobundle.vim
   call neobundle#rc(expand('~/.vim/'))
 endif
+
+" let g:neobundle_default_git_protocol='https'
 
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -35,7 +39,8 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
-NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'vim-scripts/vim-auto-save'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
 " colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/wombat256.vim'
@@ -214,6 +219,13 @@ nnoremap <silent><C-h> :Gitv!<Cr>
 autocmd FileType git :setlocal foldlevel=99
 
 "-------------------------------------------------------------------------------
+" vim-auto-save
+" http://qiita.com/kentaro/items/833075356d41e9d9bc75
+"-------------------------------------------------------------------------------
+" let g:auto_save = 1
+
+
+"-------------------------------------------------------------------------------
 " start original .vimrc statements
 "-------------------------------------------------------------------------------
 filetype on
@@ -275,6 +287,33 @@ highlight CursorLine ctermbg=black guibg=black
 "autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
+
+"-------------------------------------------------------------------------------
+" rspec
+"-------------------------------------------------------------------------------
+autocmd FileType quickrun AnsiEsc
+
+" let g:quickrun_config = {}
+let g:quickrun_config._ = {'runner' : 'vimproc'}
+let g:quickrun_config['rspec/bundle'] = {
+  \ 'type': 'rspec/bundle',
+  \ 'command': 'rspec',
+  \ 'outputter': 'buffer',
+  \ 'exec': 'bundle exec %c %o --color -tty %s'
+  \}
+let g:quickrun_config['rspec/normal'] = {
+  \ 'type': 'rspec/normal',
+  \ 'command': 'rspec',
+  \ 'outputter': 'buffer',
+  \ 'exec': '%c %o --color --tty %s'
+  \}
+
+function! RSpecQuickrun()
+  let b:quickrun_config = {'type' : 'rspec/normal'}
+  nnoremap <expr><silent> <Leader>lr "<Esc>:QuickRun<CR>"
+endfunction
+
+autocmd BufReadPost *_spec.rb call RSpecQuickrun()
 
 "-------------------------------------------------------------------------------
 " キーバインド編集
