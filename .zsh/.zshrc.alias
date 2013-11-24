@@ -71,3 +71,6 @@ alias la='ls -la --color=auto'
 
 ## shasum
 alias sha256="shasum -a 256"
+
+## wget
+alias wgets='wget --no-check-certificate'

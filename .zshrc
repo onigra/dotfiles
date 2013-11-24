@@ -32,6 +32,29 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 
+# http://d.hatena.ne.jp/ganaware/20130514/1368501120
+# ほとんどの補完の定義を削除する。
+# special contexts の定義のみ残す (see: man zshcompsys)
+fix_comp_assoc() {
+  local var=$1
+  shift
+  for key in "$argv[@]"; do
+    case $key in
+    -redirect-,\<,*) unset "${var}[$key]";;
+    -redirect-,\>,*) unset "${var}[$key]";;
+    -value-,-*) ;;
+    -value-,*) unset "${var}[$key]";;
+    -*) ;;
+    *) unset "${var}[$key]";;
+    esac
+  done
+}
+
+fix_comp_assoc _comps        "${(k)_comps[@]}"
+fix_comp_assoc _services     "${(k)_services[@]}"
+fix_comp_assoc _patcomps     "${(k)_patcomps[@]}"
+fix_comp_assoc _postpatcomps "${(k)_postpatcomps[@]}"
+
 ##### zsh setting
 setopt prompt_subst
 setopt nobeep
