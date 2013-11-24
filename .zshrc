@@ -9,7 +9,7 @@ export LESSCHARSET=utf-8
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
 # BERKSHELF_PATH
-export BERKSHELF_PATH="/Users/taketake3280467/study/chefstudy/chef-repo"
+export BERKSHELF_PATH="~/study/chefstudy/chef-repo"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
