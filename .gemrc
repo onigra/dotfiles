@@ -8,5 +8,8 @@ gem: --no-rdoc --no-ri
 - http://rubygems.org/
 :bulk_threshold: 1000
 :backtrace: false
-:update_sources: true
-custom_shebang: $env ruby_bundler_wrapper
+
+# :update_sources: true
+## custom_shebang
+## http://qiita.com/labocho/items/8384dd3c454ebb39c707
+# custom_shebang: $env ruby_bundler_wrapper
