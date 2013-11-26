@@ -7,4 +7,5 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.inputrc ~/.inputrc
 ln -s ~/dotfiles/.irbrc ~/.irbrc
 ln -s ~/dotfiles/.gemrc ~/.gemrc
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
