@@ -2,6 +2,7 @@
 # PATH
 export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
 # LANG
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
