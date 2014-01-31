@@ -26,11 +26,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # phpenv
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-
-# oil(fuelphp)
-export PATH="$HOME/bin:$PATH"
+# export PATH="$HOME/.phpenv/bin:$PATH"
+# eval "$(phpenv init -)"
 
 ##### colors
 export LSCOLORS=ExFxCxDxBxegedabagacad
