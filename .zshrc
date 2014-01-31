@@ -3,18 +3,34 @@
 export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
+
+# the Google Cloud SDK.
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+
+# if [ -f ~/google-cloud-sdk/arg_rc ]; then
+#   source ~/google-cloud-sdk/arg_rc
+# fi
+
+if [ -f ~/.brew_api_token ]; then
+  source ~/.brew_api_token
+fi
+
 # LANG
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 # EDITOR
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
-# BERKSHELF_PATH
-export BERKSHELF_PATH="~/study/chefstudy/chef-repo"
-
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+# phpenv
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+# oil(fuelphp)
+export PATH="$HOME/bin:$PATH"
 
 ##### colors
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -135,4 +151,8 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 ##### alias
 [ -f ~/dotfiles/.zsh/.zshrc.alias ] && source ~/dotfiles/.zsh/.zshrc.alias
+
+if [ -f "$(which dvm)" ]; then
+  eval "$(dvm env)"
+fi
 

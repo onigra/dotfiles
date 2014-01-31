@@ -16,13 +16,13 @@ endif
 " let g:neobundle_default_git_protocol='https'
 
 NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+\ 'build' : {
+\     'windows' : 'make -f make_mingw32.mak',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'unix' : 'make -f make_unix.mak',
+\    },
+\ }
 
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
@@ -48,6 +48,13 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'joedicastro/vim-molokai256'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tejr/sahara'
+
+NeoBundleLazy 'nosami/Omnisharp', {
+\ 'autoload': {'filetypes': ['cs']},
+\ 'build': {
+\     'mac': 'xbuild server/OmniSharp.sln'
+\   }
+\ }
 
 "-------------------------------------------------------------------------------
 " unite.vim
@@ -338,4 +345,4 @@ command! Rv source $MYVIMRC
 syntax enable
 let g:solarized_termcolors=256
 set background=dark
-colorscheme jellybeans
+colorscheme molokai256
