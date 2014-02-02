@@ -8,6 +8,7 @@ ln -s ~/dotfiles/.inputrc ~/.inputrc
 ln -s ~/dotfiles/.irbrc ~/.irbrc
 ln -s ~/dotfiles/.gemrc ~/.gemrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.tmux-powerlinerc ~/.tmux-powerlinerc
 
 # gem
 gem i pry td rspec powder
