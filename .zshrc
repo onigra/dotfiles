@@ -1,11 +1,14 @@
 ##### 環境変数
 # PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/google-cloud-sdk/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
 
 # the Google Cloud SDK.
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
+
+# postgresql
+export PGDATA=/usr/local/var/postgres
 
 # if [ -f ~/google-cloud-sdk/arg_rc ]; then
 #   source ~/google-cloud-sdk/arg_rc
@@ -22,8 +25,9 @@ export LESSCHARSET=utf-8
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
 
 # phpenv
 # export PATH="$HOME/.phpenv/bin:$PATH"
@@ -152,4 +156,8 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 if [ -f "$(which dvm)" ]; then
   eval "$(dvm env)"
 fi
+
+
+# added by travis gem
+[ -f /Users/TakehiroSuzuki/.travis/travis.sh ] && source /Users/TakehiroSuzuki/.travis/travis.sh
 
