@@ -9,6 +9,7 @@ ln -s ~/dotfiles/.irbrc ~/.irbrc
 ln -s ~/dotfiles/.gemrc ~/.gemrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.tmux-powerlinerc ~/.tmux-powerlinerc
+ln -s ~/dotfiles/.spring.rb ~/.spring.rb
 
 # gem
 gem i pry td rspec powder
