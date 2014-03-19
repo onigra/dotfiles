@@ -14,3 +14,6 @@ ln -s ~/dotfiles/.tmux-powerlinerc ~/.tmux-powerlinerc
 ln -s ~/dotfiles/.spring.rb ~/.spring.rb
 ln -s ~/dotfiles/Brewfile ~/Brewfile
 
+mkdir -p ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
+
