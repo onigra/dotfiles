@@ -74,3 +74,9 @@ alias sha256="shasum -a 256"
 
 ## wget
 alias wgets='wget --no-check-certificate'
+
+## postgresql
+alias psql.start='pg_ctl -l /usr/local/var/postgres/server.log start'
+alias psql.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+alias nippo='touch `gdate +"%Y%m%d"`.md; vim `gdate +"%Y%m%d"`.md'
