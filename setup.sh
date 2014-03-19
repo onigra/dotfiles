@@ -1,5 +1,7 @@
 #!/bin/sh
 
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zsh ~/.zsh
 ln -s ~/dotfiles/.vimrc ~/.vimrc
@@ -10,6 +12,5 @@ ln -s ~/dotfiles/.gemrc ~/.gemrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.tmux-powerlinerc ~/.tmux-powerlinerc
 ln -s ~/dotfiles/.spring.rb ~/.spring.rb
+ln -s ~/dotfiles/Brewfile ~/Brewfile
 
-# gem
-gem i pry td rspec powder
