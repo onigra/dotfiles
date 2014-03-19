@@ -17,3 +17,6 @@ ln -s ~/dotfiles/Brewfile ~/Brewfile
 mkdir -p ~/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 
+mkdir ~/.tmux
+git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline
+
