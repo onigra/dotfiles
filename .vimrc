@@ -36,7 +36,7 @@ NeoBundle 'taichouchou2/vim-rsense'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'vim-scripts/vim-auto-save'
@@ -173,9 +173,23 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 "-------------------------------------------------------------------------------
-" vim-powerline
+" airline
 "-------------------------------------------------------------------------------
-let g:Powerline_symbols = 'fancy'
+let g:airline_theme='powerlineish'
+
+set guifont=Ricty\ Regular\ for\ Powerline:h14
+let g:airline_left_sep = '⮀'
+let g:airline_right_sep = '⮂'
+let g:airline_linecolumn_prefix = '⭡'
+let g:airline_branch_prefix = '⭠'
+
+let g:airline_section_a = airline#section#create(['mode','','branch'])
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮀'
 
 "-------------------------------------------------------------------------------
 " Splash
