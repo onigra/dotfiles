@@ -33,6 +33,7 @@ install parallel || true
 
 install imagemagick || true
 install fontforge || true
+install pkg-config || true
 
 install phantomjs || true
 install jenkins || true
@@ -67,7 +68,6 @@ cask install airmail || true
 # install libtool
 # install ossp-uuid
 # install pcre
-# install pkg-config
 # install reattach-to-user-namespace
 # install xz
 
