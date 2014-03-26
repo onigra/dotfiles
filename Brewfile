@@ -40,10 +40,8 @@ install pkg-config || true
 install phantomjs || true
 install jenkins || true
 install docker || true
-install dvm || true
 
 cask install keyremap4macbook || true
-cask install dropbox || true
 cask install hipchat || true
 cask install skype || true
 cask install sourcetree || true
@@ -52,8 +50,12 @@ cask install yorufukurou || true
 cask install vagrant || true
 cask install iterm2 || true
 cask install appcleaner || true
-cask install google-chrome || true
 cask install mysqlworkbench || true
 cask install virtualbox || true
-cask install airmail || true
 
+tap fnichol/dvm || true
+install dvm || true
+
+# DL遅かった
+# cask install google-chrome || true
+# cask install dropbox || true
