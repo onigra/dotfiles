@@ -13,6 +13,7 @@ install readline || true
 install rsense || true
 install the_silver_searcher || true
 install tmux || true
+install reattach-to-user-namespace || true
 install wget || true
 install curl || true
 install tree || true
@@ -30,6 +31,7 @@ install gnu-sed || true
 install nkf || true
 install ngrep || true
 install parallel || true
+install automake || true
 
 install imagemagick || true
 install fontforge || true
@@ -51,23 +53,7 @@ cask install vagrant || true
 cask install iterm2 || true
 cask install appcleaner || true
 cask install google-chrome || true
-cask install mysql-workbench || true
+cask install mysqlworkbench || true
 cask install virtualbox || true
 cask install airmail || true
-
-# install automake
-# install fontconfig
-# install freetype
-# install gdbm
-# install gettext
-# install grep
-# install jpeg
-# install libevent
-# install libpng
-# install libtiff
-# install libtool
-# install ossp-uuid
-# install pcre
-# install reattach-to-user-namespace
-# install xz
 
