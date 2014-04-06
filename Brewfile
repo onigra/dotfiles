@@ -42,6 +42,9 @@ install jenkins || true
 install docker || true
 install dvm || true
 
+tap homebrew/dupes
+install homebrew/dupes/grep
+
 cask install keyremap4macbook || true
 cask install dropbox || true
 cask install hipchat || true
