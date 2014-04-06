@@ -41,6 +41,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'slim-template/vim-slim'
 " colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/wombat256.vim'
