@@ -35,7 +35,7 @@ eval "$(rbenv init -)"
 
 ##### colors
 export LSCOLORS=ExFxCxDxBxegedabagacad
-eval $(gdircolors ~/.zsh/dircolors-solarized/dircolors.256dark)
+eval $(gdircolors ~/.zsh/dircolors.256dark)
 
 ##### 補完の設定
 export ZLS_COLORS=$LS_COLORS
