@@ -1,6 +1,7 @@
 ---
+install: --no-document
+update: --no-document
 :benchmark: false
-gem: --no-rdoc --no-ri
 :verbose: false
 # :sources:
 # - http://gems.github.com
