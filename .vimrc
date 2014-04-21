@@ -31,7 +31,7 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'thinca/vim-splash'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'taichouchou2/vim-rsense'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'tpope/vim-surround'
@@ -39,9 +39,13 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'todesking/ruby_hl_lvar.vim'
 NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'amdt/vim-niji'
+NeoBundle 'aharisu/vim_goshrepl'
+NeoBundle 'aharisu/vim-gdev'
 " colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/wombat256.vim'
@@ -165,7 +169,8 @@ let g:vimfiler_safe_mode_by_default = 0
 " neocomplcache
 " https://github.com/Shougo/neocomplcache/blob/master/README
 "-------------------------------------------------------------------------------
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1
 let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
 let g:rsenseUseOmniFunc = 1
 if !exists('g:neocomplcache_omni_patterns')
@@ -199,19 +204,6 @@ let g:splash#path = expand('~/') . 'dotfiles/cheatsheat.txt'
 nnoremap <silent><C-m> :Splash<CR>
 
 "-------------------------------------------------------------------------------
-" Marked
-" http://blog.glidenote.com/blog/2013/01/10/vim-quickrun-marked/
-"-------------------------------------------------------------------------------
-let g:quickrun_config = {}
-let g:quickrun_config.markdown = {
-      \ 'outputter' : 'null',
-      \ 'command'   : 'open',
-      \ 'cmdopt'    : '-a',
-      \ 'args'      : 'Marked',
-      \ 'exec'      : '%c %o %a %s',
-      \ }
-
-"-------------------------------------------------------------------------------
 " taglist.vim
 "-------------------------------------------------------------------------------
 set tags=tags=tags,./tags,**1/tags,tags;/Projects
@@ -241,10 +233,9 @@ nnoremap <silent><C-h> :Gitv!<Cr>
 autocmd FileType git :setlocal foldlevel=99
 
 "-------------------------------------------------------------------------------
-" vim-auto-save
-" http://qiita.com/kentaro/items/833075356d41e9d9bc75
+" todesking/ruby_hl_lvar.vim
 "-------------------------------------------------------------------------------
-" let g:auto_save = 1
+" let g:ruby_hl_lvar_hl_group = 'RubyLocalVariable'
 
 
 "-------------------------------------------------------------------------------
@@ -315,7 +306,7 @@ autocmd BufWritePre * :%s/\t/  /ge
 "-------------------------------------------------------------------------------
 autocmd FileType quickrun AnsiEsc
 
-" let g:quickrun_config = {}
+let g:quickrun_config = {}
 let g:quickrun_config._ = {'runner' : 'vimproc'}
 let g:quickrun_config['rspec/bundle'] = {
   \ 'type': 'rspec/bundle',

@@ -20,6 +20,8 @@ install tree || true
 install zsh || true
 install coreutils || true
 install colordiff || true
+install gauche || true
+install graphviz || true
 
 install mysql || true
 install postgresql || true
