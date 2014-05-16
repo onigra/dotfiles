@@ -39,7 +39,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
-NeoBundle 'todesking/ruby_hl_lvar.vim'
+" NeoBundle 'todesking/ruby_hl_lvar.vim'
 NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'slim-template/vim-slim'
@@ -53,6 +53,9 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'joedicastro/vim-molokai256'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tejr/sahara'
+NeoBundle 'twerth/ir_black'
+NeoBundle 'vim-scripts/xoria256.vim'
+NeoBundle 'fmoralesc/vim-vitamins'
 
 NeoBundleLazy 'nosami/Omnisharp', {
 \ 'autoload': {'filetypes': ['cs']},
@@ -354,6 +357,6 @@ nnoremap : ;
 " シンタックスハイライト
 "-------------------------------------------------------------------------------
 syntax enable
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 set background=dark
-colorscheme molokai256
+colorscheme Tomorrow-Night-Bright

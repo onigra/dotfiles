@@ -40,7 +40,7 @@ alias mem='memcached -u memcached -d'
 
 ## bundler
 alias be='bundle exec'
-alias bi='bundle install --path vendor/bundle'
+alias bi='bundle install --path vendor/bundle --binstubs .bundle/bin; rbenv rehash'
 alias bu='bundle update'
 
 ## git
@@ -80,3 +80,6 @@ alias psql.start='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias psql.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 alias nippo='touch `gdate +"%Y%m%d"`.md; vim `gdate +"%Y%m%d"`.md'
+
+# brew upgdate
+alias bupgrade='brew outdated | grep -v tmux | xargs brew upgrade'

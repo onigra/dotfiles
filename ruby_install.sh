@@ -3,12 +3,13 @@
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 mkdir -p ~/.rbenv/plugins
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/ianheggie/rbenv-binstubs ~/.rbenv/plugins/rbenv-binstubs
 
-RUBY_CONFIGURE_OPTS="--enable-shared --with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)" rbenv install 2.1.1
+RUBY_CONFIGURE_OPTS="--enable-shared --with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)" rbenv install 2.1.2
 
-rbenv global 2.1.1
+rbenv global 2.1.2
 rbenv rehash
 
-gem i bundler pry td rspec powder spring spring-commands-cucumber spring-commands-rspec spring-commands-testunit
+gem i bundler pry td rspec powder httparty spring spring-commands-cucumber spring-commands-rspec spring-commands-testunit
 rbenv rehash
 
