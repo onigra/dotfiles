@@ -353,10 +353,22 @@ command! Rv source $MYVIMRC
 nnoremap ; :
 nnoremap : ;
 
+function! MarkdownToRedmine()
+  %s/######/h6./g
+  %s/#####/h5./g
+  %s/####/h4./g
+  %s/###/h3./g
+  %s/##/h2./g
+  %s/#/h1./g
+  %s/```\(.\+\)/<pre><code class=\"\1\">/g
+  %s/```/<\/pre>/g
+endfunction
+
+command! MdtoRm call MarkdownToRedmine()
 "-------------------------------------------------------------------------------
 " シンタックスハイライト
 "-------------------------------------------------------------------------------
 syntax enable
 " let g:solarized_termcolors=256
 set background=dark
-colorscheme Tomorrow-Night-Bright
+colorscheme molokai256

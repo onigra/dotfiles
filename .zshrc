@@ -92,18 +92,29 @@ setopt hist_ignore_dups
 setopt share_history
 setopt hist_ignore_space
 
-# zshが悪さしないように
+# 不要なコマンドを残さない
+# http://mollifier.hatenablog.com/entry/20090728/p1
+zshaddhistory() {
+  local line=${1%%$'\n'}
+  local cmd=${line%% *}
+
+  [[  ${cmd} != (l|l[sal])
+      && ${cmd} != (cd)
+      && ${cmd} != (r[m])
+  ]]
+}
+
 # http://shirusu-ni-tarazu.hatenablog.jp/entry/2013/01/18/034233
 setopt nonomatch
 
 ##### auto-fu
 if [ -f ~/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
-    source ~/.zsh/auto-fu.zsh/auto-fu.zsh
-    function zle-line-init () {
-        auto-fu-init
-    }
-    zle -N zle-line-init
-    zstyle ':completion:*' completer _oldlist _complete
+  source ~/.zsh/auto-fu.zsh/auto-fu.zsh
+  function zle-line-init () {
+      auto-fu-init
+  }
+  zle -N zle-line-init
+  zstyle ':completion:*' completer _oldlist _complete
 fi
 
 ##### vcs_info
@@ -157,7 +168,6 @@ if [ -f "$(which dvm)" ]; then
   eval "$(dvm env)"
 fi
 
-
 # added by travis gem
-[ -f /Users/TakehiroSuzuki/.travis/travis.sh ] && source /Users/TakehiroSuzuki/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
