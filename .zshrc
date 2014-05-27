@@ -33,9 +33,12 @@ eval "$(rbenv init -)"
 # export PATH="$HOME/.phpenv/bin:$PATH"
 # eval "$(phpenv init -)"
 
-##### colors
-export LSCOLORS=ExFxCxDxBxegedabagacad
-eval $(gdircolors ~/.zsh/dircolors.256dark)
+###
+# colors
+# iterm2のカラースキーマを試してるのでコメントアウト
+#
+# export LSCOLORS=ExFxCxDxBxegedabagacad
+# eval $(gdircolors ~/.zsh/dircolors.256dark)
 
 ##### 補完の設定
 export ZLS_COLORS=$LS_COLORS
@@ -145,7 +148,7 @@ rbenv_version() {
 # 一般ユーザ時
 tmp_prompt="%{${fg_bold[red]}%}( ꒪﹃ ꒪) $(rbenv_version) > %{${reset_color}%}"
 tmp_prompt2="%{${fg_bold[red]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%1(v|%F{magenta}%1v%f|)%{${fg_bold[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
+tmp_rprompt="%1(v|%F{cyan}%1v%f|)%{${fg_bold[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
 tmp_sprompt="%{${fg_bold[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
