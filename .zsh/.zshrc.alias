@@ -68,6 +68,7 @@ alias knifetest='bundle exec knife cookbook test $1 -o .'
 alias ls='gls --color=auto'
 alias ls='gls -la --color=auto'
 alias la='ls -la --color=auto'
+alias al='ls -la --color=auto'
 
 ## shasum
 alias sha256="shasum -a 256"

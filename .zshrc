@@ -1,8 +1,12 @@
 ##### 環境変数
+# golang
+export GOPATH="$(brew --prefix go)"
+
 # PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/google-cloud-sdk/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/google-cloud-sdk/bin:$PATH:$GOPATH/bin"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
+
 
 # the Google Cloud SDK.
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
@@ -173,4 +177,7 @@ fi
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
+# peco
+[ -f ~/dotfiles/.zsh/.peco_functions ] && source ~/dotfiles/.zsh/.peco_functions
 

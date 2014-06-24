@@ -15,6 +15,9 @@ ln -s ~/dotfiles/.spring.rb ~/.spring.rb
 ln -s ~/dotfiles/Brewfile ~/Brewfile
 ln -s ~/dotfiles/.tigrc ~/.tigrc
 
+mkdir ~/.peco
+ln -s ~/dotfiles/.peco/config.json ~/.peco/config.json
+
 mkdir -p ~/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 
