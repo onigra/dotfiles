@@ -29,6 +29,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'basyura/unite-rails'
 NeoBundle 'thinca/vim-splash'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplete'
@@ -76,11 +78,11 @@ nmap <Space>f [unite]
 " 開いていない場合はカレントディレクトリ
 nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " バッファ一覧
-nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]b :<C-u>Unite file buffer<CR>
 " レジスタ一覧
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file file_mru<CR>
 " ブックマーク一覧
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 " ブックマークに追加
@@ -134,6 +136,14 @@ vnoremap /g y:Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
 
 " unite colorscheme
 nnoremap <silent><C-o> :Unite colorscheme -auto-preview<Cr>
+
+" unite rails
+nnoremap <silent> [unite]rm :<C-u>Unite rails/model<Cr>
+nnoremap <silent> [unite]rc :<C-u>Unite rails/controller<Cr>
+nnoremap <silent> [unite]rn :<C-u>Unite rails/config<Cr>
+nnoremap <silent> [unite]rl :<C-u>Unite rails/lib<Cr>
+nnoremap <silent> [unite]rd :<C-u>Unite rails/db<Cr>
+nnoremap <silent> [unite]rs :<C-u>Unite rails/spec<Cr>
 
 "-------------------------------------------------------------------------------
 " vimfiler

@@ -32,11 +32,6 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-
-# phpenv
-# export PATH="$HOME/.phpenv/bin:$PATH"
-# eval "$(phpenv init -)"
-
 ###
 # colors
 # iterm2のカラースキーマを試してるのでコメントアウト
