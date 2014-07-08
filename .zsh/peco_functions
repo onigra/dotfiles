@@ -39,3 +39,8 @@ function to_vim() {
 zle -N to_vim
 bindkey '^v' to_vim
 
+# pecoで絞り込んだ出力結果に対してコマンドを実行
+function p() {
+  peco | while read LINE; do $@ $LINE; done
+}
+

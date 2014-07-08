@@ -1,6 +1,6 @@
 ##### 環境変数
 # golang
-export GOPATH="$(brew --prefix go)"
+export GOPATH=$HOME
 
 # PATH
 export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/google-cloud-sdk/bin:$PATH:$GOPATH/bin"
@@ -164,7 +164,7 @@ RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 ##### alias
-[ -f ~/dotfiles/.zsh/.zshrc.alias ] && source ~/dotfiles/.zsh/.zshrc.alias
+[ -f ~/dotfiles/.zsh/alias ] && source ~/dotfiles/.zsh/alias
 
 if [ -f "$(which dvm)" ]; then
   eval "$(dvm env)"
@@ -174,5 +174,5 @@ fi
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # peco
-[ -f ~/dotfiles/.zsh/.peco_functions ] && source ~/dotfiles/.zsh/.peco_functions
+[ -f ~/dotfiles/.zsh/peco_functions ] && source ~/dotfiles/.zsh/peco_functions
 

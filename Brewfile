@@ -6,6 +6,7 @@ install brew-cask || true
 install git || true
 install hub || true
 install tig || true
+install hg || true
 install jq || true
 install openssl || true
 install ctags || true

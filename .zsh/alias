@@ -84,3 +84,5 @@ alias nippo='touch `gdate +"%Y%m%d"`.md; vim `gdate +"%Y%m%d"`.md'
 
 # brew upgdate
 alias bupgrade='brew outdated | grep -v tmux | xargs brew upgrade'
+
+alias e='ghq list -p | p cd'
