@@ -164,7 +164,7 @@ RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 ##### alias
-[ -f ~/dotfiles/.zsh/alias ] && source ~/dotfiles/.zsh/alias
+[ -f ~/dotfiles/.zsh/alias.zsh ] && source ~/dotfiles/.zsh/alias.zsh
 
 if [ -f "$(which dvm)" ]; then
   eval "$(dvm env)"
@@ -174,5 +174,7 @@ fi
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # peco
-[ -f ~/dotfiles/.zsh/peco_functions ] && source ~/dotfiles/.zsh/peco_functions
+[ -f ~/dotfiles/.zsh/peco_functions.zsh ] && source ~/dotfiles/.zsh/peco_functions.zsh
 
+# bd
+[ -f ~/dotfiles/.zsh/bd.zsh ] && source ~/dotfiles/.zsh/bd.zsh

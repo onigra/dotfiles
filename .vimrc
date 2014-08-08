@@ -41,6 +41,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'mattn/flappyvird-vim'
 " NeoBundle 'todesking/ruby_hl_lvar.vim'
 NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
@@ -58,6 +59,7 @@ NeoBundle 'tejr/sahara'
 NeoBundle 'twerth/ir_black'
 NeoBundle 'vim-scripts/xoria256.vim'
 NeoBundle 'fmoralesc/vim-vitamins'
+
 
 NeoBundleLazy 'nosami/Omnisharp', {
 \ 'autoload': {'filetypes': ['cs']},
@@ -382,3 +384,5 @@ syntax enable
 " let g:solarized_termcolors=256
 set background=dark
 colorscheme molokai256
+
+au BufRead,BufNewFile *.md set filetype=markdown

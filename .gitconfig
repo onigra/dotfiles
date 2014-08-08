@@ -24,3 +24,5 @@
 
 [ghq]
 	root = /Users/yudai/src
+[alias]
+	see = browse

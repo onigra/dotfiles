@@ -53,6 +53,16 @@ alias gb='git branch'
 alias gc='git checkout'
 alias ga='git add --all'
 
+function gw() {
+  git commit --allow-empty -m "[WIP] $1"
+  git push origin $(current_branch)
+  git pull-request -m "[WIP] $1"
+}
+
+function current_branch() {
+  git symbolic-ref HEAD 2>/dev/null | awk -F "/" '{print $3}'
+}
+
 ## hub
 ## http://qiita.com/yaotti/items/a4a7f3f9a38d7d3415e3
 function git(){hub "$@"}
@@ -86,3 +96,4 @@ alias nippo='touch `gdate +"%Y%m%d"`.md; vim `gdate +"%Y%m%d"`.md'
 alias bupgrade='brew outdated | grep -v tmux | xargs brew upgrade'
 
 alias e='ghq list -p | p cd'
+alias gg='ghq get'
