@@ -52,21 +52,23 @@ brew install docker
 brew install --zsh-completion git-now
 brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb
 
-tap homebrew/dupes
-install homebrew/dupes/grep
-
-cask install karabiner
-cask install skype
-cask install firefox
-cask install yorufukurou
-cask install iterm2
-cask install appcleaner
-cask install mysqlworkbench
-cask install virtualbox
-
 brew tap peco/peco
 brew install peco
 
 brew tap motemen/ghq
 brew install ghq
+
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+
+brew cask install karabiner
+brew cask install skype
+brew cask install firefox
+brew cask install yorufukurou
+brew cask install iterm2
+brew cask install appcleaner
+brew cask install mysqlworkbench
+brew cask install virtualbox
+brew cask install slack
+brew cask install sqwiggle
 
