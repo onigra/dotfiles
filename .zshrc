@@ -7,6 +7,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/g
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
 
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 
 # the Google Cloud SDK.
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
@@ -165,6 +168,10 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 ##### alias
 [ -f ~/dotfiles/.zsh/alias.zsh ] && source ~/dotfiles/.zsh/alias.zsh
+
+if [ -f ~/.zsh/dev_alias.zsh ]; then
+  source ~/.zsh/dev_alias.zsh
+fi
 
 if [ -f "$(which dvm)" ]; then
   eval "$(dvm env)"

@@ -27,6 +27,7 @@ alias tm='tmux -2 new -s'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
 alias tma='tmux -2 attach -t'
+alias tmks='tmux kill-server'
 
 ## jenkins
 alias jenstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
@@ -48,19 +49,20 @@ alias gch='git checkout HEAD'
 alias gst='git status'
 alias gca='git commit -a'
 alias gpo='git push origin master'
+alias gpc='git push origin $(current_branch)'
 alias gdf='git diff'
 alias gb='git branch'
 alias gc='git checkout'
 alias ga='git add --all'
 
 function gw() {
-  git commit --allow-empty -m "[WIP] $1"
+  git commit --allow-empty -m "$1"
   git push origin $(current_branch)
   git pull-request -m "[WIP] $1"
 }
 
 function current_branch() {
-  git symbolic-ref HEAD 2>/dev/null | awk -F "/" '{print $3}'
+  git rev-parse --abbrev-ref HEAD
 }
 
 ## hub
@@ -97,3 +99,11 @@ alias bupgrade='brew outdated | grep -v tmux | xargs brew upgrade'
 
 alias e='ghq list -p | p cd'
 alias gg='ghq get'
+
+# rails
+alias rc='rails c'
+alias rs='rails s'
+alias rd='rails db'
+
+# docker
+alias dl='docker ps -l -q'

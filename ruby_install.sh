@@ -5,12 +5,13 @@ mkdir -p ~/.rbenv/plugins
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 git clone https://github.com/ianheggie/rbenv-binstubs ~/.rbenv/plugins/rbenv-binstubs
 git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src
+git clone https://github.com/sstephenson/rbenv-default-gems.git ~/.rbenv/plugins/rbenv-default-gems
 
-RUBY_CONFIGURE_OPTS="--enable-shared --with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)" rbenv install 2.1.2
+touch ~/.rbenv/default-gems
+echo "bundler\npry\nrspec\nhttparty" > ~/.rbenv/default-gems
 
-rbenv global 2.1.2
-rbenv rehash
+RUBY_CONFIGURE_OPTS="--enable-shared --with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl) --with-opt-dir=$(brew --prefix libiconv)" rbenv install 2.1.5
 
-gem i bundler pry td rspec powder httparty spring spring-commands-cucumber spring-commands-rspec spring-commands-testunit
+rbenv global 2.1.5
 rbenv rehash
 
