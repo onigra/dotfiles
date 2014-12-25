@@ -9,9 +9,16 @@ filetype off
 set rtp+=~/.vim/bundle/neobundle.vim
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/'))
+  if &compatible
+    set nocompatible
+  endif
+
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
 " let g:neobundle_default_git_protocol='https'
 
@@ -43,7 +50,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'kana/vim-smartword'
-" NeoBundle 'todesking/ruby_hl_lvar.vim'
+NeoBundle 'todesking/ruby_hl_lvar.vim'
 NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'slim-template/vim-slim'
@@ -51,23 +58,7 @@ NeoBundle 'amdt/vim-niji'
 NeoBundle 'aharisu/vim_goshrepl'
 NeoBundle 'aharisu/vim-gdev'
 " colorscheme
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'vim-scripts/wombat256.vim'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'joedicastro/vim-molokai256'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'tejr/sahara'
-NeoBundle 'twerth/ir_black'
-NeoBundle 'vim-scripts/xoria256.vim'
-NeoBundle 'fmoralesc/vim-vitamins'
-
-
-NeoBundleLazy 'nosami/Omnisharp', {
-\ 'autoload': {'filetypes': ['cs']},
-\ 'build': {
-\     'mac': 'xbuild server/OmniSharp.sln'
-\   }
-\ }
 
 "-------------------------------------------------------------------------------
 " unite.vim
@@ -300,6 +291,9 @@ set hlsearch                     " 検索結果をハイライト
 set cursorline                   " カーソル行をハイライト
 set guioptions+=a
 set ttymouse=xterm2
+set display=lastline
+set wrap
+set wrapscan
 
 " カレントウィンドウにのみ罫線を引く
 augroup cch
