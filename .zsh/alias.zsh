@@ -107,3 +107,12 @@ alias rd='rails db'
 
 # docker
 alias dl='docker ps -l -q'
+
+# タグ無しのimageを取得する
+alias dnotag="docker images | awk '/^<none>/ { print $3 }'"
+
+# .ssh/conf.d/* を1つの .ssh/configにする関数
+function sshconfig() {
+  mv ~/.ssh/config{,.bak}
+  cat ~/.ssh/conf.d/*.conf > ~/.ssh/config
+}
