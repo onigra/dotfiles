@@ -9,8 +9,10 @@ git clone https://github.com/sstephenson/rbenv-default-gems.git ~/.rbenv/plugins
 
 ln -s ~/dotfiles/default-gems ~/.rbenv/default-gems
 
-RUBY_CONFIGURE_OPTS="--enable-shared --with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl) --with-opt-dir=$(brew --prefix libiconv)" rbenv install 2.1.5
+# with-opt-dirはこれを参考.
+# http://qiita.com/niwatako/items/1fd769d679ea6cd9a476
+RUBY_CONFIGURE_OPTS="--enable-shared --disable-install-rdoc --with-opt-dir=$(brew --prefix libiconv)" rbenv install 2.2.0
 
-rbenv global 2.1.5
+rbenv global 2.2.0
 rbenv rehash
 
