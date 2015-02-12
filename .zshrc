@@ -172,10 +172,6 @@ if [ -f ~/.zsh/dev_alias.zsh ]; then
   source ~/.zsh/dev_alias.zsh
 fi
 
-if [ -f "$(which dvm)" ]; then
-  eval "$(dvm env)"
-fi
-
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
