@@ -162,7 +162,7 @@ endfunction
 call unite#custom_action('file', 'my_split', s:my_action)
 
 " 縦に開く
-let s:my_action = { 'is_selectable' : 1 }                     
+let s:my_action = { 'is_selectable' : 1 }
 function! s:my_action.func(candidates)
   wincmd p
   exec 'vsplit '. a:candidates[0].action__path
