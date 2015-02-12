@@ -70,5 +70,4 @@ brew cask install appcleaner
 brew cask install mysqlworkbench
 brew cask install virtualbox
 brew cask install slack
-brew cask install sqwiggle
 
