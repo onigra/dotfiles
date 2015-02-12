@@ -253,9 +253,6 @@ filetype indent on
 filetype plugin on
 syntax on
 
-" vim-powerlineを使う場合はコレをコメントアウト
-" set statusline=%<%f:%m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-
 set laststatus=2
 set t_Co=256
 set backupcopy=yes
