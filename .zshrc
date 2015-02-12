@@ -17,10 +17,6 @@ export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 # postgresql
 export PGDATA=/usr/local/var/postgres
 
-# if [ -f ~/google-cloud-sdk/arg_rc ]; then
-#   source ~/google-cloud-sdk/arg_rc
-# fi
-
 if [ -f ~/.brew_api_token ]; then
   source ~/.brew_api_token
 fi
