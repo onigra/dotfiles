@@ -34,6 +34,10 @@ eval "$(rbenv init -)"
 # phpunit
 export PATH="$HOME/.phpunit/bin:$PATH"
 
+# 単語区切りの調整
+# http://polamjag.hatenablog.jp/entry/2013/11/19/003727
+export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
+
 ###
 # colors
 # iterm2のカラースキーマを試してるのでコメントアウト
