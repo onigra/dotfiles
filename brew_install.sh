@@ -31,6 +31,7 @@ brew install go
 brew install docker
 brew install boot2docker
 brew install heroku-toolbelt
+brew install peco
 
 brew install mysql
 brew install redis
@@ -52,9 +53,6 @@ brew install docker
 brew install --zsh-completion git-now
 brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb
 
-brew tap peco/peco
-brew install peco
-
 brew tap motemen/ghq
 brew install ghq
 
@@ -62,7 +60,6 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
 brew cask install karabiner
-brew cask install skype
 brew cask install firefox
 brew cask install yorufukurou
 brew cask install iterm2
