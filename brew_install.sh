@@ -35,6 +35,7 @@ brew install peco
 
 brew install mysql
 brew install redis
+brew install phantomjs
 
 brew install bash
 brew install gnu-sed
@@ -46,9 +47,6 @@ brew install automake
 brew install imagemagick
 brew install fontforge
 brew install pkg-config
-
-brew install phantomjs
-brew install docker
 
 brew install --zsh-completion git-now
 brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb
