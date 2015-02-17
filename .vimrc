@@ -143,14 +143,23 @@ nnoremap <silent> [unite]rs :<C-u>Unite rails/spec<Cr>
 " vimfiler
 " http://hrsh7th.hatenablog.com/entry/20120229/1330525683
 "-------------------------------------------------------------------------------
+" でフォルトのファイラをnetrwではなくvimfilerにする
+let g:vimfiler_as_default_explorer = 1
+
+"セーフモードを無効にした状態で起動する
+let g:vimfiler_safe_mode_by_default = 0
+
+" C-eでvimfilerを開く
 nnoremap <silent><C-e> :VimFiler -buffer-name=explorer -split -toggle -winwidth=45 -no-quit<Cr>
-autocmd! FileType vimfiler call g:my_vimfiler_settings()
-function! g:my_vimfiler_settings()
+
+autocmd! FileType vimfiler call s:my_vimfiler_settings()
+
+function! s:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
   " sで横に開く
-  nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
+  nnoremap <buffer>s :call vimfiler#mappings#do_action('my_split')<Cr>
   " vで縦に開く
-  nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
+  nnoremap <buffer>v :call vimfiler#mappings#do_action('my_vsplit')<Cr>
 endfunction
 
 " 横に開く
@@ -168,9 +177,6 @@ function! s:my_action.func(candidates)
   exec 'vsplit '. a:candidates[0].action__path
 endfunction
 call unite#custom_action('file', 'my_vsplit', s:my_action)
-
-"セーフモードを無効にした状態で起動する
-let g:vimfiler_safe_mode_by_default = 0
 
 "-------------------------------------------------------------------------------
 " neocomplcache
