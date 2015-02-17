@@ -153,7 +153,7 @@ rbenv_version() {
 # 一般ユーザ時
 tmp_prompt="%{${fg_bold[red]}%}( ꒪﹃ ꒪) $(rbenv_version) > %{${reset_color}%}"
 tmp_prompt2="%{${fg_bold[red]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%1(v|%F{cyan}%1v%f|)%{${fg_bold[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
+tmp_rprompt="%1(v|%F{red}%1v%f|)%{${fg_bold[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
 tmp_sprompt="%{${fg_bold[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
