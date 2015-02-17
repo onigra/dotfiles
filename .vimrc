@@ -267,6 +267,7 @@ set helpfile=$VIMRUNTIME/doc/help.txt
 set fileencodings=utf-8,cp932,euc-jp,iso-2011-jp
 set fileformats=unix,dos,mac
 set ambiwidth=double
+set undodir=D:~/.vim/undo
 
 let mapleader = ","              " キーマップリーダー
 set autoindent                   " オートインデントの設定

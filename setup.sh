@@ -17,6 +17,7 @@ mkdir ~/.peco
 ln -s ~/dotfiles/.peco/config.json ~/.peco/config.json
 
 mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/undo
 git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 
 mkdir ~/.tmux
