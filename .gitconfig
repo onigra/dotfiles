@@ -10,7 +10,7 @@
   interactive = auto
   grep = auto
 [core]
-  excludesfile = /Users/taketake3280467/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
@@ -23,6 +23,6 @@
   diff = diff-highlight | less
 
 [ghq]
-	root = /Users/yudai/src
+  root = ~/src
 [alias]
-	see = browse
+  see = browse
