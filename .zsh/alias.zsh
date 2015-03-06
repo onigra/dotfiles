@@ -98,7 +98,7 @@ alias nippo='touch `gdate +"%Y%m%d"`.md; vim `gdate +"%Y%m%d"`.md'
 alias bupdate='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
 alias bupgrade='brew outdated | grep -v tmux | xargs brew upgrade'
 
-alias e='ghq list -p | p cd'
+alias e='ghq list -p | ag -v vendor | p cd'
 alias gg='ghq get'
 
 # rails
