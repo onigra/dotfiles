@@ -44,15 +44,74 @@ function p() {
   peco | while read LINE; do $@ $LINE; done
 }
 
-# .ssh/configのHostをpecoで選ぶ関数
+##
+# by cool-peco
+# https://github.com/ryoppy/cool-peco
+#
+function _cool-peco-on-complete() {
+  if zle; then
+    BUFFER=$1
+    CURSOR=$#BUFFER
+    zle clear-screen
+  else
+    print -z $1
+  fi
+}
+
+##
+# file name search
+#
+function peco-file-search() {
+  local res
+  res=$(find . -name "*${1}*" | grep -v "/\." | peco)
+  _cool-peco-on-complete $res
+}
+
+##
+# select branch, and checkout
+#
+function gcp() {
+  local res
+  local branch=$(git branch -a | peco | tr -d ' ')
+  if [ -n "$branch" ]; then
+    if [[ "$branch" =~ "remotes/" ]]; then
+      local b=$(echo $branch | awk -F'/' '{print $3}')
+      res="git checkout -b ${b} ${branch}"
+    else
+      res="git checkout ${branch}"
+    fi
+  fi
+
+  _cool-peco-on-complete "$res"
+}
+
+##
+# select ssh host from ~/.ssh/config
+#
 function s() {
-  ssh $(awk '
-    tolower($1)=="host" {
-      for (i=2; i<=NF; i++) {
-        if ($i !~ "[*?]") {
-          print $i
-        }
-      }
-    }
-  ' ~/.ssh/config | sort | peco)
+  local res
+  res=$(grep "Host " ~/.ssh/config | grep -v '*' | cut -b 6- | peco)
+  if [ -n "$res" ]; then
+    _cool-peco-on-complete "ssh $res"
+  fi
+}
+
+##
+# select pid by `ps aux`
+#
+function psp() {
+  local res
+  res=$(ps aux | peco | awk '{print $2}')
+  _cool-peco-on-complete $res
+}
+
+##
+# select tmux session
+#
+function tmap() {
+  local res
+  res=$(tmux list-sessions | peco | awk -F':' '{print $1}')
+  if [ -n "$res" ]; then
+    _cool-peco-on-complete "tmux attach -t $res"
+  fi
 }
