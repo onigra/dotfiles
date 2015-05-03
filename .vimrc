@@ -57,6 +57,7 @@ NeoBundle 'slim-template/vim-slim'
 NeoBundle 'amdt/vim-niji'
 NeoBundle 'aharisu/vim_goshrepl'
 NeoBundle 'aharisu/vim-gdev'
+NeoBundle 'kchmck/vim-coffee-script'
 " colorscheme
 NeoBundle 'joedicastro/vim-molokai256'
 

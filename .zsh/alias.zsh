@@ -41,7 +41,7 @@ alias mem='memcached -u memcached -d'
 
 ## bundler
 alias be='bundle exec'
-alias bi='bundle install --path vendor/bundle --binstubs .bundle/bin; rbenv rehash'
+alias bi='bundle install --path vendor/bundle --binstubs .bundle/bin -j 10'
 alias bu='bundle update'
 
 ## git
