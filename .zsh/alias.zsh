@@ -117,3 +117,5 @@ function sshconfig() {
   mv ~/.ssh/config{,.bak}
   cat ~/.ssh/conf.d/*.conf > ~/.ssh/config
 }
+
+alias redisd='redis-server /usr/local/etc/redis.conf'
