@@ -18,9 +18,6 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
-
-" let g:neobundle_default_git_protocol='https'
 
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
@@ -41,7 +38,6 @@ NeoBundle 'basyura/unite-rails'
 NeoBundle 'thinca/vim-splash'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplete'
-NeoBundle 'taichouchou2/vim-rsense'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -60,6 +56,7 @@ NeoBundle 'aharisu/vim-gdev'
 NeoBundle 'kchmck/vim-coffee-script'
 " colorscheme
 NeoBundle 'joedicastro/vim-molokai256'
+call neobundle#end()
 
 "-------------------------------------------------------------------------------
 " unite.vim
@@ -183,14 +180,11 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 " neocomplcache
 " https://github.com/Shougo/neocomplcache/blob/master/README
 "-------------------------------------------------------------------------------
+let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
-" let g:neocomplcache_enable_at_startup = 1
-let g:rsenseHome = "/usr/local/Cellar/rsense/0.3/libexec"
-let g:rsenseUseOmniFunc = 1
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\ }
 
 "-------------------------------------------------------------------------------
 " airline
