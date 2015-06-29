@@ -184,3 +184,5 @@ fi
 
 # bd
 [ -f ~/dotfiles/.zsh/bd.zsh ] && source ~/dotfiles/.zsh/bd.zsh
+
+ulimit -n 1024
