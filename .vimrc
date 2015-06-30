@@ -38,6 +38,7 @@ NeoBundle 'basyura/unite-rails'
 NeoBundle 'thinca/vim-splash'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'osyo-manga/vim-monster'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -177,8 +178,7 @@ endfunction
 call unite#custom_action('file', 'my_vsplit', s:my_action)
 
 "-------------------------------------------------------------------------------
-" neocomplcache
-" https://github.com/Shougo/neocomplcache/blob/master/README
+" neocomplete
 "-------------------------------------------------------------------------------
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
