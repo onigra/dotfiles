@@ -73,7 +73,6 @@ filetype plugin indent on
 
 "-------------------------------------------------------------------------------
 " unite.vim
-" http://www.karakaram.com/unite
 "-------------------------------------------------------------------------------
 " unite prefix key.
 nnoremap [unite] <Nop>
@@ -158,7 +157,6 @@ nnoremap <silent> [unite]ro :<C-u>Unite rails/route<Cr>
 
 "-------------------------------------------------------------------------------
 " vimfiler
-" http://hrsh7th.hatenablog.com/entry/20120229/1330525683
 "-------------------------------------------------------------------------------
 " でフォルトのファイラをnetrwではなくvimfilerにする
 let g:vimfiler_as_default_explorer = 1
@@ -256,12 +254,6 @@ nnoremap <silent><C-h> :Gitv!<Cr>
 autocmd FileType git :setlocal foldlevel=99
 
 "-------------------------------------------------------------------------------
-" todesking/ruby_hl_lvar.vim
-"-------------------------------------------------------------------------------
-" let g:ruby_hl_lvar_hl_group = 'RubyLocalVariable'
-
-
-"-------------------------------------------------------------------------------
 " start original .vimrc statements
 "-------------------------------------------------------------------------------
 filetype on
@@ -326,6 +318,11 @@ highlight CursorLine ctermbg=black guibg=black
 autocmd BufWritePre * :%s/\t/  /ge
 
 "-------------------------------------------------------------------------------
+" filetype
+"-------------------------------------------------------------------------------
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+"-------------------------------------------------------------------------------
 " rspec
 "-------------------------------------------------------------------------------
 autocmd FileType quickrun AnsiEsc
@@ -353,7 +350,7 @@ endfunction
 autocmd BufReadPost *_spec.rb call RSpecQuickrun()
 
 "-------------------------------------------------------------------------------
-" キーバインド編集
+" Keybind
 "-------------------------------------------------------------------------------
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする
 imap <C-p>  <ESC>"*pa
@@ -386,8 +383,9 @@ function! MarkdownToRedmine()
 endfunction
 
 command! MdtoRm call MarkdownToRedmine()
+
 "-------------------------------------------------------------------------------
-" シンタックスハイライト
+" Syntax highlight
 "-------------------------------------------------------------------------------
 syntax enable
 " let g:solarized_termcolors=256
