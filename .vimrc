@@ -383,6 +383,10 @@ endfunction
 
 command! MdtoRm call MarkdownToRedmine()
 
+" タブ設定
+nnoremap tn :<C-u>tabnew<CR>
+nnoremap ut :<C-u>Unite tab<CR>
+
 "-------------------------------------------------------------------------------
 " Syntax highlight
 "-------------------------------------------------------------------------------
