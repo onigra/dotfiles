@@ -17,9 +17,9 @@ ln -s ~/dotfiles/.tmux-powerlinerc ~/.tmux-powerlinerc
 mkdir ~/.peco
 ln -s ~/dotfiles/.peco/config.json ~/.peco/config.json
 
-mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/dein
 mkdir -p ~/.vim/undo
-git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
+git clone https://github.com/Shougo/dein.vim ~/.vim/dein/dein.vim
 
 mkdir ~/.tmux
 git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline
