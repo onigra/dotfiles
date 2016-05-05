@@ -202,6 +202,10 @@ let g:neocomplete#sources#omni#input_patterns = {
 \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
 \ }
 
+let g:neocomplete#keyword_patterns = {}
+let g:neocomplete#keyword_patterns['gosh-repl'] = "[[:alpha:]+*/@$_=.!?-][[:alnum:]+*/@$_:=.!?-]*"
+vmap <CR> <Plug>(gosh_repl_send_block)
+
 "-------------------------------------------------------------------------------
 " airline
 "-------------------------------------------------------------------------------
