@@ -210,7 +210,7 @@ vmap <CR> <Plug>(gosh_repl_send_block)
 " airline
 "-------------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
+let g:airline_theme='murmur'
 
 set guifont=Ricty\ Regular\ for\ Powerline:h14
 let g:airline_section_a = airline#section#create(['mode','','branch'])
