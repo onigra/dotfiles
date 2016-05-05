@@ -15,6 +15,7 @@ call dein#add('Shougo/unite.vim')
 call dein#add('basyura/unite-rails')
 call dein#add('Shougo/vimfiler')
 call dein#add('Shougo/neomru.vim')
+call dein#add('sorah/unite-ghq')
 
 " Auto complete
 call dein#add('Shougo/neocomplete')
@@ -387,6 +388,9 @@ command! MdtoRm call MarkdownToRedmine()
 " タブ設定
 nnoremap tn :<C-u>tabnew<CR>
 nnoremap ut :<C-u>Unite tab<CR>
+
+" unite-ghq
+nnoremap UG :<C-u>Unite ghq<CR>
 
 "-------------------------------------------------------------------------------
 " Syntax highlight
