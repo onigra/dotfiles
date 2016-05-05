@@ -29,10 +29,6 @@ alias tmk='tmux kill-session -t'
 alias tma='tmux -2 attach -t'
 alias tmks='tmux kill-server'
 
-## jenkins
-alias jenstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
-alias jenstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist'
-
 ## mysql
 #alias mysql='mysql --pager='less -S''
 
@@ -69,13 +65,6 @@ function current_branch() {
 ## http://qiita.com/yaotti/items/a4a7f3f9a38d7d3415e3
 function git(){hub "$@"}
 
-## chef, knife-solo, berkshelf
-alias berkinstall='bundle exec berks install --path cookbooks'
-alias knifecook='bundle exec knife solo cook'
-alias knifepre='bundle exec knife solo prepare'
-alias knifecreate='bundle exec knife cookbook create $1 -o site-cookbooks'
-alias knifetest='bundle exec knife cookbook test $1 -o .'
-
 ## ls
 alias ls='gls --color=auto'
 alias ls='gls -la --color=auto'
@@ -91,8 +80,6 @@ alias wgets='wget --no-check-certificate'
 ## postgresql
 alias psql.start='pg_ctl -l /usr/local/var/postgres/server.log start'
 alias psql.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-alias nippo='touch `gdate +"%Y%m%d"`.md; vim `gdate +"%Y%m%d"`.md'
 
 # brew upgdate
 alias bupdate='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
