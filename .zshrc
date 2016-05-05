@@ -31,6 +31,9 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # phpunit
 export PATH="$HOME/.phpunit/bin:$PATH"
 
