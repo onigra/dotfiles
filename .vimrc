@@ -58,6 +58,7 @@ call dein#add('bling/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 
 " Utils
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('thinca/vim-splash')
 call dein#add('thinca/vim-quickrun')
 call dein#add('vim-scripts/taglist.vim')
