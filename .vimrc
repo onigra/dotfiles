@@ -142,13 +142,19 @@ vnoremap /g y:Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
 " unite colorscheme
 nnoremap <silent><C-o> :Unite colorscheme -auto-preview<Cr>
 
+"-------------------------------------------------------------------------------
 " unite rails
+"-------------------------------------------------------------------------------
 nnoremap <silent> [unite]rm :<C-u>Unite rails/model<Cr>
 nnoremap <silent> [unite]rc :<C-u>Unite rails/controller<Cr>
+nnoremap <silent> [unite]rv :<C-u>Unite rails/view<Cr>
 nnoremap <silent> [unite]rn :<C-u>Unite rails/config<Cr>
 nnoremap <silent> [unite]rl :<C-u>Unite rails/lib<Cr>
 nnoremap <silent> [unite]rd :<C-u>Unite rails/db<Cr>
 nnoremap <silent> [unite]rs :<C-u>Unite rails/spec<Cr>
+nnoremap <silent> [unite]rg :<C-u>Unite rails/bundled_gem<Cr>
+nnoremap <silent> [unite]rr :<C-u>Unite rails/root<Cr>
+nnoremap <silent> [unite]ro :<C-u>Unite rails/route<Cr>
 
 "-------------------------------------------------------------------------------
 " vimfiler
@@ -353,7 +359,7 @@ autocmd BufReadPost *_spec.rb call RSpecQuickrun()
 imap <C-p>  <ESC>"*pa
 
 " ESCキー連打で検索ハイライトを消す
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " Ctrl + 上下移動で5行分移動
 nnoremap <C-k> 5<Up>
