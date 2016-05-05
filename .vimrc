@@ -1,63 +1,75 @@
 "-------------------------------------------------------------------------------
-" Plugins(NeoBundle)
-" https://github.com/Shougo/neobundle.vim
+" dein.vim
 "-------------------------------------------------------------------------------
 autocmd!
 
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/neobundle.vim
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+if &compatible
+  set nocompatible
 endif
+set runtimepath^=~/.vim/dein/dein.vim
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(expand('~/.vim/dein/cache'))
 
-NeoBundle 'Shougo/vimproc', {
-\ 'build' : {
-\     'windows' : 'make -f make_mingw32.mak',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'unix' : 'make -f make_unix.mak',
-\    },
-\ }
+" Filer
+call dein#add('Shougo/unite.vim')
+call dein#add('basyura/unite-rails')
+call dein#add('Shougo/vimfiler')
+call dein#add('Shougo/neomru.vim')
 
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'gregsexton/gitv'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'basyura/unite-rails'
-NeoBundle 'thinca/vim-splash'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'osyo-manga/vim-monster'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'joker1007/vim-markdown-quote-syntax'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'kana/vim-smartword'
-NeoBundle 'todesking/ruby_hl_lvar.vim'
-NeoBundle 'vim-scripts/vim-auto-save'
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'amdt/vim-niji'
-NeoBundle 'aharisu/vim_goshrepl'
-NeoBundle 'aharisu/vim-gdev'
-NeoBundle 'kchmck/vim-coffee-script'
-" colorscheme
-NeoBundle 'joedicastro/vim-molokai256'
-call neobundle#end()
+" Auto complete
+call dein#add('Shougo/neocomplete')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+
+" Syntax highlight
+call dein#add('scrooloose/syntastic')
+
+" Ruby
+call dein#add('todesking/ruby_hl_lvar.vim')
+call dein#add('osyo-manga/vim-monster')
+
+" Lisp
+call dein#add('losingkeys/vim-niji')
+call dein#add('aharisu/vim_goshrepl')
+call dein#add('aharisu/vim-gdev')
+
+" Golang
+call dein#add('fatih/vim-go')
+
+" Coffee script
+call dein#add('kchmck/vim-coffee-script')
+
+" Slim
+call dein#add('slim-template/vim-slim')
+
+" Markdown
+call dein#add('joker1007/vim-markdown-quote-syntax')
+
+" Colorscheme
+call dein#add('joedicastro/vim-molokai256')
+call dein#add('ujihisa/unite-colorscheme')
+
+" Git plugins
+call dein#add('tpope/vim-fugitive')
+call dein#add('gregsexton/gitv')
+
+" Status line
+call dein#add('bling/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+
+" Utils
+call dein#add('thinca/vim-splash')
+call dein#add('thinca/vim-quickrun')
+call dein#add('vim-scripts/taglist.vim')
+call dein#add('tpope/vim-surround')
+call dein#add('terryma/vim-multiple-cursors')
+call dein#add('junegunn/vim-easy-align')
+call dein#add('kana/vim-smartword')
+call dein#add('vim-scripts/vim-auto-save')
+call dein#add('vim-scripts/AnsiEsc.vim')
+
+call dein#end()
+filetype plugin indent on
 
 "-------------------------------------------------------------------------------
 " unite.vim
