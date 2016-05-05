@@ -305,13 +305,6 @@ set display=lastline
 set wrap
 set wrapscan
 
-" カレントウィンドウにのみ罫線を引く
-augroup cch
-  autocmd! cch
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter,BufRead * set cursorline
-augroup END
-
 hi clear CursorLine
 hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
@@ -392,8 +385,6 @@ command! MdtoRm call MarkdownToRedmine()
 " Syntax highlight
 "-------------------------------------------------------------------------------
 syntax enable
-" let g:solarized_termcolors=256
 set background=dark
 colorscheme molokai256
 
-au BufRead,BufNewFile *.md set filetype=markdown
