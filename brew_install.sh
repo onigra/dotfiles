@@ -28,10 +28,9 @@ brew install gauche
 brew install graphviz
 brew install ansible
 brew install go
-brew install docker
-brew install boot2docker
 brew install heroku-toolbelt
 brew install peco
+brew install ghq
 
 brew install mysql
 brew install redis
@@ -49,10 +48,6 @@ brew install fontforge
 brew install pkg-config
 
 brew install --zsh-completion git-now
-brew install https://raw.githubusercontent.com/sorah/envchain/master/brew/envchain.rb
-
-brew tap motemen/ghq
-brew install ghq
 
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
@@ -62,7 +57,7 @@ brew cask install firefox
 brew cask install yorufukurou
 brew cask install iterm2
 brew cask install appcleaner
-brew cask install mysqlworkbench
 brew cask install virtualbox
 brew cask install slack
+brew cask install terraform
 
