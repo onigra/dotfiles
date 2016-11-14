@@ -7,15 +7,16 @@ export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/g
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
 
-export DOCKER_HOST=tcp://192.168.59.104:2376
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# k8s
+# export PATH="$HOME/kubernetes/platforms/darwin/amd64:$PATH"
 
 # the Google Cloud SDK.
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
 # postgresql
 export PGDATA=/usr/local/var/postgres
+export PATH="$HOME/.composer/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 if [ -f ~/.brew_api_token ]; then
   source ~/.brew_api_token
@@ -138,29 +139,27 @@ function chpwd() { gls -la --color=auto }
 # http://www.sakito.com/2011/11/zsh.html
 autoload -U colors; colors
 
-# rubyのバージョン出す
-rbenv_version() {
-  echo -n "${$(rbenv version)%% *}"
-}
+l_prompt="%{${fg_bold[red]}%} $ %{${reset_color}%}"
+r_prompt="%F{blue} %D{%Y-%m-%d %H:%M:%S %Z} %1(v|%F{red}%1v%f|) %{${fg_bold[green]}%}[%(5~,%-2~/.../%2~,%~)] %{${reset_color}%}"
 
-# 一般ユーザ時
-tmp_prompt="%{${fg_bold[red]}%}( ꒪﹃ ꒪) $(rbenv_version) > %{${reset_color}%}"
-tmp_prompt2="%{${fg_bold[red]}%}%_> %{${reset_color}%}"
-tmp_rprompt="%1(v|%F{red}%1v%f|)%{${fg_bold[green]}%}[%(5~,%-2~/.../%2~,%~)]%{${reset_color}%}"
-tmp_sprompt="%{${fg_bold[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
+# 入力ミス時に出るやつ
+s_prompt="%{${fg_bold[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
+
+# root時
+root_l_prompt="%{${fg_bold[red]}%}% root %{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
 if [ ${UID} -eq 0 ]; then
-  tmp_prompt="%B%U${tmp_prompt}%u%b"
-  tmp_prompt2="%B%U${tmp_prompt2}%u%b"
-  tmp_rprompt="%B%U${tmp_rprompt}%u%b"
-  tmp_sprompt="%B%U${tmp_sprompt}%u%b"
+  l_prompt="%B%U${l_prompt}%u%b"
+  root_l_prompt="%B%U${root_l_prompt}%u%b"
+  r_prompt="%B%U${r_prompt}%u%b"
+  s_prompt="%B%U${s_prompt}%u%b"
 fi
 
-PROMPT=$tmp_prompt    # 通常のプロンプト
-PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
-RPROMPT=$tmp_rprompt  # 右側のプロンプト
-SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
+PROMPT=$l_prompt       # 通常のプロンプト
+PROMPT2=$root_l_prompt # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
+RPROMPT=$r_prompt      # 右側のプロンプト
+SPROMPT=$s_prompt      # スペル訂正用プロンプト
 
 ##### alias
 [ -f ~/dotfiles/.zsh/alias.zsh ] && source ~/dotfiles/.zsh/alias.zsh
@@ -179,3 +178,18 @@ fi
 [ -f ~/dotfiles/.zsh/bd.zsh ] && source ~/dotfiles/.zsh/bd.zsh
 
 ulimit -n 1024
+
+agent="$HOME/.ssh/agent"
+if [ -S "$SSH_AUTH_SOCK" ]; then
+  case $SSH_AUTH_SOCK in
+  /private/tmp/com.apple.launchd.*/Listeners )
+      ln -snf "$SSH_AUTH_SOCK" $agent && export SSH_AUTH_SOCK=$agent ;;
+  esac
+elif [ -S $agent ]; then
+  export SSH_AUTH_SOCK=$agent
+else
+  echo "no ssh-agent"
+fi
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
