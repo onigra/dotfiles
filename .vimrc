@@ -72,6 +72,7 @@ call dein#add('junegunn/vim-easy-align')
 call dein#add('kana/vim-smartword')
 call dein#add('vim-scripts/vim-auto-save')
 call dein#add('vim-scripts/AnsiEsc.vim')
+call dein#add('osyo-manga/vim-over')
 
 call dein#end()
 filetype plugin indent on
