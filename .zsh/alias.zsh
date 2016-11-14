@@ -106,3 +106,5 @@ function sshconfig() {
 }
 
 alias redisd='redis-server /usr/local/etc/redis.conf'
+alias rails-cli='~/.rails/.bundle/bin/rails'
+alias rails-new="~/.rails/.bundle/bin/rails new $1 --skip-bundle"
