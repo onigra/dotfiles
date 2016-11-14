@@ -271,14 +271,18 @@ filetype indent on
 filetype plugin on
 syntax on
 
+set encoding=utf-8
+scriptencoding utf-8
+
+set fileencoding=utf-8                            " 保存時の文字コード
+set fileencodings=utf-8,cp932,euc-jp,iso-2011-jp  " 読み込み時の文字コードの自動判別. 左側が優先される
+set fileformats=unix,dos,mac                      " 改行コードの自動判別. 左側が優先される
+set ambiwidth=double                              " □や○文字が崩れる問題を解決. iTerm2の場合 Treat ambiguous-width characters as double width にチェック
+
 set laststatus=2
 set t_Co=256
 set backupcopy=yes
-set encoding=utf-8
 set helpfile=$VIMRUNTIME/doc/help.txt
-set fileencodings=utf-8,cp932,euc-jp,iso-2011-jp
-set fileformats=unix,dos,mac
-set ambiwidth=double
 set undodir=D:~/.vim/undo
 
 let mapleader = ","              " キーマップリーダー
