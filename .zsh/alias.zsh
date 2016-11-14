@@ -23,7 +23,7 @@ alias diffy='diff -y --suppress-common-lines'
 export LESS="-R"
 
 ## tmux
-alias tm='tmux -2 new -s'
+alias tm='tmux -2u new -s'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
 alias tma='tmux -2 attach -t'
