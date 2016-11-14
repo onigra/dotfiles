@@ -34,19 +34,9 @@ eval "$(rbenv init -)"
 # direnv
 eval "$(direnv hook zsh)"
 
-# phpunit
-export PATH="$HOME/.phpunit/bin:$PATH"
-
 # 単語区切りの調整
 # http://polamjag.hatenablog.jp/entry/2013/11/19/003727
 export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
-
-###
-# colors
-# iterm2のカラースキーマを試してるのでコメントアウト
-#
-# export LSCOLORS=ExFxCxDxBxegedabagacad
-# eval $(gdircolors ~/.zsh/dircolors.256dark)
 
 ##### 補完の設定
 export ZLS_COLORS=$LS_COLORS
