@@ -46,6 +46,9 @@ call dein#add('slim-template/vim-slim')
 " Markdown
 call dein#add('joker1007/vim-markdown-quote-syntax')
 
+" Ansible
+call dein#add('pearofducks/ansible-vim')
+
 " Colorscheme
 call dein#add('joedicastro/vim-molokai256')
 call dein#add('ujihisa/unite-colorscheme')
