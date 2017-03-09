@@ -56,7 +56,6 @@ brew cask install firefox
 brew cask install yorufukurou
 brew cask install iterm2
 brew cask install appcleaner
-brew cask install virtualbox
 brew cask install slack
 brew cask install terraform
 
