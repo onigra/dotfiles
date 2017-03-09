@@ -22,7 +22,7 @@ call dein#add('Shougo/neocomplete')
 call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
 
-" Syntax highlight
+" Syntax check
 call dein#add('scrooloose/syntastic')
 
 " Ruby
@@ -49,6 +49,9 @@ call dein#add('joker1007/vim-markdown-quote-syntax')
 " Ansible
 call dein#add('pearofducks/ansible-vim')
 
+" Hashicorp Products
+call dein#add('hashivim/vim-terraform')
+
 " Colorscheme
 call dein#add('joedicastro/vim-molokai256')
 call dein#add('ujihisa/unite-colorscheme')
@@ -74,6 +77,9 @@ call dein#add('kana/vim-smartword')
 call dein#add('vim-scripts/vim-auto-save')
 call dein#add('vim-scripts/AnsiEsc.vim')
 call dein#add('osyo-manga/vim-over')
+call dein#add('Yggdroot/indentLine')
+call dein#add('junegunn/vim-easy-align')
+call dein#add('tpope/vim-endwise')
 
 call dein#end()
 filetype plugin indent on
@@ -265,6 +271,21 @@ nnoremap <silent><C-h> :Gitv!<Cr>
 autocmd FileType git :setlocal foldlevel=99
 
 "-------------------------------------------------------------------------------
+" indentLine
+"-------------------------------------------------------------------------------
+let g:indentLine_color_term = 239
+let g:indentLine_conceallevel = 2
+
+"-------------------------------------------------------------------------------
+" vim-easy-align
+"-------------------------------------------------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"-------------------------------------------------------------------------------
 " start original .vimrc statements
 "-------------------------------------------------------------------------------
 filetype on
@@ -315,6 +336,9 @@ set ttymouse=xterm2
 set display=lastline
 set wrap
 set wrapscan
+set tabstop=2
+set list
+set listchars=tab:>>,trail:-,nbsp:%
 
 hi clear CursorLine
 hi CursorLine gui=underline
@@ -324,8 +348,15 @@ highlight CursorLine ctermbg=black guibg=black
 if expand("%:e") != 'md'
   autocmd BufWritePre * :%s/\s\+$//ge
 endif
+
+autocmd BufWritePre *.tf TerraformFmt
+" autocmd BufWritePre *.rb gg=G
+
 " 保存時にtabをスペースに変換する
-autocmd BufWritePre * :%s/\t/  /ge
+if expand("%:e") != 'go'
+  autocmd BufWritePre * :%s/\t/  /ge
+endif
+
 
 "-------------------------------------------------------------------------------
 " filetype
