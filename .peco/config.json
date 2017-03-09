@@ -3,5 +3,9 @@
     "C-p": "peco.SelectPrevious",
     "C-n": "peco.SelectNext",
     "C-c": "peco.Cancel"
+  },
+  "Style": {
+    "Selected": ["underline", "on_white", "black"],
+    "Matched": ["cyan", "on_black"]
   }
 }

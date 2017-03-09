@@ -52,6 +52,7 @@ call dein#add('pearofducks/ansible-vim')
 " Colorscheme
 call dein#add('joedicastro/vim-molokai256')
 call dein#add('ujihisa/unite-colorscheme')
+call dein#add('cocopon/iceberg.vim')
 
 " Git plugins
 call dein#add('tpope/vim-fugitive')
@@ -405,5 +406,5 @@ nnoremap UG :<C-u>Unite ghq<CR>
 "-------------------------------------------------------------------------------
 syntax enable
 set background=dark
-colorscheme molokai256
+colorscheme iceberg
 
