@@ -5,3 +5,8 @@ set main-view = id date author commit-title:graph=yes,refs=yes
 
 bind main    R !git rebase -i %(commit)
 bind diff    R !git rebase -i %(commit)
+
+#
+# このコミットが含まれたプルリクに飛ぶ
+# http://hisaichi5518.hatenablog.jp/entry/2017/02/09/160007
+bind generic P @sh -c 'hub browse -- commit/%(commit)'
