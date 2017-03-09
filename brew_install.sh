@@ -26,7 +26,6 @@ brew install coreutils
 brew install colordiff
 brew install gauche
 brew install graphviz
-brew install ansible
 brew install go
 brew install heroku-toolbelt
 brew install peco
