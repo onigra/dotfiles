@@ -108,3 +108,10 @@ function sshconfig() {
 alias redisd='redis-server /usr/local/etc/redis.conf'
 alias rails-cli='~/.rails/.bundle/bin/rails'
 alias rails-new="~/.rails/.bundle/bin/rails new $1 --skip-bundle"
+
+# http://blog.kazuhooku.com/2017/03/peco.html
+function pero-func() {
+  exec ag "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less '
+}
+
+alias pero=pero-func
