@@ -1,39 +1,4 @@
 ##### 環境変数
-# golang
-export GOPATH=$HOME
-
-# PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/google-cloud-sdk/bin:$PATH:$GOPATH/bin"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
-
-# k8s
-# export PATH="$HOME/kubernetes/platforms/darwin/amd64:$PATH"
-
-# the Google Cloud SDK.
-export PATH="$HOME/google-cloud-sdk/bin:$PATH"
-
-# postgresql
-export PGDATA=/usr/local/var/postgres
-export PATH="$HOME/.composer/bin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
-
-if [ -f ~/.brew_api_token ]; then
-  source ~/.brew_api_token
-fi
-
-# LANG
-export LANG=ja_JP.UTF-8
-export LESSCHARSET=utf-8
-# EDITOR
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-
-# rbenv
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# direnv
-eval "$(direnv hook zsh)"
 
 # 単語区切りの調整
 # http://polamjag.hatenablog.jp/entry/2013/11/19/003727
@@ -191,5 +156,3 @@ else
   echo "no ssh-agent"
 fi
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
