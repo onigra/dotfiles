@@ -52,6 +52,9 @@ call dein#add('pearofducks/ansible-vim')
 " Hashicorp Products
 call dein#add('hashivim/vim-terraform')
 
+" Nginx
+call dein#add('vim-scripts/nginx.vim')
+
 " Colorscheme
 call dein#add('joedicastro/vim-molokai256')
 call dein#add('ujihisa/unite-colorscheme')
@@ -351,6 +354,9 @@ endif
 
 autocmd BufWritePre *.tf TerraformFmt
 " autocmd BufWritePre *.rb gg=G
+
+" Nginx
+au BufRead,BufNewFile nginx.conf set ft=nginx
 
 " 保存時にtabをスペースに変換する
 if expand("%:e") != 'go'
