@@ -59,17 +59,6 @@ export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
 export LESS="-R"
 
 #################
-# 色設定
-#################
-eval "$(dircolors)"
-export ZLS_COLORS=$LS_COLORS
-
-# Tab補完で表示される候補の色をlsと同じ色にする
-if [ -n "$LS_COLORS" ]; then
-  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-fi
-
-#################
 # プロンプト
 #################
 # 参考リンク
@@ -113,6 +102,9 @@ precmd () {
 #################
 # 補完
 #################
+eval "$(dircolors)"
+
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # Tab補完で表示される候補の色をlsと同じ色にする
 zstyle ':completion:*:default' menu select=1
 zstyle :compinstall filename '~/.zshrc'
 
