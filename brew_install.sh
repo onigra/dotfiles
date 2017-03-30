@@ -29,6 +29,7 @@ brew install go
 brew install heroku
 brew install peco
 brew install ghq
+brew install jenv
 
 brew install mysql
 brew install redis
