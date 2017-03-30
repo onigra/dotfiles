@@ -9,7 +9,6 @@ brew install brew-cask
 brew install git
 brew install hub
 brew install tig
-brew install hg
 brew install jq
 brew install openssl
 brew install ctags
