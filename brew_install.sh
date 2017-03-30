@@ -26,7 +26,7 @@ brew install colordiff
 brew install gauche
 brew install graphviz
 brew install go
-brew install heroku-toolbelt
+brew install heroku
 brew install peco
 brew install ghq
 
