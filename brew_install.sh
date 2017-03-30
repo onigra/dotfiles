@@ -1,9 +1,10 @@
 #!/bin/sh
 
-brew tap phinze/homebrew-cask
+brew tap caskroom/cask
+brew tap homebrew/dupes
 
-brew install brew-cask
 brew install git
+brew install git-now
 brew install hub
 brew install tig
 brew install jq
@@ -28,6 +29,7 @@ brew install peco
 brew install ghq
 brew install jenv
 brew install terraform
+brew install direnv
 
 brew install mysql
 brew install redis
@@ -44,9 +46,6 @@ brew install automake
 brew install imagemagick
 brew install pkg-config
 
-brew install --zsh-completion git-now
-
-brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
 brew cask install karabiner
