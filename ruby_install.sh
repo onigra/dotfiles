@@ -11,7 +11,7 @@ ln -s ~/dotfiles/default-gems ~/.rbenv/default-gems
 
 # with-opt-dirはこれを参考.
 # http://qiita.com/niwatako/items/1fd769d679ea6cd9a476
-RUBY_CONFIGURE_OPTS="--enable-shared --disable-install-rdoc --with-opt-dir=$(brew --prefix libiconv)" rbenv install 2.4.0
+RUBY_CONFIGURE_OPTS="--enable-shared --disable-install-rdoc --with-opt-dir=$(brew --prefix libiconv)" rbenv install 2.4.1
 
-rbenv global 2.4.0
+rbenv global 2.4.1
 
