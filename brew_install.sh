@@ -1,9 +1,6 @@
 #!/bin/sh
 
-brew update
-
 brew tap phinze/homebrew-cask
-brew tap homebrew/versions
 
 brew install brew-cask
 brew install git
@@ -30,9 +27,11 @@ brew install heroku
 brew install peco
 brew install ghq
 brew install jenv
+brew install terraform
 
 brew install mysql
 brew install redis
+brew install postgresql
 brew install phantomjs
 
 brew install bash
@@ -43,7 +42,6 @@ brew install parallel
 brew install automake
 
 brew install imagemagick
-brew install fontforge
 brew install pkg-config
 
 brew install --zsh-completion git-now
@@ -53,9 +51,7 @@ brew install homebrew/dupes/grep
 
 brew cask install karabiner
 brew cask install firefox
-brew cask install yorufukurou
 brew cask install iterm2
 brew cask install appcleaner
 brew cask install slack
-brew cask install terraform
 
