@@ -190,7 +190,7 @@ export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+eval "$(jenv init -)"
 
 # Google Cloud SDK
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
