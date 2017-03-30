@@ -181,7 +181,9 @@ eval "$(rbenv init -)"
 # export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # phpbrew
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# export PATH="$HOME/.composer/bin:$PATH"
+# export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Golang
 export GOPATH=$HOME
@@ -195,8 +197,6 @@ export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
 # Postgresql
 export PGDATA=/usr/local/var/postgres
-export PATH="$HOME/.composer/bin:$PATH"
-export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
