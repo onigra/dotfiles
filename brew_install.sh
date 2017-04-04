@@ -48,9 +48,17 @@ brew install pkg-config
 
 brew install homebrew/dupes/grep
 
-brew cask install karabiner
 brew cask install firefox
 brew cask install iterm2
 brew cask install appcleaner
 brew cask install slack
+
+# Mac OS ver10.12(Sierra)以降はkarabinerをインストールしない
+macOsVersion=$(sw_vers -productVersion)
+
+if [[ "$macOsVersion" =~ "10.12" ]]; then
+  brew cask install cmd-eikana
+else
+  brew cask install karabiner
+fi
 
