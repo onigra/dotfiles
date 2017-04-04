@@ -11,7 +11,13 @@
 
 # パッチ当て済みRictyをインストール
 
-# carabinerの設定
+# iterm colorscheme
+
+[mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
+
+# Sierra以前
+
+## carabinerの設定
 
 - Change Key
   - コマンドキーの動作を優先モード1
@@ -38,6 +44,10 @@
     <appname>MACVIM</appname>
     <equal>org.vim.MacVim</equal>
   </appdef>
+  <appdef>
+    <appname>SLACK</appname>
+    <equal>com.tinyspeck.slackmacgap</equal>
+  </appdef>
   <list>
     <item>
       <name>Leave Insert Mode with EISUU (vim keybind apps)</name>
@@ -46,10 +56,15 @@
       <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::ESCAPE, KeyCode::JIS_EISUU</autogen>
       <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_CONTROL, KeyCode::BRACKET_LEFT, VK_CONTROL, KeyCode::JIS_EISUU</autogen>
     </item>
+    <item>
+      <name>For Slack CTRL+N=move next channel, CTRL+P=move previous channel, ALT+A=move unread channel</name>
+      <identifier>private.app_slack_move_channel_with_ctrln_ctrlp</identifier>
+      <only>SLACK</only>
+      <autogen>__KeyToKey__ KeyCode::N, ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::P, ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP, ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::OPTION_L, KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L, ModifierFlag::SHIFT_L</autogen>
+    </item>
   </list>
 </root>
 ```
 
-# iterm colorscheme
-
-[mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
