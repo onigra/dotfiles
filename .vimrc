@@ -23,7 +23,7 @@ call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
 
 " Syntax check
-call dein#add('scrooloose/syntastic')
+call dein#add('w0rp/ale')
 
 " Ruby
 call dein#add('todesking/ruby_hl_lvar.vim')
