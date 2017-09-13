@@ -37,6 +37,9 @@ call dein#add('aharisu/vim-gdev')
 " Golang
 call dein#add('fatih/vim-go')
 
+" Kotlin
+call dein#add('udalov/kotlin-vim')
+
 " Coffee script
 call dein#add('kchmck/vim-coffee-script')
 
