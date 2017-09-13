@@ -15,6 +15,14 @@
 
 [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 
+# Sierra以降
+
+## Carabiner-Elementsの設定
+
+```sh
+cp karabiner/assets/complex_modifications/slack.json ~/.config/karabiner/assets/complex_modifications/slack.json
+```
+
 # Sierra以前
 
 ## carabinerの設定
