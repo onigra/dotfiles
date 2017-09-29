@@ -52,6 +52,7 @@ brew cask install firefox
 brew cask install iterm2
 brew cask install appcleaner
 brew cask install slack
+brew cask install atool
 
 # Mac OS ver10.12(Sierra)以降はkarabinerをインストールしない
 macOsVersion=$(sw_vers -productVersion)
