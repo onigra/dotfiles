@@ -29,19 +29,11 @@ call dein#add('w0rp/ale')
 call dein#add('todesking/ruby_hl_lvar.vim')
 call dein#add('osyo-manga/vim-monster')
 
-" Lisp
-call dein#add('losingkeys/vim-niji')
-call dein#add('aharisu/vim_goshrepl')
-call dein#add('aharisu/vim-gdev')
-
 " Golang
 call dein#add('fatih/vim-go')
 
 " Kotlin
 call dein#add('udalov/kotlin-vim')
-
-" Coffee script
-call dein#add('kchmck/vim-coffee-script')
 
 " Slim
 call dein#add('slim-template/vim-slim')
@@ -60,7 +52,6 @@ call dein#add('vim-scripts/nginx.vim')
 
 " Colorscheme
 call dein#add('joedicastro/vim-molokai256')
-call dein#add('ujihisa/unite-colorscheme')
 call dein#add('cocopon/iceberg.vim')
 
 " Git plugins
