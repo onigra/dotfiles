@@ -21,8 +21,6 @@ brew install tree
 brew install zsh
 brew install coreutils
 brew install colordiff
-brew install gauche
-brew install graphviz
 brew install go
 brew install heroku
 brew install peco
@@ -34,7 +32,6 @@ brew install direnv
 brew install mysql
 brew install redis
 brew install postgresql
-brew install phantomjs
 
 brew install bash
 brew install gnu-sed
