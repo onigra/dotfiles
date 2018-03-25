@@ -161,13 +161,9 @@ zshaddhistory() {
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# nodebrew
-# export PATH="$HOME/.nodebrew/current/bin:$PATH"
-
-# phpbrew
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-# export PATH="$HOME/.composer/bin:$PATH"
-# export PATH="$HOME/.composer/vendor/bin:$PATH"
+# ndenv
+export PATH="$HOME/.ndenv/bin:$PATH"
+eval "$(ndenv init -)"
 
 # Golang
 export GOPATH=$HOME
