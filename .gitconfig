@@ -9,8 +9,6 @@
   branch = auto
   interactive = auto
   grep = auto
-[core]
-  excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =

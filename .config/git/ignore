@@ -1,0 +1,6 @@
+/vendor/bundle
+.bundle
+db/mysql
+public/assets
+.envrc
+.DS_Store
