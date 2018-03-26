@@ -35,9 +35,9 @@ alias sed='gsed'
 ## ctags
 alias ctags='/usr/local/bin/ctags'
 
-# vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+# neovim
+alias vi='env LANG=ja_JP.UTF-8 /usr/local/bin/nvim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /usr/local/bin/nvim "$@"'
 
 ## diff
 ## colordiff: http://www.glidenote.com/archives/1403

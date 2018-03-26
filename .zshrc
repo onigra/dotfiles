@@ -47,7 +47,7 @@ export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
 # EDITOR
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+export EDITOR=/usr/local/bin/nvim
 
 # 単語区切りの調整
 # http://polamjag.hatenablog.jp/entry/2013/11/19/003727
