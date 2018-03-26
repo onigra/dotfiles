@@ -31,7 +31,6 @@ if dein#load_state('~/.dein')
 
   " 補完
   call dein#add('Shougo/deoplete.nvim')
-  call dein#add('osyo-manga/vim-monster')
 
   " Syntax check
   call dein#add('w0rp/ale')
@@ -126,13 +125,6 @@ call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '-
 " deoplete
 "-------------------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
-
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.ruby =
-\ ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::']
-
-" Ruby
-let g:monster#completion#backend = 'solargraph'
 
 "-------------------------------------------------------------------------------
 " vaffle.vim
