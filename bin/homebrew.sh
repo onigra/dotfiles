@@ -3,6 +3,7 @@
 brew tap caskroom/cask
 brew tap homebrew/dupes
 
+brew install neovim
 brew install git
 brew install git-now
 brew install hub
