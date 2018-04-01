@@ -25,6 +25,7 @@ if dein#load_state('~/.dein')
   call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/neoyank.vim')
+  call dein#add('5t111111/denite-rails')
 
   " Filer
   call dein#add('cocopon/vaffle.vim')
@@ -123,6 +124,17 @@ call denite#custom#option('default', 'direction', 'top')
 call denite#custom#var('grep', 'command', ['ag'])
 " カレントディレクトリ内の検索もagを使用する
 call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+"-------------------------------------------------------------------------------
+" denite.nvim
+"-------------------------------------------------------------------------------
+nnoremap <silent> [Denite]r :<C-u>Denite<Space>rails:dwim<Return>
+nnoremap <silent> [Denite]m :<C-u>Denite<Space>rails:model<Return>
+nnoremap <silent> [Denite]c :<C-u>Denite<Space>rails:controller<Return>
+nnoremap <silent> [Denite]v :<C-u>Denite<Space>rails:view<Return>
+nnoremap <silent> [Denite]h :<C-u>Denite<Space>rails:helper<Return>
+nnoremap <silent> [Denite]r :<C-u>Denite<Space>rails:test<Return>
+nnoremap <silent> [Denite]s :<C-u>Denite<Space>rails:spec<Return>
 
 "-------------------------------------------------------------------------------
 " deoplete
