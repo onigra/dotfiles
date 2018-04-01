@@ -128,13 +128,13 @@ call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '-
 "-------------------------------------------------------------------------------
 " denite.nvim
 "-------------------------------------------------------------------------------
-nnoremap <silent> [Denite]r :<C-u>Denite<Space>rails:dwim<Return>
-nnoremap <silent> [Denite]m :<C-u>Denite<Space>rails:model<Return>
-nnoremap <silent> [Denite]c :<C-u>Denite<Space>rails:controller<Return>
-nnoremap <silent> [Denite]v :<C-u>Denite<Space>rails:view<Return>
-nnoremap <silent> [Denite]h :<C-u>Denite<Space>rails:helper<Return>
-nnoremap <silent> [Denite]r :<C-u>Denite<Space>rails:test<Return>
-nnoremap <silent> [Denite]s :<C-u>Denite<Space>rails:spec<Return>
+nnoremap <silent> [Denite]rr :<C-u>Denite<Space>rails:dwim<Return>
+nnoremap <silent> [Denite]rm :<C-u>Denite<Space>rails:model<Return>
+nnoremap <silent> [Denite]rc :<C-u>Denite<Space>rails:controller<Return>
+nnoremap <silent> [Denite]rv :<C-u>Denite<Space>rails:view<Return>
+nnoremap <silent> [Denite]rh :<C-u>Denite<Space>rails:helper<Return>
+nnoremap <silent> [Denite]rt :<C-u>Denite<Space>rails:test<Return>
+nnoremap <silent> [Denite]rs :<C-u>Denite<Space>rails:spec<Return>
 
 "-------------------------------------------------------------------------------
 " deoplete
