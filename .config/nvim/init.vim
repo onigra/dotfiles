@@ -237,7 +237,7 @@ set tabstop=2
 set list
 set listchars=tab:>>,trail:-,nbsp:%
 set ttimeout
-set ttimeoutlen=0
+set ttimeoutlen=40
 
 hi clear CursorLine
 hi CursorLine gui=underline
