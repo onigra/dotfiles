@@ -29,6 +29,7 @@ brew install ghq
 brew install jenv
 brew install terraform
 brew install direnv
+brew install python3
 
 brew install mysql
 brew install redis
