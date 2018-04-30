@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sudo easy_install pip
-sudo pip install ansible
+sudo easy_install pip3
+sudo pip3 install ansible
 
