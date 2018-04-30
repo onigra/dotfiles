@@ -109,8 +109,10 @@ call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>', 'noremap')
 
 " [ctrl + v]で横に分割して開く
 call denite#custom#map('insert', '<C-s>', '<denite:do_action:split>', 'noremap')
+call denite#custom#map('normal', '<C-s>', '<denite:do_action:split>', 'noremap')
 " [ctrl + s]で縦に分割して開く
 call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
+call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
 
 call denite#custom#map('insert', '<C-w>', '<denite:insert_word:../>', 'noremap')
 
