@@ -1,0 +1,26 @@
+{
+  "title": "Caps and return to ctrl. Ctrl to caps.",
+  "rules": [
+    {
+      "description": "Map caps_lock to left_ctrl.",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
