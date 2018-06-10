@@ -11,6 +11,7 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zsh ~/.zsh
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/powerline ~/.config/powerline
 
 mkdir ~/.peco
 ln -s ~/dotfiles/.peco/config.json ~/.peco/config.json
