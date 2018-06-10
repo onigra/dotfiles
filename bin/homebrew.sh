@@ -23,7 +23,6 @@ brew install zsh
 brew install coreutils
 brew install colordiff
 brew install go
-brew install heroku
 brew install peco
 brew install ghq
 brew install jenv
