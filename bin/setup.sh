@@ -11,13 +11,9 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zsh ~/.zsh
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.tmux-powerlinerc ~/.tmux-powerlinerc
 
 mkdir ~/.peco
 ln -s ~/dotfiles/.peco/config.json ~/.peco/config.json
-
-mkdir ~/.tmux
-git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/tmux-powerline
 
 mkdir -p ~/.config/git
 ln -s ~/dotfiles/.config/git/ignore ~/.config/git/ignore
