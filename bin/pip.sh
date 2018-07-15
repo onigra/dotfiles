@@ -1,6 +1,5 @@
 #!/bin/sh
 
-sudo easy_install pip3
 pip3 install --upgrade pip
 pip3 install neovim
 pip3 install ansible
