@@ -165,6 +165,10 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.ndenv/bin:$PATH"
 eval "$(ndenv init -)"
 
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Golang
 export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
