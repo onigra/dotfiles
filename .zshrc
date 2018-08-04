@@ -176,6 +176,9 @@ export PATH="$GOPATH/bin:$PATH"
 # Java
 eval "$(jenv init -)"
 
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Google Cloud SDK
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
