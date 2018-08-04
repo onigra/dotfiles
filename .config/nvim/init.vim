@@ -37,6 +37,12 @@ if dein#load_state('~/.dein')
   " Golang
   call dein#add('fatih/vim-go')
 
+  " Rust
+  call dein#add('rust-lang/rust.vim')
+
+  " Toml
+  call dein#add('cespare/vim-toml')
+
   " Ansible
   call dein#add('pearofducks/ansible-vim')
 
@@ -196,6 +202,11 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "-------------------------------------------------------------------------------
+" rust-vim
+"-------------------------------------------------------------------------------
+let g:rustfmt_autosave = 1
+
+"-------------------------------------------------------------------------------
 " start original .vimrc statements
 "-------------------------------------------------------------------------------
 filetype on
@@ -349,4 +360,5 @@ nnoremap ut :<C-u>Unite tab<CR>
 syntax enable
 set background=dark
 colorscheme molokai256
+
 
