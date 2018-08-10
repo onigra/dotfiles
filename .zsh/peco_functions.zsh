@@ -1,5 +1,8 @@
+###
+#
 # zsh history
 # http://blog.kenjiskywalker.org/blog/2014/06/12/peco/
+#
 function peco-select-history() {
   local tac
 
@@ -18,8 +21,11 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+###
+#
 # bundler管理下にあるgemのディレクトリに移動
 # http://qiita.com/joker1007/items/2410529b8f4e2a2cbde9
+#
 function cdgem() {
   local gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
 
@@ -45,6 +51,7 @@ function p() {
 }
 
 ##
+#
 # by cool-peco
 # https://github.com/ryoppy/cool-peco
 #
@@ -59,6 +66,7 @@ function _cool-peco-on-complete() {
 }
 
 ##
+#
 # file name search
 #
 function peco-file-search() {
@@ -86,6 +94,8 @@ function gcp() {
 }
 
 ##
+#
+#
 # select ssh host from ~/.ssh/config
 #
 function s() {
@@ -97,6 +107,7 @@ function s() {
 }
 
 ##
+#
 # select pid by `ps aux`
 #
 function psp() {
@@ -106,6 +117,7 @@ function psp() {
 }
 
 ##
+#
 # select tmux session
 #
 function tmap() {
@@ -113,5 +125,17 @@ function tmap() {
   res=$(tmux list-sessions | peco | awk -F':' '{print $1}')
   if [ -n "$res" ]; then
     _cool-peco-on-complete "tmux attach -t $res"
+  fi
+}
+
+##
+#
+# select ec2
+#
+function ec2ssh() {
+  local res
+  res=$(aws ec2 describe-instances | jq -r '.Reservations[].Instances[] | {PrivateIpAddress, InstanceName: (.Tags[] | select(.Key=="Name").Value)} | [.PrivateIpAddress, .InstanceName] | @sh' | sed s/\'//g | peco | awk -F' ' '{print $1}')
+  if [ -n "$res" ]; then
+    _cool-peco-on-complete "ssh $res"
   fi
 }
