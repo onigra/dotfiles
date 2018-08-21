@@ -55,6 +55,7 @@ if dein#load_state('~/.dein')
   " Colorscheme
   call dein#add('joedicastro/vim-molokai256')
   call dein#add('cocopon/iceberg.vim')
+  call dein#add('dracula/vim')
 
   " Status line
   call dein#add('bling/vim-airline')
@@ -359,6 +360,6 @@ nnoremap ut :<C-u>Unite tab<CR>
 "-------------------------------------------------------------------------------
 syntax enable
 set background=dark
-colorscheme molokai256
+colorscheme dracula
 
 
