@@ -135,8 +135,8 @@ function tmap() {
 function ec2ssh() {
   local res
   res=$(aws ec2 describe-instances --filter Name=instance-state-name,Values=running | \
-        jq -r '.Reservations[].Instances[] | {PrivateIpAddress, InstanceName: (.Tags[] | select(.Key=="Name").Value)} | [.PrivateIpAddress, .InstanceName] | @sh' | \
-        sed s/\'//g | peco | awk -F' ' '{print $1}')
+        jq -r '.Reservations[].Instances[] | {PrivateIpAddress, InstanceName: (.Tags[] | select(.Key=="Name").Value)} | [.PrivateIpAddress, .InstanceName] | @tsv' | \
+        peco | awk -F' ' '{print $1}')
   if [ -n "$res" ]; then
     _cool-peco-on-complete "ssh $res"
   fi
