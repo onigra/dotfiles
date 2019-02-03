@@ -29,7 +29,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('cocopon/vaffle.vim')
 
   " 補完
-  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('zxqfl/tabnine-vim')
 
   " Syntax check
   call dein#add('w0rp/ale')
@@ -142,11 +142,6 @@ nnoremap <silent> [Denite]rv :<C-u>Denite<Space>rails:view<Return>
 nnoremap <silent> [Denite]rh :<C-u>Denite<Space>rails:helper<Return>
 nnoremap <silent> [Denite]rt :<C-u>Denite<Space>rails:test<Return>
 nnoremap <silent> [Denite]rs :<C-u>Denite<Space>rails:spec<Return>
-
-"-------------------------------------------------------------------------------
-" deoplete
-"-------------------------------------------------------------------------------
-let g:deoplete#enable_at_startup = 1
 
 "-------------------------------------------------------------------------------
 " vaffle.vim
@@ -361,5 +356,4 @@ nnoremap ut :<C-u>Unite tab<CR>
 syntax enable
 set background=dark
 colorscheme dracula
-
 
