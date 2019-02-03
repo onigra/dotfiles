@@ -19,6 +19,8 @@ ln -s ~/dotfiles/.peco/config.json ~/.peco/config.json
 mkdir -p ~/.config/git
 ln -s ~/dotfiles/.config/git/ignore ~/.config/git/ignore
 
-mkdir -p ~/.dein
-git clone https://github.com/Shougo/dein.vim ~/.dein/repos/github.com/Shougo/dein.vim
+mkdir -p ~/.cache
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
+rm installer.sh
 
