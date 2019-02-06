@@ -32,9 +32,6 @@ alias pero=pero-func
 # sed
 alias sed='gsed'
 
-## ctags
-alias ctags='/usr/local/bin/ctags'
-
 # neovim
 alias vi='env LANG=ja_JP.UTF-8 /usr/local/bin/nvim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /usr/local/bin/nvim "$@"'
@@ -51,13 +48,9 @@ alias tmk='tmux kill-session -t'
 alias tma='tmux -2 attach -t'
 alias tmks='tmux kill-server'
 
-## memcached
-alias mem='memcached -u memcached -d'
-
 ## bundler
 alias be='bundle exec'
 alias bi='bundle install --path vendor/bundle --binstubs .bundle/bin -j 10'
-alias bu='bundle update'
 
 ## git
 alias gch='git checkout HEAD'
@@ -69,7 +62,6 @@ alias gfpc='git push origin -f $(current_branch)'
 alias gdf='git diff'
 alias gb='git branch'
 alias gc='git checkout'
-alias ga='git add --all'
 
 # ls
 alias ls='gls --color=auto'
@@ -79,16 +71,6 @@ alias al='ls -la --color=auto'
 
 # shasum
 alias sha256="shasum -a 256"
-
-# wget
-alias wgets='wget --no-check-certificate'
-
-# postgresql
-alias psql.start='pg_ctl -l /usr/local/var/postgres/server.log start'
-alias psql.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-# brew upgdate
-alias bupdate='brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup'
 
 # ghq
 alias e='ghq list -p | ag -v vendor | p cd'
@@ -105,8 +87,6 @@ alias dl='docker ps -l -q'
 # タグ無しのimageを取得する
 alias dnotag="docker images | awk '/^<none>/ { print $3 }'"
 
-# redis
-alias redisd='redis-server /usr/local/etc/redis.conf'
 alias rails-cli='~/.rails/.bundle/bin/rails'
 alias rails-new="~/.rails/.bundle/bin/rails new $1 --skip-bundle"
 
