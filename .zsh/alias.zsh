@@ -90,3 +90,4 @@ alias dnotag="docker images | awk '/^<none>/ { print $3 }'"
 alias rails-cli='~/.rails/.bundle/bin/rails'
 alias rails-new="~/.rails/.bundle/bin/rails new $1 --skip-bundle"
 
+alias vimconf='vim ~/.config/nvim/init.vim'
