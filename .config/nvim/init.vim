@@ -1,5 +1,8 @@
 autocmd!
 
+let g:python_host_prog = expand('/usr/local/bin/python2')
+let g:python3_host_prog = expand('~/.pyenv/shims/python3')
+
 "-------------------------------------------------------------------------------
 " dein.vim
 "-------------------------------------------------------------------------------
@@ -62,7 +65,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('vim-airline/vim-airline-themes')
 
   " Tag Jump
-  call dein#add('vim-scripts/taglist.vim')
+  call dein#add('lighttiger2505/gtags.vim')
+  call dein#add('jsfaint/gen_tags.vim')
 
   " Utils
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -172,21 +176,21 @@ let g:indentLine_color_term = 239
 let g:indentLine_conceallevel = 2
 
 "-------------------------------------------------------------------------------
-" taglist.vim
+" gtags.vim
 "-------------------------------------------------------------------------------
-set tags=tags=tags,./tags,**1/tags,tags;/Projects
-" taglistを開くショットカットキー
-nnoremap <silent><C-t> :Tlist<CR>
-" ctagsのパス(Homebrew)
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-" 現在編集中のソースのタグしか表示しない
-let Tlist_Show_One_File = 1
-" taglistのウィンドウが最後のウィンドウならばVimを閉じる
-let Tlist_Exit_OnlyWindow = 1
-" 自動表示
-let Tlist_Auto_Open = 1
-" 表示幅
-let Tlist_WinWidth = 30
+" 開いているファイルの関数一覧を表示
+nnoremap <C-h> :Gtags -f %<Cr>
+" 関数リストの下移動
+nnoremap <silent> <C-n> :cn<Cr>
+" 関数リストの上移動
+nnoremap <silent> <C-p> :cp<Cr>
+" 調べたい関数にカーソルを合わせてC-mするとジャンプする
+nnoremap <silent> <C-m> :GtagsCursor<Cr>
+
+"-------------------------------------------------------------------------------
+" gen_tags.vim
+"-------------------------------------------------------------------------------
+let g:gen_tags#gtags_auto_gen = 1
 
 "-------------------------------------------------------------------------------
 " vim-easy-align
@@ -348,7 +352,6 @@ command! MdtoRm call MarkdownToRedmine()
 
 " タブ設定
 nnoremap tn :<C-u>tabnew<CR>
-nnoremap ut :<C-u>Unite tab<CR>
 
 "-------------------------------------------------------------------------------
 " Syntax highlight
