@@ -4,3 +4,6 @@ db/mysql
 public/assets
 .envrc
 .DS_Store
+GPATH
+GRTAGS
+GTAGS
