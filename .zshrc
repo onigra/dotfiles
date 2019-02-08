@@ -157,6 +157,10 @@ zshaddhistory() {
 # Tools
 #################
 
+# homebrew
+export PATH="$HOME/.homebrew/bin:$PATH"
+export HOMEBREW_CACHE=$HOME/.homebrew/caches
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
