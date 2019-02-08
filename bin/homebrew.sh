@@ -42,7 +42,7 @@ brew install ngrep
 brew install parallel
 brew install automake
 
-brew install imagemagick
+# brew install imagemagick
 brew install pkg-config
 
 brew install homebrew/dupes/grep
@@ -52,13 +52,5 @@ brew cask install iterm2
 brew cask install appcleaner
 brew cask install slack
 brew cask install atool
-
-# Mac OS ver10.12(Sierra)以降はkarabinerをインストールしない
-macOsVersion=$(sw_vers -productVersion)
-
-if [[ "$macOsVersion" =~ "10.12" ]]; then
-  brew cask install cmd-eikana
-else
-  brew cask install karabiner
-fi
+brew cask install cmd-eikana
 
