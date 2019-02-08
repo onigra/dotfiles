@@ -169,25 +169,24 @@ eval "$(ndenv init -)"
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 
+# Java
+eval "$(jenv init -)"
+
 # Golang
 export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
-# Java
-eval "$(jenv init -)"
-
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Embulk
+export PATH="$HOME/.embulk/bin:$PATH"
 
 # Google Cloud SDK
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
-# Postgresql
-export PGDATA=/usr/local/var/postgres
-
 # direnv
 eval "$(direnv hook zsh)"
-
 
 # To connect the Docker client to the Docker daemon, please set these environment variables.
 # You can set them by running:
