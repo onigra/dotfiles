@@ -11,6 +11,7 @@ brew install tig
 brew install jq
 brew install openssl
 brew install ctags
+brew install global
 brew install readline
 brew install rsense
 brew install the_silver_searcher
