@@ -7,3 +7,7 @@ public/assets
 GPATH
 GRTAGS
 GTAGS
+.zsh/dev_alias.zsh
+.zsh/dev_db.zsh
+.vscode
+.netrwhist
