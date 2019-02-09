@@ -81,9 +81,10 @@ function peco-file-search() {
 function gcp() {
   local res
   local branch=$(git branch -a | peco | tr -d ' ')
+
   if [ -n "$branch" ]; then
     if [[ "$branch" =~ "remotes/" ]]; then
-      local b=$(echo $branch | awk -F'/' '{print $3}')
+      local b=$(echo $branch | cut -d '/' -f 3-)
       res="git checkout -b ${b} ${branch}"
     else
       res="git checkout ${branch}"
