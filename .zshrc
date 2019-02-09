@@ -1,4 +1,68 @@
 #################
+# 環境変数
+#################
+
+path=(
+  "$HOME/.homebrew/bin"
+  "$HOME/.homebrew/opt/coreutils/libexec/gnubin"
+  "$HOME/.homebrew/opt/git/share/git-core/contrib/diff-highlight"
+  "$HOME/.rbenv/bin"
+  "$HOME/.ndenv/bin"
+  "$HOME/.pyenv/bin"
+  "$HOME/.cargo/bin"
+  "/usr/local/bin"
+  "/usr/local/sbin"
+  "/usr/bin"
+  "/usr/sbin"
+  "/bin"
+  "/sbin"
+  "$HOME/.embulk/bin"
+  "$HOME/google-cloud-sdk/bin"
+)
+
+# homebrew
+export HOMEBREW_CACHE=$HOME/.homebrew/caches
+
+# LANG
+export LANG=ja_JP.UTF-8
+export LESSCHARSET=utf-8
+
+# EDITOR
+export EDITOR="$HOME/.homebrew/bin/nvim"
+
+# 単語区切りの調整
+# http://polamjag.hatenablog.jp/entry/2013/11/19/003727
+export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
+
+# less
+# colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
+# -Rを付けるとちゃんとカラー表示される。
+export LESS="-R"
+
+#################
+# Tools
+#################
+
+# rbenv
+eval "$(rbenv init -)"
+
+# ndenv
+eval "$(ndenv init -)"
+
+# pyenv
+eval "$(pyenv init -)"
+
+# Java
+eval "$(jenv init -)"
+
+# Golang
+export GOPATH=$HOME
+export PATH="$GOPATH/bin:$PATH"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+#################
 # 基本設定
 #################
 setopt prompt_subst
@@ -34,29 +98,6 @@ source ~/dotfiles/.zsh/bd.zsh # http://blog.glidenote.com/blog/2014/05/15/zsh-bd
 # 仕事で使うaliasはdev_alias.zshに入れる
 [ -f ~/.zsh/dev_alias.zsh ] && source ~/.zsh/dev_alias.zsh
 
-#################
-# 環境変数
-#################
-# PATH
-export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH:"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH"
-
-# LANG
-export LANG=ja_JP.UTF-8
-export LESSCHARSET=utf-8
-
-# EDITOR
-export EDITOR=/usr/local/bin/nvim
-
-# 単語区切りの調整
-# http://polamjag.hatenablog.jp/entry/2013/11/19/003727
-export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
-
-# less
-# colordiffの結果をパイプでlessとかに渡すとおかしなことになるので、
-# -Rを付けるとちゃんとカラー表示される。
-export LESS="-R"
 
 #################
 # プロンプト
@@ -152,43 +193,4 @@ zshaddhistory() {
       && ${cmd} != (r[m])
   ]]
 }
-
-#################
-# Tools
-#################
-
-# homebrew
-export PATH="$HOME/.homebrew/bin:$PATH"
-export HOMEBREW_CACHE=$HOME/.homebrew/caches
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# ndenv
-export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)"
-
-# pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Java
-eval "$(jenv init -)"
-
-# Golang
-export GOPATH=$HOME
-export PATH="$GOPATH/bin:$PATH"
-
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Embulk
-export PATH="$HOME/.embulk/bin:$PATH"
-
-# Google Cloud SDK
-export PATH="$HOME/google-cloud-sdk/bin:$PATH"
-
-# direnv
-eval "$(direnv hook zsh)"
 

@@ -33,8 +33,8 @@ alias pero=pero-func
 alias sed='gsed'
 
 # neovim
-alias vi='env LANG=ja_JP.UTF-8 /usr/local/bin/nvim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /usr/local/bin/nvim "$@"'
+alias vi='env LANG=ja_JP.UTF-8 $HOME/.homebrew/bin/nvim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 $HOME/.homebrew/bin/nvim "$@"'
 
 ## diff
 ## colordiff: http://www.glidenote.com/archives/1403
