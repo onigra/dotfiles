@@ -39,25 +39,16 @@ export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
 # -Rを付けるとちゃんとカラー表示される。
 export LESS="-R"
 
+# Golang
+export GOPATH=$HOME
+export PATH="$GOPATH/bin:$PATH"
+
 #################
 # Tools
 #################
 
-# rbenv
-eval "$(rbenv init -)"
-
-# ndenv
-eval "$(ndenv init -)"
-
-# pyenv
-eval "$(pyenv init -)"
-
-# Java
-eval "$(jenv init -)"
-
-# Golang
-export GOPATH=$HOME
-export PATH="$GOPATH/bin:$PATH"
+# なんちゃらenvをlazy load
+source ~/dotfiles/.zsh/langenv_lazy_load.zsh
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -97,7 +88,6 @@ source ~/dotfiles/.zsh/bd.zsh # http://blog.glidenote.com/blog/2014/05/15/zsh-bd
 
 # 仕事で使うaliasはdev_alias.zshに入れる
 [ -f ~/.zsh/dev_alias.zsh ] && source ~/.zsh/dev_alias.zsh
-
 
 #################
 # プロンプト
