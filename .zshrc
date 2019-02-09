@@ -124,7 +124,7 @@ zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%b)[%a]'
 
 precmd () {
-  zstyle ':vcs_info:git:*:-all-' command /usr/local/bin/git
+  zstyle ':vcs_info:git:*:-all-' command $HOME/.homebrew/bin/git
   psvar=()
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
