@@ -38,18 +38,6 @@ function cdgem() {
 zle -N cdgem
 bindkey '^g' cdgem
 
-# pecoの結果をvimで起動
-function to_vim() {
-  find . -name '*.rb' | peco | xargs -o /Applications/MacVim.app/Contents/MacOS/Vim
-}
-zle -N to_vim
-bindkey '^v' to_vim
-
-# pecoで絞り込んだ出力結果に対してコマンドを実行
-function p() {
-  peco | while read LINE; do $@ $LINE; done
-}
-
 ##
 #
 # by cool-peco
