@@ -2,7 +2,7 @@
 # function
 #################
 # cd後自動でlsする
-function chpwd() { gls -la --color=auto }
+function chpwd() { ls -la --color=auto }
 
 # 現在のブランチを取得
 function current_branch() {
@@ -64,8 +64,6 @@ alias gb='git branch'
 alias gc='git checkout'
 
 # ls
-alias ls='gls --color=auto'
-alias ls='gls -la --color=auto'
 alias la='ls -la --color=auto'
 alias al='ls -la --color=auto'
 
