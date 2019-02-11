@@ -157,7 +157,7 @@ fix_comp_assoc() {
   done
 }
 
-fix_comp_assoc _comps        "${(k)_comps[@]}"
+# fix_comp_assoc _comps        "${(k)_comps[@]}"
 fix_comp_assoc _services     "${(k)_services[@]}"
 fix_comp_assoc _patcomps     "${(k)_patcomps[@]}"
 fix_comp_assoc _postpatcomps "${(k)_postpatcomps[@]}"
