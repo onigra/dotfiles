@@ -16,7 +16,6 @@ brew install readline
 brew install rsense
 brew install the_silver_searcher
 brew install tmux
-brew install reattach-to-user-namespace
 brew install wget
 brew install curl
 brew install tree
