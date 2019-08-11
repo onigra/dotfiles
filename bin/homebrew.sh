@@ -46,5 +46,4 @@ brew cask install iterm2
 brew cask install appcleaner
 brew cask install slack
 brew cask install atool
-brew cask install cmd-eikana
 
