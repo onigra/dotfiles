@@ -27,9 +27,7 @@ brew install ghq
 brew install direnv
 brew install gpg
 
-brew install mysql
-brew install redis
-brew install postgresql
+brew install libpq
 
 brew install bash
 brew install gnu-sed
