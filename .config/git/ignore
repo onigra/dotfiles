@@ -12,3 +12,4 @@ GTAGS
 .vscode
 .netrwhist
 karabiner.json
+.config/karabiner/automatic_backups
