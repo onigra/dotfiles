@@ -6,9 +6,6 @@ path=(
   "$HOME/.homebrew/bin"
   "$HOME/.homebrew/opt/coreutils/libexec/gnubin"
   "$HOME/.homebrew/opt/git/share/git-core/contrib/diff-highlight"
-  "$HOME/.rbenv/bin"
-  "$HOME/.ndenv/bin"
-  "$HOME/.pyenv/bin"
   "$HOME/.cargo/bin"
   "/usr/local/bin"
   "/usr/local/sbin"
@@ -47,8 +44,9 @@ export PATH="$GOPATH/bin:$PATH"
 # Tools
 #################
 
-# なんちゃらenvをlazy load
-source ~/dotfiles/.zsh/langenv_lazy_load.zsh
+# asdf
+source ~/.asdf/asdf.sh
+# source ~/.asdf/completions/asdf.bash
 
 # direnv
 eval "$(direnv hook zsh)"
