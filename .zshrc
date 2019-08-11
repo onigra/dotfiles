@@ -6,6 +6,7 @@ path=(
   "$HOME/.homebrew/bin"
   "$HOME/.homebrew/opt/coreutils/libexec/gnubin"
   "$HOME/.homebrew/opt/git/share/git-core/contrib/diff-highlight"
+  "$HOME/.homebrew/opt/libpq/bin"
   "$HOME/.cargo/bin"
   "/usr/local/bin"
   "/usr/local/sbin"
