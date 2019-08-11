@@ -22,13 +22,10 @@ brew install tree
 brew install zsh
 brew install coreutils
 brew install colordiff
-brew install go
 brew install peco
 brew install ghq
-brew install jenv
-brew install terraform
 brew install direnv
-brew install yarn --without-node
+brew install gpg
 
 brew install mysql
 brew install redis
