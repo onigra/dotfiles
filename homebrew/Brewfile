@@ -1,0 +1,36 @@
+tap "homebrew/cask"
+cask_args appdir: "/Applications"
+
+brew "neovim"
+brew "git"
+brew "git-now"
+brew "hub"
+brew "tig"
+brew "jq"
+brew "openssl"
+brew "readline"
+brew "tmux"
+brew "colordiff"
+
+brew "wget"
+brew "curl"
+brew "tree"
+brew "zsh"
+brew "coreutils"
+brew "grep"
+
+brew "peco"
+brew "ghq"
+brew "direnv"
+brew "gpg"
+
+# 審議
+brew "ctags"
+brew "global"
+brew "the_silver_searcher"
+
+cask "firefox"
+cask "iterm2"
+cask "appcleaner"
+cask "slack"
+cask "atool"
