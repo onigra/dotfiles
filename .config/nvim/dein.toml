@@ -43,39 +43,79 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
+  autocmd FileType denite call s:denite_my_settings()
+  function! s:denite_my_settings() abort
+
+    "
+    nnoremap <silent><buffer><expr> <CR>
+    \ denite#do_map('do_action')
+
+    " ノーマルモード
+
+    " [q] deniteを終了
+    nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+
+    " [p] プレビューを開く
+    nnoremap <silent><buffer><expr> p
+    \ denite#do_map('do_action', 'preview')
+
+    " [i] filteringウィンドウを開く
+    nnoremap <silent><buffer><expr> i
+    \ denite#do_map('open_filter_buffer')
+
+    " [Ctrl + w] 一つ上のディレクトリに移動
+    nnoremap <silent><buffer><expr> <C-w>
+    \ denite#do_map('move_up_path')
+
+    " [ctrl + v] 横に分割して開く
+    nnoremap <silent><buffer><expr> <C-v>
+    \ denite#do_map('do_action', 'vsplit')
+
+    " [ctrl + s] 縦に分割して開く
+    nnoremap <silent><buffer><expr> <C-s>
+    \ denite#do_map('do_action', 'split')
+
+    "
+    nnoremap <silent><buffer><expr> d
+    \ denite#do_map('do_action', 'delete')
+
+    "
+    nnoremap <silent><buffer><expr> <Space>
+    \ denite#do_map('toggle_select').'j'
+  endfunction
+
   " [Space + f] がPrefix
   nnoremap [Denite] <Nop>
   nmap <Space>f [Denite]
 
   " カレントディレクトリ
   nnoremap <silent> [Denite]f :<C-u>Denite file buffer<CR>
+
   " 最近開いたファイル
   nnoremap <silent> [Denite]m :<C-u>Denite file_mru<CR>
 
-  " ESCキーでdeniteを終了
-  call denite#custom#map('insert', '<esc>', '<denite:enter_mode:normal>', 'noremap')
-  call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
-
-  " insertモードの時にjjでnormalモードになる
-  call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>', 'noremap')
-
-  " [ctrl + v]で横に分割して開く
-  call denite#custom#map('insert', '<C-s>', '<denite:do_action:split>', 'noremap')
-  call denite#custom#map('normal', '<C-s>', '<denite:do_action:split>', 'noremap')
-  " [ctrl + s]で縦に分割して開く
-  call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
-  call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
-
-  call denite#custom#map('insert', '<C-w>', '<denite:insert_word:../>', 'noremap')
-
-  " プロンプトを # から > に変更
-  call denite#custom#option('default', 'prompt', '>')
   " 表示位置を上部に変更
-  call denite#custom#option('default', 'direction', 'top')
-  " grepでagを使用するように設定
-  call denite#custom#var('grep', 'command', ['ag'])
-  " カレントディレクトリ内の検索もagを使用する
-  call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+  " call denite#custom#option('default', 'direction', 'top')
+
+  let s:denite_win_width_percent = 0.85
+  let s:denite_win_height_percent = 0.7
+  let s:denite_default_options = {
+    " \ 'split': 'floating',
+    \ 'direction': 'top',
+    \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+    \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+    \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+    \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
+    \ 'highlight_filter_background': 'DeniteFilter',
+    \ 'prompt': '$ ',
+    \ 'start_filter': v:true,
+    \ }
+  let s:denite_option_array = []
+  for [key, value] in items(s:denite_default_options)
+    call add(s:denite_option_array, '-'.key.'='.value)
+  endfor
+  call denite#custom#option('default', s:denite_default_options)
 '''
 
 [[plugins]]
