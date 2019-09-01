@@ -18,6 +18,34 @@ repo = 'cocopon/iceberg.vim'
 repo = 'zxqfl/tabnine-vim'
 
 [[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+  let g:LanguageClient_serverCommands = {
+      \ 'ruby': ['solargraph', 'stdio'],
+  \}
+
+  " [F5] メニューを開く
+  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+
+  " [K] ドキュメント開く
+  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+
+  " [ld] 定義ジャンプ
+  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+  " [F2] リネーム
+  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+  " debug
+  let g:lsp_log_verbose = 1
+  let g:lsp_log_file = expand('~/vim-lsp.log')
+  let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+'''
+
+# リッチなステータスバー
+[[plugins]]
 repo = 'bling/vim-airline'
 hook_add = '''
   let g:airline_powerline_fonts = 1
