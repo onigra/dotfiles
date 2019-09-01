@@ -176,27 +176,6 @@ hook_add = '''
 [[plugins]]
 repo = 'w0rp/ale'
 
-# Gtag
-[[plugins]]
-repo = 'lighttiger2505/gtags.vim'
-hook_add = '''
-  " 開いているファイルの関数一覧を表示
-  nnoremap <C-h> :Gtags -f %<Cr>
-  " 関数リストの下移動
-  nnoremap <silent> <C-n> :cn<Cr>
-  " 関数リストの上移動
-  nnoremap <silent> <C-p> :cp<Cr>
-  " 調べたい関数にカーソルを合わせてC-mするとジャンプする
-  nnoremap <silent> <C-m> :GtagsCursor<Cr>
-'''
-
-# タグの非同期更新
-[[plugins]]
-repo = 'jsfaint/gen_tags.vim'
-hook_add = '''
-  let g:gen_tags#gtags_auto_gen = 1
-'''
-
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_add = '''
