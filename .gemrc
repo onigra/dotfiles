@@ -1,8 +1,11 @@
 ---
-install: --no-document
-update: --no-document
-:benchmark: false
-:verbose: false
-:bulk_threshold: 1000
 :backtrace: false
-
+:bulk_threshold: 1000
+:sources:
+- https://rubygems.org/
+:update_sources: true
+:verbose: false
+:concurrent_downloads: 8
+install: "--document=yri"
+update: "--no-document"
+benchmark: false
