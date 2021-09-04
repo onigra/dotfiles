@@ -3,10 +3,6 @@
 #################
 
 path=(
-  "$HOME/.homebrew/bin"
-  "$HOME/.homebrew/opt/coreutils/libexec/gnubin"
-  "$HOME/.homebrew/opt/git/share/git-core/contrib/diff-highlight"
-  "$HOME/.homebrew/opt/libpq/bin"
   "$HOME/.cargo/bin"
   "/usr/local/bin"
   "/usr/local/sbin"
@@ -14,12 +10,11 @@ path=(
   "/usr/sbin"
   "/bin"
   "/sbin"
-  "$HOME/.embulk/bin"
   "$HOME/google-cloud-sdk/bin"
 )
 
 # homebrew
-export HOMEBREW_CACHE=$HOME/.homebrew/caches
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # brew installの時に勝手にアップデートしないようにする
 export HOMEBREW_NO_AUTO_UPDATE=1
 
