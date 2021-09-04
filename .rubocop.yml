@@ -3,3 +3,16 @@ Style/Documentation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/EmptyCaseCondition:
+  Enabled: false
