@@ -5,8 +5,6 @@
 ```
 
 - Growl
-- [GrowlNotify](http://growl.cachefly.net/GrowlNotify-2.1.zip)
-- [MacVim-Kaoriya](https://github.com/splhack/macvim/releases)
 - [Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
 
 # パッチ当て済みRictyをインストール
