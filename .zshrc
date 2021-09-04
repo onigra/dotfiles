@@ -20,6 +20,8 @@ path=(
 
 # homebrew
 export HOMEBREW_CACHE=$HOME/.homebrew/caches
+# brew installの時に勝手にアップデートしないようにする
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # LANG
 export LANG=ja_JP.UTF-8
