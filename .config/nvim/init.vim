@@ -85,6 +85,7 @@ set list
 set listchars=tab:>>,trail:-,nbsp:%
 set ttimeout
 set ttimeoutlen=40
+set paste
 
 hi clear CursorLine
 hi CursorLine gui=underline
@@ -98,9 +99,9 @@ highlight CursorLine ctermbg=black guibg=black
 " filetype
 "-------------------------------------------------------------------------------
 " Markdownじゃなかったら保存時に行末の空白を除去する
-if expand("%:e") != 'md'
-  autocmd BufWritePre * :%s/\s\+$//ge
-endif
+" if expand("%:e") != 'md'
+"   autocmd BufWritePre * :%s/\s\+$//ge
+" endif
 
 autocmd BufWritePre *.tf TerraformFmt
 " autocmd BufWritePre *.rb gg=G
@@ -109,9 +110,9 @@ autocmd BufWritePre *.tf TerraformFmt
 au BufRead,BufNewFile nginx.conf set ft=nginx
 
 " 保存時にtabをスペースに変換する
-if expand("%:e") != 'go'
-  autocmd BufWritePre * :%s/\t/  /ge
-endif
+" if expand("%:e") != 'go'
+"   autocmd BufWritePre * :%s/\t/  /ge
+" endif
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
