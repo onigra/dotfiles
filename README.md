@@ -4,12 +4,13 @@
 ./ruby_install.sh
 ```
 
-- Growl
-- [Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
+# iTerm2用設定
 
-# パッチ当て済みRictyをインストール
+## フォント
 
-# iterm colorscheme
+[Hack](https://sourcefoundry.org/hack/)
+
+## iterm colorscheme
 
 [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 
