@@ -6,7 +6,7 @@ let g:python3_host_prog = expand('~/.asdf/shims/python3')
 "-------------------------------------------------------------------------------
 " vim-plug
 "-------------------------------------------------------------------------------
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.cache/nvim/plugged')
 
 " Colorscheme
 Plug 'dracula/vim'
