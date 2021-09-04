@@ -19,3 +19,9 @@ cd dotfiles
 
 [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 
+
+## diff-highlight
+
+```sh
+ln -s $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight $(brew --prefix)/bin
+```
