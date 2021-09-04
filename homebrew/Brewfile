@@ -9,7 +9,6 @@ brew "tig"
 brew "jq"
 brew "openssl"
 brew "readline"
-brew "tmux"
 brew "colordiff"
 
 brew "wget"
@@ -23,9 +22,6 @@ brew "peco"
 brew "ghq"
 brew "direnv"
 brew "gpg"
-
-# 審議
-brew "the_silver_searcher"
 
 cask "firefox"
 cask "iterm2"
