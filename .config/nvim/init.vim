@@ -4,32 +4,70 @@ let g:python_host_prog = expand('/usr/local/bin/python2')
 let g:python3_host_prog = expand('~/.asdf/shims/python3')
 
 "-------------------------------------------------------------------------------
-" dein.vim
+" vim-plug
 "-------------------------------------------------------------------------------
-if &compatible
-  set nocompatible
-endif
+call plug#begin('~/.config/nvim/plugged')
 
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+" Colorscheme
+Plug 'dracula/vim'
+Plug 'joedicastro/vim-molokai256'
+Plug 'cocopon/iceberg.vim'
 
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+" 補完
+Plug 'neovim/nvim-lspconfig'
 
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+" Lint
+Plug 'w0rp/ale'
 
-  call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
-  call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
-  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'vim-scripts/nginx.vim'
 
-  call dein#end()
-  call dein#save_state()
-endif
+" リッチなステータスバー
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kana/vim-smartword'
 
-filetype plugin indent on
+" テキスト整形
+" https://wonderwall.hatenablog.com/entry/2016/03/29/215904
+Plug 'junegunn/vim-easy-align'
 
-if dein#check_install()
-  call dein#install()
-endif
+Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
+Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'osyo-manga/vim-over'
+Plug 'tpope/vim-endwise'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'thinca/vim-quickrun'
+
+call plug#end()
+
+"-------------------------------------------------------------------------------
+" airline
+"-------------------------------------------------------------------------------
+let g:airline_theme='angr'
+
+"-------------------------------------------------------------------------------
+" indentLine
+"-------------------------------------------------------------------------------
+let g:indentLine_color_term = 239
+let g:indentLine_conceallevel = 2
+
+"-------------------------------------------------------------------------------
+" vim-easy-align
+"-------------------------------------------------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"-------------------------------------------------------------------------------
+" rust.vim
+"-------------------------------------------------------------------------------
+let g:rustfmt_autosave = 1
+
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
@@ -99,20 +137,15 @@ highlight CursorLine ctermbg=black guibg=black
 " filetype
 "-------------------------------------------------------------------------------
 " Markdownじゃなかったら保存時に行末の空白を除去する
-" if expand("%:e") != 'md'
-"   autocmd BufWritePre * :%s/\s\+$//ge
-" endif
+if expand("%:e") != 'md'
+  autocmd BufWritePre * :%s/\s\+$//ge
+endif
 
 autocmd BufWritePre *.tf TerraformFmt
 " autocmd BufWritePre *.rb gg=G
 
 " Nginx
 au BufRead,BufNewFile nginx.conf set ft=nginx
-
-" 保存時にtabをスペースに変換する
-" if expand("%:e") != 'go'
-"   autocmd BufWritePre * :%s/\t/  /ge
-" endif
 
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -146,4 +179,4 @@ nnoremap tn :<C-u>tabnew<CR>
 "-------------------------------------------------------------------------------
 syntax enable
 set background=dark
-colorscheme dracula
+colorscheme molokai256
