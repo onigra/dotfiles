@@ -2,7 +2,7 @@
 # function
 #################
 # cd後自動でlsする
-function chpwd() { ls -la --color=auto }
+function chpwd() { gls -la --color=auto }
 
 # 現在のブランチを取得
 function current_branch() {
@@ -33,8 +33,8 @@ alias pero=pero-func
 alias sed='gsed'
 
 # neovim
-alias vi='env LANG=ja_JP.UTF-8 $HOME/.homebrew/bin/nvim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 $HOME/.homebrew/bin/nvim "$@"'
+alias vi='env LANG=ja_JP.UTF-8 nvim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 nvim "$@"'
 
 ## diff
 ## colordiff: http://www.glidenote.com/archives/1403
@@ -64,8 +64,8 @@ alias gb='git branch'
 alias gc='git checkout'
 
 # ls
-alias la='ls -la --color=auto'
-alias al='ls -la --color=auto'
+alias la='gls -la --color=auto'
+alias al='gls -la --color=auto'
 
 # shasum
 alias sha256="shasum -a 256"
