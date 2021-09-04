@@ -28,7 +28,7 @@ export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 
 # EDITOR
-export EDITOR="$HOME/.homebrew/bin/nvim"
+export EDITOR="nvim"
 
 # 単語区切りの調整
 # http://polamjag.hatenablog.jp/entry/2013/11/19/003727
@@ -125,7 +125,7 @@ zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%b)[%a]'
 
 precmd () {
-  zstyle ':vcs_info:git:*:-all-' command $HOME/.homebrew/bin/git
+  zstyle ':vcs_info:git:*:-all-' command git
   psvar=()
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
@@ -134,7 +134,7 @@ precmd () {
 #################
 # 補完
 #################
-eval "$(dircolors)"
+eval "$(gdircolors)"
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # Tab補完で表示される候補の色をlsと同じ色にする
 zstyle ':completion:*:default' menu select=1
