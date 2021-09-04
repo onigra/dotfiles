@@ -13,6 +13,10 @@ Plug 'dracula/vim'
 Plug 'joedicastro/vim-molokai256'
 Plug 'cocopon/iceberg.vim'
 
+" ファジーファインダー
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " 補完
 Plug 'neovim/nvim-lspconfig'
 
@@ -175,8 +179,17 @@ nnoremap : ;
 nnoremap tn :<C-u>tabnew<CR>
 
 "-------------------------------------------------------------------------------
+" telescope
+"-------------------------------------------------------------------------------
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+"-------------------------------------------------------------------------------
 " Syntax highlight
 "-------------------------------------------------------------------------------
 syntax enable
 set background=dark
 colorscheme molokai256
+
