@@ -13,3 +13,7 @@ GTAGS
 .netrwhist
 karabiner.json
 .config/karabiner/automatic_backups
+.tool-versions
+__pycache__
+.terraform.tfstate.lock.info
+.terraform
