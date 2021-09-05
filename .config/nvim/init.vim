@@ -127,7 +127,6 @@ set list
 set listchars=tab:>>,trail:-,nbsp:%
 set ttimeout
 set ttimeoutlen=40
-set paste
 
 hi clear CursorLine
 hi CursorLine gui=underline
