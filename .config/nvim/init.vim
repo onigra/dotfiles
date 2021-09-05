@@ -19,6 +19,7 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " 補完
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 
 " Lint
 Plug 'w0rp/ale'
@@ -72,6 +73,9 @@ nmap ga <Plug>(EasyAlign)
 "-------------------------------------------------------------------------------
 let g:rustfmt_autosave = 1
 
+"-------------------------------------------------------------------------------
+" completion-nvim
+"-------------------------------------------------------------------------------
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
