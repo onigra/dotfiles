@@ -74,8 +74,30 @@ nmap ga <Plug>(EasyAlign)
 let g:rustfmt_autosave = 1
 
 "-------------------------------------------------------------------------------
+" nvim-lspconfig
+"-------------------------------------------------------------------------------
+lua << EOF
+  local completion_callback = function (client, bufnr)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true, silent = true})
+    require('completion').on_attach(client)
+  end
+
+  require'lspconfig'.solargraph.setup{ on_attach = completion_callback }
+EOF
+
+"-------------------------------------------------------------------------------
 " completion-nvim
 "-------------------------------------------------------------------------------
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
