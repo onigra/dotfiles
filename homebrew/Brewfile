@@ -5,8 +5,9 @@ brew "git"
 brew "gh"
 brew "tig"
 brew "neovim"
-
 brew "jq"
+brew "jnv"
+
 brew "wget"
 brew "curl"
 brew "tree"
