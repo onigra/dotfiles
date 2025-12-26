@@ -17,3 +17,4 @@ karabiner.json
 __pycache__
 .terraform.tfstate.lock.info
 .terraform
+.mise.toml
