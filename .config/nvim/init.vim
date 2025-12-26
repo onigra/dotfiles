@@ -94,14 +94,25 @@ lua << EOF
     }
   })
 
+  -- Neovim 0.11+ の新しいLSP設定方法
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  require('lspconfig').solargraph.setup({
+
+  vim.lsp.config.solargraph = {
+    cmd = { 'solargraph', 'stdio' },
+    filetypes = { 'ruby' },
+    root_markers = { 'Gemfile', '.git' },
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
-      vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
-      vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
-      vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true, silent = true})
-    end
+  }
+  vim.lsp.enable('solargraph')
+
+  -- キーマッピング設定
+  vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+      local bufnr = args.buf
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr, noremap = true, silent = true })
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, noremap = true, silent = true })
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr, noremap = true, silent = true })
+    end,
   })
 EOF
 
