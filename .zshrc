@@ -42,10 +42,6 @@ export PATH="$GOPATH/bin:$PATH"
 # Tools
 #################
 
-# asdf
-source ~/.asdf/asdf.sh
-# source ~/.asdf/completions/asdf.bash
-
 # direnv
 eval "$(direnv hook zsh)"
 
@@ -179,4 +175,6 @@ zshaddhistory() {
       && ${cmd} != (r[m])
   ]]
 }
+
+eval "$(mise activate zsh)"
 
