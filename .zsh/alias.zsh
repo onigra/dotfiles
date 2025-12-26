@@ -71,7 +71,7 @@ alias al='gls -la --color=auto'
 alias sha256="shasum -a 256"
 
 # ghq
-alias e='ghq list -p | ag -v vendor | peco | while read LINE; do cd $LINE; done'
+alias e='ghq list -p | ggrep -v vendor | peco | while read LINE; do cd $LINE; done'
 
 # rails
 alias rc='rails c'
