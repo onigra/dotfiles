@@ -134,7 +134,6 @@ set hidden                       " 編集中でも他のファイルを開ける
 set backspace=indent,eol,start   " バックスペースでなんでも消せるように
 set formatoptions=lmoq           " テキスト整形オプション，マルチバイト系を追加
 set vb t_vb=                     " ビープをならさない
-set browsedir=buffer             " Exploreの初期ディレクトリ
 set whichwrap=b,s,h,l,<,>,[,]    " カーソルを行頭、行末で止まらないようにする
 set showcmd                      " コマンドをステータス行に表示
 set showmode                     " 現在のモードを表示
