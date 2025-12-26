@@ -118,7 +118,7 @@ set laststatus=2
 set t_Co=256
 set backupcopy=yes
 set helpfile=$VIMRUNTIME/doc/help.txt
-set undodir=D:~/.vim/undo
+set undodir=~/.config/nvim/undo
 
 let mapleader = ","              " キーマップリーダー
 set autoindent                   " オートインデントの設定
