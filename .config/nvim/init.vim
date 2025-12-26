@@ -19,7 +19,10 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " 補完
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 
 " Lint
 Plug 'w0rp/ale'
@@ -77,27 +80,40 @@ let g:rustfmt_autosave = 1
 " nvim-lspconfig
 "-------------------------------------------------------------------------------
 lua << EOF
-  local completion_callback = function (client, bufnr)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true, silent = true})
-    require('completion').on_attach(client)
-  end
+  local cmp = require('cmp')
+  cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+      ['<Tab>'] = cmp.mapping.select_next_item(),
+      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = {
+      { name = 'nvim_lsp' },
+      { name = 'buffer' },
+      { name = 'path' },
+    }
+  })
 
-  require'lspconfig'.solargraph.setup{ on_attach = completion_callback }
+  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  require('lspconfig').solargraph.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+      vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
+      vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
+      vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {noremap = true, silent = true})
+    end
+  })
 EOF
 
 "-------------------------------------------------------------------------------
-" completion-nvim
+" nvim-cmp / completion settings
 "-------------------------------------------------------------------------------
-" Set completeopt to have a better completion experience
+" 補完メニューの動作設定
+" menuone: 候補が1つでもメニュー表示, noinsert: 自動挿入しない, noselect: 自動選択しない
 set completeopt=menuone,noinsert,noselect
 
-" Avoid showing message extra message when using completion
+" 補完使用時の余計なメッセージを表示しない
 set shortmess+=c
-
-imap <tab> <Plug>(completion_smart_tab)
-imap <s-tab> <Plug>(completion_smart_s_tab)
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
