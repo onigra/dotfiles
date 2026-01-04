@@ -38,10 +38,6 @@ alias tmk='tmux kill-session -t'
 alias tma='tmux -2 attach -t'
 alias tmks='tmux kill-server'
 
-## bundler
-alias be='bundle exec'
-alias bi='bundle install --path vendor/bundle --binstubs .bundle/bin -j 10'
-
 ## git
 alias gch='git checkout HEAD'
 alias gst='git status'
@@ -63,19 +59,3 @@ alias sha256="shasum -a 256"
 # ghq
 alias e='ghq list -p | ggrep -v vendor | peco | while read LINE; do cd $LINE; done'
 
-# rails
-alias rc='rails c'
-alias rs='rails s'
-alias rd='rails db'
-
-# docker
-alias dl='docker ps -l -q'
-
-# タグ無しのimageを取得する
-alias dnotag="docker images | awk '/^<none>/ { print $3 }'"
-
-alias rails-cli='~/.rails/.bundle/bin/rails'
-alias rails-new="~/.rails/.bundle/bin/rails new $1 --skip-bundle"
-
-alias vimconf='vim ~/.config/nvim/init.vim'
-alias zshconf='vim ~/.zshrc'
