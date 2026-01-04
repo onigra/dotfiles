@@ -20,10 +20,6 @@ function pero-func() {
   exec ag "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less '
 }
 
-# hub
-# http://qiita.com/yaotti/items/a4a7f3f9a38d7d3415e3
-function git(){hub "$@"}
-
 #################
 # alias
 #################
