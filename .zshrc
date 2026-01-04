@@ -39,13 +39,6 @@ export GOPATH=$HOME
 export PATH="$GOPATH/bin:$PATH"
 
 #################
-# Tools
-#################
-
-# direnv
-eval "$(direnv hook zsh)"
-
-#################
 # 基本設定
 #################
 setopt prompt_subst
