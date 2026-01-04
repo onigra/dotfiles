@@ -1,17 +1,17 @@
 #!/bin/sh
 
-ln -s ~/dotfiles/.gemrc ~/.gemrc
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.inputrc ~/.inputrc
-ln -s ~/dotfiles/.tigrc ~/.tigrc
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.zsh ~/.zsh
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.peco ~/.peco
-ln -s ~/dotfiles/.rubocop.yml ~/.rubocop.yml
+ln -s $HOME/dotfiles/.gemrc $HOME/.gemrc
+ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $HOME/dotfiles/.inputrc $HOME/.inputrc
+ln -s $HOME/dotfiles/.tigrc $HOME/.tigrc
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/.zsh $HOME/.zsh
+ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/.peco $HOME/.peco
+ln -s $HOME/dotfiles/.rubocop.yml $HOME/.rubocop.yml
 
-ln -s ~/dotfiles/.config/git ~/.config/git
-ln -s ~/dotfiles/.config/nvim ~/.config/nvim
-ln -s ~/dotfiles/.config/powerline ~/.config/powerline
-ln -s ~/dotfiles/.config/karabiner ~/.config/karabiner
+ln -s $HOME/dotfiles/.config/git $HOME/.config/git
+ln -s $HOME/dotfiles/.config/nvim $HOME/.config/nvim
+ln -s $HOME/dotfiles/.config/powerline $HOME/.config/powerline
+ln -s $HOME/dotfiles/.config/karabiner $HOME/.config/karabiner
 
