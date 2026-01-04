@@ -9,12 +9,6 @@ function current_branch() {
   git rev-parse --abbrev-ref HEAD
 }
 
-function gw() {
-  git commit --allow-empty -m "$1"
-  git push origin $(current_branch)
-  git pull-request -m "[WIP] $1"
-}
-
 # http://blog.kazuhooku.com/2017/03/peco.html
 function pero-func() {
   exec ag "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less '
