@@ -9,15 +9,10 @@ function current_branch() {
   git rev-parse --abbrev-ref HEAD
 }
 
-# http://blog.kazuhooku.com/2017/03/peco.html
-function pero-func() {
-  exec ag "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less '
-}
 
 #################
 # alias
 #################
-alias pero=pero-func
 
 # sed
 alias sed='gsed'

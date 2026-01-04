@@ -21,23 +21,6 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-###
-#
-# bundler管理下にあるgemのディレクトリに移動
-# http://qiita.com/joker1007/items/2410529b8f4e2a2cbde9
-#
-function cdgem() {
-  local gem_name=$(bundle list | sed -e 's/^ *\* *//g' | peco | cut -d \  -f 1)
-
-  if [ -n "$gem_name" ]; then
-    local gem_dir=$(bundle show ${gem_name})
-    echo "cd to ${gem_dir}"
-    cd $(bundle show ${gem_name})
-  fi
-}
-zle -N cdgem
-bindkey '^g' cdgem
-
 ##
 #
 # by cool-peco
@@ -130,3 +113,4 @@ function ec2ssh() {
     _cool-peco-on-complete "ssh $res"
   fi
 }
+
