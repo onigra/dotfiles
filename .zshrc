@@ -12,8 +12,9 @@ path=(
   "$HOME/google-cloud-sdk/bin"
 )
 
-# homebrew
+# $PATH にhomebrewでインストールしたものを追加する
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # brew installの時に勝手にアップデートしないようにする
 export HOMEBREW_NO_AUTO_UPDATE=1
 
