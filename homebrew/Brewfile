@@ -1,5 +1,6 @@
-tap "homebrew/cask"
-cask_args appdir: "/Applications"
+# doc: https://docs.brew.sh/Brew-Bundle-and-Brewfile
+# install command:
+#   brew bundle --file=~/dotfiles/homebrew/Brewfile
 
 brew "git"
 brew "gh"
