@@ -66,10 +66,6 @@ typeset -U path cdpath fpath manpath PATH
 #################
 source ~/dotfiles/.zsh/alias.zsh
 source ~/dotfiles/.zsh/peco_functions.zsh
-source ~/dotfiles/.zsh/bd.zsh # http://blog.glidenote.com/blog/2014/05/15/zsh-bd/
-
-# travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # 仕事で使うaliasはdev_alias.zshに入れる
 [ -f ~/.zsh/dev_alias.zsh ] && source ~/.zsh/dev_alias.zsh
