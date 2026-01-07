@@ -5,7 +5,6 @@
 brew "git"
 brew "gh"
 brew "tig"
-brew "neovim"
 brew "jq"
 brew "jnv"
 
@@ -27,3 +26,8 @@ brew "ghq"
 brew "mise"
 brew "tmux"
 brew "font-hack-nerd-font"
+
+brew "neovim"
+# telescope.vim の依存関係に必要
+brew "ripgrep"
+brew "fd"
