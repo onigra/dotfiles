@@ -29,7 +29,6 @@ Plug 'hrsh7th/cmp-path'
 " Lint
 Plug 'w0rp/ale'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'vim-scripts/nginx.vim'
 
