@@ -65,7 +65,7 @@ typeset -U path cdpath fpath manpath PATH
 # alias
 #################
 source ~/dotfiles/.zsh/alias.zsh
-source ~/dotfiles/.zsh/peco_functions.zsh
+source ~/dotfiles/.zsh/fzf_alias.zsh
 
 # 仕事で使うaliasはdev_alias.zshに入れる
 [ -f ~/.zsh/dev_alias.zsh ] && source ~/.zsh/dev_alias.zsh
