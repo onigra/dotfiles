@@ -30,7 +30,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'w0rp/ale'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-scripts/nginx.vim'
 
@@ -77,11 +76,6 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "-------------------------------------------------------------------------------
-" rust.vim
-"-------------------------------------------------------------------------------
-let g:rustfmt_autosave = 1
-
-"-------------------------------------------------------------------------------
 " nvim-lspconfig
 "-------------------------------------------------------------------------------
 lua require('nvim-lspconfig_config')
@@ -98,7 +92,8 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 "-------------------------------------------------------------------------------
-" telescope
+" telescope.nvim
+" ファジーファインダー
 "-------------------------------------------------------------------------------
 lua require('telescope_config')
 
