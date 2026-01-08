@@ -1,7 +1,12 @@
 autocmd!
 
 "-------------------------------------------------------------------------------
+" Plugins & Plugin Settings
+"-------------------------------------------------------------------------------
+
+"-------------------------------------------------------------------------------
 " vim-plug
+" プラグインマネージャー
 "-------------------------------------------------------------------------------
 call plug#begin('~/.cache/nvim/plugged')
 
@@ -49,18 +54,21 @@ Plug 'thinca/vim-quickrun'
 call plug#end()
 
 "-------------------------------------------------------------------------------
-" airline
+" vim-airline
+" リッチなステータスバー
 "-------------------------------------------------------------------------------
 let g:airline_theme='angr'
 
 "-------------------------------------------------------------------------------
 " indentLine
+" わかりやすいインデント表示
 "-------------------------------------------------------------------------------
 let g:indentLine_color_term = 239
 let g:indentLine_conceallevel = 2
 
 "-------------------------------------------------------------------------------
 " vim-easy-align
+" テキスト整形
 "-------------------------------------------------------------------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -76,45 +84,11 @@ let g:rustfmt_autosave = 1
 "-------------------------------------------------------------------------------
 " nvim-lspconfig
 "-------------------------------------------------------------------------------
-lua << EOF
-  local cmp = require('cmp')
-  cmp.setup({
-    mapping = cmp.mapping.preset.insert({
-      ['<Tab>'] = cmp.mapping.select_next_item(),
-      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    }),
-    sources = {
-      { name = 'nvim_lsp' },
-      { name = 'buffer' },
-      { name = 'path' },
-    }
-  })
-
-  -- Neovim 0.11+ の新しいLSP設定方法
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-  vim.lsp.config.solargraph = {
-    cmd = { 'solargraph', 'stdio' },
-    filetypes = { 'ruby' },
-    root_markers = { 'Gemfile', '.git' },
-    capabilities = capabilities,
-  }
-  vim.lsp.enable('solargraph')
-
-  -- キーマッピング設定
-  vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(args)
-      local bufnr = args.buf
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr, noremap = true, silent = true })
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, noremap = true, silent = true })
-      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr, noremap = true, silent = true })
-    end,
-  })
-EOF
+lua require('nvim-lspconfig_config')
 
 "-------------------------------------------------------------------------------
-" nvim-cmp / completion settings
+" nvim-cmp
+" 補完設定
 "-------------------------------------------------------------------------------
 " 補完メニューの動作設定
 " menuone: 候補が1つでもメニュー表示, noinsert: 自動挿入しない, noselect: 自動選択しない
@@ -122,6 +96,11 @@ set completeopt=menuone,noinsert,noselect
 
 " 補完使用時の余計なメッセージを表示しない
 set shortmess+=c
+
+"-------------------------------------------------------------------------------
+" telescope
+"-------------------------------------------------------------------------------
+lua require('telescope_config')
 
 "-------------------------------------------------------------------------------
 " start original .vimrc statements
@@ -224,11 +203,6 @@ nnoremap : ;
 
 " タブ設定
 nnoremap tn :<C-u>tabnew<CR>
-
-"-------------------------------------------------------------------------------
-" telescope
-"-------------------------------------------------------------------------------
-lua require('telescope_config')
 
 "-------------------------------------------------------------------------------
 " Syntax highlight
