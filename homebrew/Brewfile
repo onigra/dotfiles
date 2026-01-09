@@ -13,6 +13,7 @@ brew "curl"
 brew "tree"
 brew "zsh"
 brew "coreutils"
+brew "gsed"
 brew "grep"
 brew "atool"
 brew "gpg"
@@ -21,11 +22,13 @@ brew "readline"
 brew "colordiff"
 
 brew "git-now"
-brew "peco"
 brew "ghq"
 brew "mise"
 brew "tmux"
 brew "font-hack-nerd-font"
+
+brew "fzf"
+brew "bat"
 
 brew "neovim"
 # telescope.vim の依存関係に必要
