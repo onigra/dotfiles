@@ -167,3 +167,5 @@ zshaddhistory() {
 
 eval "$(mise activate zsh)"
 
+source <(fzf --zsh)
+
