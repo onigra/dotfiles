@@ -26,6 +26,14 @@ function ffbr() {
     git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
+# git branch を fzf で検索して削除
+function ffbd() {
+  local branches branch
+  branches=$(git branch -vv) &&
+    branch=$(echo "$branches" | fzf) &&
+    git branch -df $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
 # ps を fzf で見て pid を標準出力に出す
 function ffps() {
   local pid
