@@ -3,6 +3,11 @@ local fzf_color_option='--color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E
 
 export FZF_DEFAULT_OPTS="--reverse --border --height=90% '${fzf_color_option}'"
 
+# ls でディレクトリだけ表示して tree して中身をざっと見れる君
+function ffdp() {
+  ls -df */ | fzf --preview 'tree -C {} | head -200'
+}
+
 # fzf で検索したファイルを vim で開く
 function ffv() {
   local file
