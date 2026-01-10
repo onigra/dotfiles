@@ -6,7 +6,7 @@ export FZF_DEFAULT_OPTS="--reverse --border --height=90% '${fzf_color_option}'"
 # fzf で検索したファイルを vim で開く
 function ffv() {
   local file
-  file=$(find . -path "*/.git" -prune -o -type f -print | fzf)
+  file=$(find . -path "*/.git" -prune -o -type f -print | fzf --preview 'bat --style=numbers --color=always {}')
   [[ -n "$file" ]] && vim "$file"
 }
 
