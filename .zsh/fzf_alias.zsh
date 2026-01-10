@@ -11,14 +11,14 @@ function ffv() {
 function ffb() {
   local branches branch
   branches=$(git branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+    branch=$(echo "$branches" | fzf) &&
+    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 # remote branch も含む git branch を fzf で検索してチェックアウト
 function ffbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
-    branch=$(echo "$branches" | fzf +m) &&
+    branch=$(echo "$branches" | fzf) &&
     git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
