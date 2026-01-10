@@ -26,6 +26,12 @@ function ffbr() {
     git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
+# ps を fzf で見て pid を標準出力に出す
+function ffps() {
+  local pid
+  ps aux | fzf | awk '{print $2}'
+}
+
 # ghq で管理してるディレクトリに cd する
 function e() {
   cd $(ghq list -p | fzf)
