@@ -22,3 +22,8 @@ function ffbr() {
     branch=$(echo "$branches" | fzf) &&
     git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
+
+# ghq で管理してるディレクトリに cd する
+function e() {
+  cd $(ghq list -p | fzf)
+}
