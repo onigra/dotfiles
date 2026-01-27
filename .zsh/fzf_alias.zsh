@@ -28,7 +28,7 @@ function ffbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
     branch=$(echo "$branches" | fzf) &&
-    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+    git switch -c $(echo $branch | cut -d '/' -f 3-) $(echo $branch | awk '{print $1}' | sed "s/.* //")
 }
 
 # git branch を fzf で検索して削除
